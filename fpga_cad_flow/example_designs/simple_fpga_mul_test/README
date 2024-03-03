@@ -1,0 +1,82 @@
+TOOL VERSIONS:
+=============
+Yosys 0.9+3911 (git sha1 4746ffd7b) --> https://github.com/YosysHQ/yosys
+VTR v8.0.0 (git tags/v8.0.0) --> https://github.com/verilog-to-routing/vtr-verilog-to-routing
+sbt 1.6.2 (scala build tool) --> https://www.scala-sbt.org/
+Python 3.6
+Cadence Conformal 18.1 or above if you need to run Logic Equivalence Check (LEC)
+
+-----------------------------------------------------------------------------------------------------------------
+
+STEP1 - SETUP DESIGN RUN DIR:
+============================
+
+Copy the add16 example to a new work_dir with a suitable name.
+
+1. Copy the source verilog files to work_dir/inputs directory
+		* Yosys will read all the verilog files in the input directory
+2. In work_dir/design.sh, edit DESIGN_NAME to point to the module that should be redacted
+		* If there are other unused modules in the verilog files, Yosys will ignore them.
+3. In work_dir/design.sh, specify all the other design related variables for each step
+
+Then,
+
+bash$ cd work_dir (or) add16 if you want to rerun the add16 example
+bash$ source design.sh
+
+STEP2 - LUT SYNTHESIS:
+=====================
+
+bash$ cd ${WORK_DIR}/yosys
+bash$ make synth # Will output synthesized BLIF and Verilog in the outputs directory
+
+
+STEP3 - FPGA PnR USING VPR:
+==========================
+bash$ cd ${WORK_DIR}/vpr_pnr
+bash$ make vpr  		# runs VPR without GUI
+bash$ make vpr_gui 	# runs VPR with GUI. Click Proceed until the bottom status bar says 'Routed succesfully...'
+
+
+STEP3 - BITSTREAM GENERATION:
+============================
+# Note: Check if REDACTED_DESIGN_HIER is correct in design.sh
+
+bash$ cd ${WORDK_DIR}/../../bitstream_gen
+bash$ make
+
+STEP4 - FABRIC RTL GENERATION:
+=============================
+# Note 1: Check if variables under 'Fabric generator' is correct in design.sh
+# Note 2: For the very first run please use 'make online'. 
+	  sbt will download and compile the dependencies inside ~/.sbt/boot/scala-2.12.4/
+	  after the first run you can use 'make' without needing internet
+
+bash$ cd ${WORDK_DIR}/../../fabric_generator
+bash$ make
+
+
+STEP5 - LEC:
+===========
+
+bash$ cd ${WORDK_DIR}/../../rtl_lec_verif
+bash$ make setup_lec_dir
+bash$ cd $LEC_RUN_DIR_NAME
+# Refer to README to setup the source verilog files for comparison
+bash$ make
+
+-----------------------------------------------------------------------------------------------------------------
+
+NOTES:
+=====
+
+Currently Supported FPGA features
+	* Verilog module to be redacted must have only one clock domain
+	* No asynchronous set/reset
+	* NO RTL instantiated std-cells as input to yosys
+
+Guidelines for redaction
+	* eFPGA sizes >= 4x4 recommended
+	* Including sequential logic
+
+-----------------------------------------------------------------------------------------------------------------

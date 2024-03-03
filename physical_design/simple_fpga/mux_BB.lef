@@ -1,0 +1,98 @@
+# BSD 3-Clause License
+# 
+# Copyright 2022 Lawrence T. Clark, Vinay Vashishtha, or Arizona State
+# University
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+# 
+# 1. Redistributions of source code must retain the above copyright notice,
+# this list of conditions and the following disclaimer.
+# 
+# 2. Redistributions in binary form must reproduce the above copyright
+# notice, this list of conditions and the following disclaimer in the
+# documentation and/or other materials provided with the distribution.
+# 
+# 3. Neither the name of the copyright holder nor the names of its
+# contributors may be used to endorse or promote products derived from this
+# software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+SITE asap7sc7p5t
+ CLASS CORE ;
+ SIZE 0.054 BY 0.270 ;
+ SYMMETRY Y ;
+END asap7sc7p5t
+
+
+MACRO BUFx2_ASAP7_75t_BB
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN BUFx2_ASAP7_75t_L 0 0 ;
+  SIZE 0.27 BY 0.27 ;
+  SYMMETRY X Y ;
+  SITE asap7sc7p5t ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+        RECT 0.018 0.126 0.073 0.144 ;
+        RECT 0.018 0.189 0.055 0.207 ;
+        RECT 0.018 0.063 0.055 0.081 ;
+        RECT 0.018 0.063 0.036 0.207 ;
+    END
+  END A
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER M1 ;
+        RECT 0 0.261 0.27 0.279 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER M1 ;
+        RECT 0 -0.009 0.27 0.009 ;
+    END
+  END VSS
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+        RECT 0.145 0.225 0.252 0.243 ;
+        RECT 0.234 0.027 0.252 0.243 ;
+        RECT 0.145 0.027 0.252 0.045 ;
+    END
+  END Y
+  OBS
+    LAYER M1 ;
+      RECT 0.04 0.225 0.12 0.243 ;
+      RECT 0.102 0.027 0.12 0.243 ;
+      RECT 0.102 0.126 0.203 0.144 ;
+      RECT 0.04 0.027 0.12 0.045 ;
+  END
+END BUFx2_ASAP7_75t_BB
+
+END LIBRARY

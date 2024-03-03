@@ -1,0 +1,29 @@
+Netlist_File: test1_syn.net Netlist_ID: SHA256:f6fb5c387243486bf11bad62fffef6868549634ad09acfd852b2f1a9a1d9e3b3
+Array size: 13 x 12 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+out:io_gpio_write[6]	    11	1	12	#7
+out:io_gpio_write[7]	    11	1	14	#8
+out:io_gpio_write[5]	    11	1	11	#9
+out:io_gpio_write[4]	    11	1	21	#10
+out:io_gpio_write[2]	    11	1	5	#11
+out:io_gpio_write[0]	    11	1	1	#12
+out:io_gpio_write[1]	    11	1	2	#13
+out:io_gpio_write[3]	    11	1	13	#14
+out:io_gpio_writeEnable[0]	11	1	23	#15
+out:io_gpio_writeEnable[1]	11	1	22	#16
+out:io_gpio_writeEnable[2]	11	1	18	#17
+out:io_gpio_writeEnable[3]	11	1	16	#18
+out:io_gpio_writeEnable[4]	11	1	20	#19
+out:io_gpio_writeEnable[5]	11	1	19	#20
+out:io_gpio_writeEnable[6]	11	1	15	#21
+out:io_gpio_writeEnable[7]	11	1	17	#22
+io_gpio_read[0]	11	1	1	#23
+io_gpio_read[1]	11	1	6	#24
+io_gpio_read[2]	11	1	16	#25
+io_gpio_read[3]	11	1	4	#26
+io_gpio_read[4]	11	1	20	#27
+io_gpio_read[5]	11	1	29	#28
+io_gpio_read[6]	11	1	11	#29
+io_gpio_read[7]	11	1	0	#30

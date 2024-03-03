@@ -1,0 +1,172 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Databases
+#
+database require dump -search {
+	./dump.shm/dump.trn
+	/afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_cust_tile_test/dump.shm/dump.trn
+}
+database require /afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_cust_tile_test/sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn -search {
+	./sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn
+	/afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_cust_tile_test/sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 2146x843+78+93}] != ""} {
+    window geometry "Waveform 1" 2146x843+78+93
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 268
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	{dump::flatFabric.io_IO_i[127:0]}
+	} ]
+waveform hierarchy expand $id
+set id [waveform add -signals  {
+	{dump::flatFabric.io_IO_o[127:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.logicBlock.custMul.a_in_mul[15:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.logicBlock.custMul.b_in_mul[15:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.logicBlock.custMul.c_out_mul[15:0]}
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1514_32
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1515_33
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1516_34
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1517_35
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1518_36
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_4_1_iotile.OUT_OPIN_N1519_37
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN0_N1369_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN1_N1370_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN2_N1371_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN3_N1372_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN16_N1385_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN17_N1386_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN18_N1387_io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile._CBMux_IPIN19_N1388_io_out
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.io_in[23:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.io_config[4:0]}
+	} ]
+waveform format $id -radix %d
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.io_out
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369._OPinMux_o
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.io_ioGndBle
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.io_pathBreak
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.OPinMux.m16_1.o
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.OPinMux.m16_1.in[15:0]}
+	} ]
+
+waveform xview limits 0 1336.5ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Source Browser windows
+#
+if {[catch {window new SrcBrowser -name "Source Browser 1" -geometry 700x525+826+386}] != ""} {
+    window geometry "Source Browser 1" 700x525+826+386
+}
+window target "Source Browser 1" on
+srcbrowser using {Source Browser 1}
+srcbrowser set \
+    -primarycursor TimeA \
+    -units ns \
+    -radix default \
+    -showstrength 0 \
+    -showcallstack 0 \
+    -displayvalues 0
+
+srcbrowser show -scope flatFabric.Tile_3_4_custmultile.CBMux_IPIN0_N1369.OPinMux -file /afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_cust_tile_test/verilog/muxC.v -line 38
+
+srcbrowser sidebar visibility partial
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+0+0
+
+#
+# Layout selection
+#

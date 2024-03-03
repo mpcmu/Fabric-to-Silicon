@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="spac-core_2.13-0.12.0.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/io/dylemma/spac-core_2.13/0.12.0/spac-core_2.13-0.12.0.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/io/dylemma/spac-core_2.13/0.12.0/spac-core_2.13-0.12.0-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

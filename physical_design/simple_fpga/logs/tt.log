@@ -1,0 +1,42 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[20:05:59.383404] Configured Lic search path (20.02-s004): 5280@cadence-lic.ece.cmu.edu:/afs/ece/support/cds/share/image/usr/cds/soc/license.dat:/afs/ece/support/cds/share/image/usr/cds/share/license/license.dat:/afs/ece/support/mgc/license.dat
+
+Version: 21.12-s068_1, built Fri Mar 04 11:12:46 PST 2022
+Options: -log logs/tt.log 
+Date:    Sat Mar 02 20:05:59 2024
+Host:    brooklyn.lan.local.cmu.edu (x86_64 w/Linux 3.10.0-1160.102.1.el7.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5800X 8-Core Processor 512KB) (65794736KB)
+PID:     18070
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+
+[20:05:59.294739] Periodic Lic check successful
+[20:05:59.294744] Feature usage summary:
+[20:05:59.294745] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (5 seconds elapsed).
+
+WARNING: This version of the tool is 729 days old.
+@genus:root: 1> 
+@genus:root: 1> 
+@genus:root: 1> puts "test"
+test
+@genus:root: 2> exit
+
+Lic Summary:
+[20:06:14.277473] Cdslmd servers: jop
+[20:06:14.277483] Feature usage summary:
+[20:06:14.277483] Genus_Synthesis
+
+Normal exit.

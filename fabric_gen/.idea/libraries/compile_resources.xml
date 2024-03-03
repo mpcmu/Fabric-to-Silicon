@@ -1,0 +1,7 @@
+<component name="libraryTable">
+    <library name="compile-resources">
+        <CLASSES>
+            <root url="file://$PROJECT_DIR$/mill-build/compile-resources"/>
+        </CLASSES>
+    </library>
+</component>

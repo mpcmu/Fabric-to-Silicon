@@ -1,0 +1,290 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+7a9676256
+Revision: v8.0.0-7543-g7a9676256
+Compiled: 2023-11-03T14:58:29
+Compiler: GNU 9.4.0 on Linux-5.15.0-57-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/home/kmgroup/software/vtr-verilog-to-routing/build/utils/fasm/genfasm /home/kmgroup/projects/isfpga_tutorial/fpga_cad_flow/example_designs/simple_fpga_add_test/../../vpr_arch_files/k4_N8_simple_fpga.xml /home/kmgroup/projects/isfpga_tutorial/fpga_cad_flow/example_designs/simple_fpga_add_test/yosys/outputs/add_syn.eblif --route_chan_width 80 --read_rr_graph rr_fasm.xml
+
+
+Architecture file: /home/kmgroup/projects/isfpga_tutorial/fpga_cad_flow/example_designs/simple_fpga_add_test/../../vpr_arch_files/k4_N8_simple_fpga.xml
+Circuit name: add_syn
+
+Loading Architecture Description
+Loading Architecture Description took 0.00 seconds (max_rss 15.9 MiB, delta_rss +1.4 MiB)
+
+Timing analysis: ON
+Circuit netlist file: add_syn.net
+Circuit placement file: add_syn.place
+Circuit routing file: add_syn.route
+Circuit SDC file: add_syn.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 80
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: ASTAR_ROUTE
+PlaceOpts.seed: 0
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 80
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+AnalysisOpts.post_synth_netlist_unconn_input_handling: UNCONNECTED
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+Building complex block graph
+Warning 1: clbsite[0].I[32] unconnected pin in architecture.
+Warning 2: clbsite[0].I[33] unconnected pin in architecture.
+Warning 3: clbsite[0].I[34] unconnected pin in architecture.
+Warning 4: clbsite[0].I[35] unconnected pin in architecture.
+Warning 5: clbsite[0].I[36] unconnected pin in architecture.
+Warning 6: clbsite[0].I[37] unconnected pin in architecture.
+Warning 7: clbsite[0].I[38] unconnected pin in architecture.
+Warning 8: clbsite[0].I[39] unconnected pin in architecture.
+Building complex block graph took 0.00 seconds (max_rss 16.8 MiB, delta_rss +1.0 MiB)
+Circuit file: /home/kmgroup/projects/isfpga_tutorial/fpga_cad_flow/example_designs/simple_fpga_add_test/yosys/outputs/add_syn.eblif
+Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+Load circuit took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.7 MiB)
+Clean circuit
+Absorbed 0 LUT buffers
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 112
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 114
+Swept block(s)      : 2
+Constant Pins Marked: 0
+Clean circuit took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+Compress circuit
+Compress circuit took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+Verify circuit
+Verify circuit took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 163
+    .input :      17
+    .latch :       2
+    .output:     128
+    0-LUT  :       1
+    4-LUT  :      15
+  Nets  : 35
+    Avg Fanout:     5.1
+    Max Fanout:   118.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+Build Timing Graph
+  Timing Graph Nodes: 215
+  Timing Graph Edges: 232
+  Timing Graph Levels: 12
+Build Timing Graph took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'clk' Fanout: 2 pins (0.9%), 2 blocks (1.2%)
+Load Timing Constraints
+
+SDC file 'add_syn.sdc' not found
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock 'clk'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'clk' Source: 'clk.inpad[0]'
+
+Load Timing Constraints took 0.00 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'add_syn.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.016295 seconds).
+Warning 9: Treated 1 constant nets as global which will not be routed (to see net names increase packer verbosity).
+Load packing took 0.02 seconds (max_rss 56.2 MiB, delta_rss +38.6 MiB)
+Warning 10: Netlist contains 1 global net to non-global architecture pin connections
+Warning 11: Logic block #3 ($undef) has only 1 output pin '$undef.O[7]'. It may be a constant generator.
+
+Pb types usage...
+  insite     : 17
+   inpad     : 17
+  outsite    : 128
+   outpad    : 128
+  clbsite    : 4
+   ble       : 18
+    lut4     : 16
+     lut     : 16
+    ff       : 2
+     VPR_FF  : 2
+
+Create Device
+# Build Device Grid
+FPGA sized to 6 x 6: 36 grid tiles (fixedly)
+
+Resource usage...
+	Netlist
+		17	blocks of type: insite
+	Architecture
+		256	blocks of type: iotile
+	Netlist
+		128	blocks of type: outsite
+	Architecture
+		256	blocks of type: iotile
+	Netlist
+		0	blocks of type: clbalusite
+	Architecture
+		12	blocks of type: clbalutile
+	Netlist
+		4	blocks of type: clbsite
+	Architecture
+		12	blocks of type: clbalutile
+
+Device Utilization: 0.17 (target 1.00)
+	Physical Tile iotile:
+	Block Utilization: 0.07 Logical Block: insite
+	Block Utilization: 0.50 Logical Block: outsite
+	Physical Tile clbalutile:
+	Block Utilization: 0.00 Logical Block: clbalusite
+	Block Utilization: 0.33 Logical Block: clbsite
+
+# Build Device Grid took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+# Loading routing resource graph
+# Loading routing resource graph took 0.02 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 3608
+  RR Graph Edges: 18433
+Create Device took 0.02 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+
+Load Placement
+Reading add_syn.place.
+
+Successfully read add_syn.place.
+
+Load Placement took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+
+Load Routing
+Begin loading FPGA routing file.
+Warning 12: Net 34 ($undef) is marked as global in the netlist, but is non-global in the .route file
+Finished loading route file
+Load Routing took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+Checking to ensure non-configurable edges are legal
+Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -11870539
+Circuit successfully routed with a channel width factor of 80.
+Synchronize the packed netlist to routing optimization
+# Annotating rr_node with routed nets
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+Found 0 mismatches between routing and packing results.
+Fixed 0 routing traces due to mismatch between routing and packing results.
+Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 56.5 MiB, delta_rss +0.0 MiB)
+Writing Implementation FASM: add.fasm
+The entire flow of VPR took 0.078876 seconds.
+Incr Slack updates 1 in 2.946e-06 sec
+Full Max Req/Worst Slack updates 1 in 2.531e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 1.7185e-05 sec

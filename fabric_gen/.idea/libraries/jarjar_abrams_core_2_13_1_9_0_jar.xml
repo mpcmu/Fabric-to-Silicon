@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="jarjar-abrams-core_2.13-1.9.0.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/com/eed3si9n/jarjarabrams/jarjar-abrams-core_2.13/1.9.0/jarjar-abrams-core_2.13-1.9.0.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/com/eed3si9n/jarjarabrams/jarjar-abrams-core_2.13/1.9.0/jarjar-abrams-core_2.13-1.9.0-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

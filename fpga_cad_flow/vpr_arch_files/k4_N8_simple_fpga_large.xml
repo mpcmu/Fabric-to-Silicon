@@ -1,0 +1,914 @@
+<architecture>
+  <models>
+	<model name="R0DFF">
+        <input_ports>
+          <port name="D" clock="C" />
+          <port name="R" clock="C" />
+          <port name="C" is_clock="1"/>
+        </input_ports>
+        <output_ports>
+          <port name="Q" clock="C"/>
+        </output_ports>
+  	</model>	
+    <model name="clbalu">
+        <input_ports>
+          <port name="CTRL" clock="C" />
+          <port name="I1" clock="C" />
+          <port name="I0" clock="C" />
+          <port name="R" clock="C" />
+          <port name="CIN" clock="C" />
+          <port name="C" is_clock="1"/>
+        </input_ports>
+        <output_ports>
+          <port name="Q" clock="C"/>
+          <port name="COUT" clock="C"/>
+        </output_ports>
+    </model>
+  </models>
+
+  <directlist>
+      <direct name="alu_top_bot" from_pin="clbalutile.COUT" to_pin="clbalutile.CIN" x_offset="0" y_offset="-1" z_offset="0"/>
+      <direct name="mul_top_bot" from_pin="clbmultile.COUT" to_pin="clbmultile.CIN" x_offset="0" y_offset="-1" z_offset="0"/>
+          <!--<direct name="alu_right_left" from_pin="clbalutile.COUTR" to_pin="clbalutile.IB32R" x_offset="1" y_offset="0" z_offset="0"/>-->
+  </directlist>
+
+
+  <tiles>
+      
+      <tile name="iotile">
+
+      <sub_tile name="outtile" capacity="32">
+        <input name="I" num_pins="1" equivalent="none" />
+        <equivalent_sites>
+            <site pb_type="outsite" pin_mapping="direct">
+            </site>
+        </equivalent_sites>
+
+        <fc in_type="frac" in_val="0.28" out_type="frac" out_val="0.05">
+            <fc_override fc_type="frac" fc_val="0.01" port_name="I" segment_name="L2"/>
+        </fc>
+        <pinlocations pattern="custom">
+          <loc side="top"> outtile.I </loc>     
+        </pinlocations>
+    </sub_tile>
+
+    <sub_tile name="intile" capacity="32">
+        <output name="O" num_pins="1" equivalent="none" />
+        <equivalent_sites>
+            <site pb_type="insite" pin_mapping="direct">
+            </site>
+        </equivalent_sites>
+
+        <fc in_type="frac" in_val="0.28" out_type="frac" out_val="0.05">
+            <fc_override fc_type="frac" fc_val="0.01" port_name="O" segment_name="L2"/>
+        </fc>
+        <pinlocations pattern="custom">
+          <loc side="right"> intile.O </loc> 
+        </pinlocations>
+      </sub_tile>
+
+
+    </tile>
+    
+    <tile name="clbalutile">
+      <sub_tile name="clbalutile">
+        
+        <input name="I" num_pins="40" equivalent="none" />
+        <input name="CIN" num_pins="1" equivalent="none" />
+        <input name="R" num_pins= "1" equivalent="none" is_non_clock_global="true"/>
+        <output name="O" num_pins="16" equivalent="none" />
+        <output name="COUT" num_pins="1" equivalent="none" />
+        <clock name="clk" num_pins="1" />
+        
+        <equivalent_sites>
+            <site pb_type="clbsite" pin_mapping="custom">
+                <direct from="clbalutile.I" to="clbsite.I"/>
+                <direct from="clbalutile.R"  to="clbsite.R"/>
+                <direct from="clbalutile.clk" to="clbsite.clk"/>
+                <direct from="clbalutile.O" to="clbsite.O"/>
+            </site>
+            <site pb_type="clbalusite" pin_mapping="custom">
+                <direct from="clbalutile.I" to="clbalusite.I"/>
+                <direct from="clbalutile.CIN" to="clbalusite.CIN"/>
+                <direct from="clbalutile.R"  to="clbalusite.R"/>
+                <direct from="clbalutile.clk" to="clbalusite.C"/>
+                <direct from="clbalutile.O" to="clbalusite.Q"/>
+                <direct from="clbalutile.COUT" to="clbalusite.COUT"/>
+            </site>
+        </equivalent_sites>
+
+        <fc in_type="frac" in_val="0.2" out_type="frac" out_val="0.1">
+            <fc_override fc_type="frac" fc_val="0.0" port_name="CIN"/>
+            <fc_override fc_type="frac" fc_val="0.0" port_name="COUT"/>
+        </fc>
+        
+        <pinlocations pattern="custom">
+          <loc side="right">clbalutile.O[7:0] clbalutile.I[15:0] clbalutile.clk clbalutile.R  </loc> 
+          <loc side="top"> clbalutile.CIN clbalutile.O[15:8] clbalutile.I[31:16] clbalutile.I[39:32] </loc>     
+          <loc side="bottom">clbalutile.COUT </loc>     
+        </pinlocations>
+        <!-- <pinlocations pattern="spread"/> -->
+      </sub_tile>
+  </tile>
+
+</tiles>
+  <!-- ODIN II specific config ends -->
+<!-- Physical descriptions begin -->
+<layout>
+  <fixed_layout name="fixedly" width="12" height="12">
+    <perimeter type="EMPTY" priority="101"/>
+    <col type="iotile" startx="10" starty="1" priority="14"/>
+    <single priority="12" type="clbalutile" x="1" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="1" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_1_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="2" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_2_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="3" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_3_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="4" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_4_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="5" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_5_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="6" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_6_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="7" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_7_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="8" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_8_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="9" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_9_10</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="1">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_1</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="2">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_2</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="3">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_3</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="4">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_4</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="5">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_5</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="6">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_6</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="7">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_7</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="8">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_8</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="9">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_9</meta>
+      </metadata>
+    </single>
+    <single priority="12" type="clbalutile" x="10" y="10">
+      <metadata>
+        <meta name="fasm_prefix">clbalutile_10_10</meta>
+      </metadata>
+    </single>
+  </fixed_layout>
+</layout>
+  <device>
+    <sizing R_minW_nmos="6065.520020" R_minW_pmos="18138.500000"/>
+    <area grid_logic_tile_area="7238.080078"/>
+    <chan_width_distr>
+      <x distr="uniform" peak="1.000000"/>
+      <y distr="uniform" peak="1.000000"/>
+    </chan_width_distr>
+    <switch_block type="custom"/>
+    <connection_block input_switch_name="ipin_cblock"/>
+  </device>
+  <switchblocklist>
+				<switchblock name="wilturn_turn" type="unidir">
+					<switchblock_location type="EVERYWHERE"/>
+					<switchfuncs>
+					  <func type="lt" formula="W-t"/>
+					  <func type="lb" formula="t-1"/>
+					  <func type="rt" formula="t-1"/>
+					  <func type="rb" formula="W-t-2"/>
+					  <func type="br" formula="W-t-2"/>
+					  <func type="bl" formula="t+1"/>
+					  <func type="tl" formula="W-t"/>
+					  <func type="tr" formula="t+1"/>
+					</switchfuncs>
+                    <wireconn num_conns="to" from_type="L2"  to_type="L2"  from_switchpoint="0,1" to_switchpoint="0"/>-->
+                    <wireconn num_conns="to" from_type="L2"  to_type="L4"  from_switchpoint="0,1" to_switchpoint="0"/>-->
+                    <wireconn num_conns="to" from_type="L2"  to_type="L4g"  from_switchpoint="0,1" to_switchpoint="0"/>-->
+                    <wireconn num_conns="to" from_type="L4"  to_type="L4"  from_switchpoint="0,1,2,3" to_switchpoint="0"/>
+                    <wireconn num_conns="to" from_type="L4"  to_type="L2"  from_switchpoint="0,2" to_switchpoint="0"/>
+					<wireconn num_conns="to" from_type="L4g" to_type="L4"  from_switchpoint="0"   to_switchpoint="0"/>
+					<wireconn num_conns="to" from_type="L4g" to_type="L4g" from_switchpoint="0"   to_switchpoint="0"/>
+				</switchblock>
+				
+				<switchblock name="wilturn_straight" type="unidir">
+					<switchblock_location type="EVERYWHERE"/>
+					<switchfuncs>
+					  <func type="lr" formula="t"/>
+					  <func type="rl" formula="t"/>
+					  <func type="tb" formula="t"/>
+					  <func type="bt" formula="t"/>
+					</switchfuncs>
+                    <wireconn num_conns="to" from_type="L2"  to_type="L2"  from_switchpoint="0"   to_switchpoint="0"/>
+					<wireconn num_conns="to" from_type="L4"  to_type="L4"  from_switchpoint="0"   to_switchpoint="0"/>
+					<wireconn num_conns="to" from_type="L4g" to_type="L4g" from_switchpoint="0"   to_switchpoint="0"/>
+					<!-- <wireconn num_conns="1" from_type="L4g" to_type="L2"  from_switchpoint="0"   to_switchpoint="0"/> -->
+			  	</switchblock>
+  </switchblocklist>
+  <switchlist>
+    <switch type="mux" name="0" R="0.000000" Cin="0.000000e+00" Cout="0.000000e+00" Tdel="120.58e-12" mux_trans_size="2.074780" buf_size="19.261999"/>
+    <switch type="mux" name="l2" R="0.000000" Cin="0.000000e+00" Cout="0.000000e+00" Tdel="360.58e-12" mux_trans_size="2.074780" buf_size="19.261999"/>
+    <switch type="mux" name="l4" R="0.000000" Cin="0.000000e+00" Cout="0.000000e+00" Tdel="450.58e-12" mux_trans_size="2.074780" buf_size="19.261999"/>
+    <switch type="mux" name="l4g" R="0.000000" Cin="0.000000e+00" Cout="0.000000e+00" Tdel="300.58e-12" mux_trans_size="2.074780" buf_size="19.261999"/>
+    <!--switch ipin_cblock resistance set to yeild for 4x minimum drive strength buffer-->
+    <switch type="mux" name="ipin_cblock" R="1516.380005" Cout="0." Cin="0.000000e+00" Tdel="200.20e-12" mux_trans_size="1.240240" buf_size="auto"/>
+  </switchlist>
+  <segmentlist>
+    <segment name="L4" freq="6" length="4" type="unidir" Rmetal="0.000000" Cmetal="0.000000e+00">
+      <mux name="l4"/>
+      <sb type="pattern">1 1 1 1 1</sb>
+      <cb type="pattern">1 1 1 1</cb>
+    </segment>
+    <segment name="L4g" freq="1" length="4" type="unidir" Rmetal="0.000000" Cmetal="0.000000e+00">
+      <mux name="l4g"/>
+      <sb type="pattern">1 1 1 1 1</sb>
+      <cb type="pattern">0 0 0 0</cb>
+    </segment>
+    <segment name="L2" freq="5" length="2" type="unidir" Rmetal="0.000000" Cmetal="0.000000e+00">
+      <mux name="l2"/>
+      <sb type="pattern">1 1 1</sb>
+      <cb type="pattern">1 1</cb>
+  </segment>
+  </segmentlist>
+  <complexblocklist>
+    <!-- Define I/O pads begin -->
+
+    <pb_type name="insite">
+      <output name="O" num_pins="1"/>
+      
+      <pb_type name="inpad" blif_model=".input" num_pb="1">
+          <output name="inpad" num_pins="1"/>
+      </pb_type>
+             
+      <interconnect>
+        <direct name="inpad" input="inpad.inpad" output="insite.O">
+          <delay_constant max="151.1e-12" in_port="inpad.inpad" out_port="insite.O"/>
+        </direct>
+      </interconnect>
+  </pb_type>
+
+    <pb_type name="outsite">
+      <input name="I" num_pins="1"/>
+      
+      <pb_type name="outpad" blif_model=".output" num_pb="1">
+          <input name="outpad" num_pins="1"/>
+      </pb_type>
+        
+      <interconnect>
+        <direct name="outpad" input="outsite.I" output="outpad.outpad">
+          <delay_constant max="151.1e-12" in_port="outsite.I" out_port="outpad.outpad"/>
+        </direct>
+      </interconnect>
+    </pb_type>
+  
+    <!-- Define I/O pads ends -->
+  
+  <pb_type name="clbalusite">
+        <input name="I" num_pins="40" equivalent="none" />
+        <input name="R" num_pins="1" equivalent="none" />
+        <output name="Q" num_pins="16" equivalent="none" />
+        <input name="CIN" num_pins="1" equivalent="none" />
+        <output name="COUT" num_pins="1" equivalent="none" />
+        <clock name="C" num_pins="1" />
+      <mode name="ALU16">
+            <pb_type name="CLBALU" num_pb="1" blif_model=".subckt clbalu">
+                    <metadata>
+                         <meta name="fasm_features">CLBALU</meta>
+                         <meta name="fasm_params">
+                            CLBALU.MODE_ALU[31:0] = MODE_ALU
+                         </meta>
+                    </metadata>
+                <input name="I0" num_pins="16"   />
+                <input name="I1" num_pins="16"   />
+                <input name="CTRL" num_pins="8"  />
+                <input name="R" num_pins="1"  />
+                <input name="CIN" num_pins="1"   />
+                <output name="Q" num_pins="16"  />
+                <output name="COUT" num_pins="1"  />
+                <clock name="C" num_pins="1" />
+                <T_setup    value="160e-12" port="CLBALU.CTRL" clock="C"/>
+                <T_setup    value="160e-12" port="CLBALU.I1" clock="C"/>
+                <T_setup    value="160e-12" port="CLBALU.I0" clock="C"/>
+                <T_setup    value="160e-12" port="CLBALU.CIN" clock="C"/>
+                <T_setup    value="160e-12" port="CLBALU.R" clock="C"/>
+                <T_clock_to_Q max="800e-12" port="CLBALU.Q" clock="C"/>
+                <T_clock_to_Q max="800e-12" port="CLBALU.COUT" clock="C"/>
+            </pb_type>
+            <interconnect>
+                <direct name="CTRL"   input="clbalusite.I[39:32]"   output="CLBALU.CTRL" />
+                <direct name="I1"   input="clbalusite.I[31:16]"     output="CLBALU.I1" />
+                <direct name="I0"   input="clbalusite.I[15:0]"      output="CLBALU.I0" />
+                <direct name="CIN"  input="clbalusite.CIN"       output="CLBALU.CIN" />
+                <direct name="C"    input="clbalusite.C"            output="CLBALU.C" />
+                <direct name="R"    input="clbalusite.R"            output="CLBALU.R" />
+                <direct name="Q"    input="CLBALU.Q" output="clbalusite.Q" />
+                <direct name="COUT"    input="CLBALU.COUT" output="clbalusite.COUT" />
+            </interconnect>
+      </mode>
+  </pb_type>
+
+
+  <!-- Define general purpose logic block (CLB) begin -->
+
+    <pb_type name="clbsite">
+
+      <input name="I" num_pins="40" equivalent="none" />
+      <input name="R" num_pins= "1" equivalent="none" is_non_clock_global="true"/>
+      <output name="O" num_pins="16" equivalent="none" />
+      <clock name="clk" num_pins="1" />
+
+      <!-- Basic logic element definition -->
+      <pb_type name="ble" num_pb="8">
+			<metadata>
+			  <meta name="fasm_prefix">CLBBLE0 CLBBLE1 CLBBLE2 CLBBLE3 CLBBLE4 CLBBLE5 CLBBLE6 CLBBLE7</meta>
+			</metadata>
+        <input name="in_A" num_pins="1" />
+        <input name="in_B" num_pins="1" />
+        <input name="in_C" num_pins="1" />
+        <input name="in_D" num_pins="1" />
+        <input name="R" num_pins="1" />
+        <output name="out_right" num_pins="1" />
+        <output name="out_top" num_pins="1" />
+        <clock name="clk" num_pins="1" />
+
+        <mode name="ble4">
+          <pb_type name="lut4" blif_model=".names" num_pb="1" class="lut">
+              <metadata>  
+                  <meta name="fasm_type">LUT</meta> 
+                  <meta name="fasm_lut">LUT.INIT[15:0]</meta>
+              </metadata>
+            <input name="in" num_pins="4" port_class="lut_in" />
+            <!-- I average out the delays because VPR does not to LUT balancing-->
+            <output name="out" num_pins="1" port_class="lut_out" />
+            <delay_matrix type="max" in_port="lut4.in" out_port="lut4.out">
+					   155.353e-12
+					   155.353e-12
+					   155.353e-12
+					   155.353e-12
+				    </delay_matrix>
+          </pb_type>
+          
+          <pb_type name="ff" num_pb="1">
+            <input name="D" num_pins="1"/>
+            <input name="R" num_pins="1"/> 
+            <output name="Q" num_pins="1"/>
+            <clock name="clk" num_pins="1"/>
+            <mode name="VPR_FF">
+              <pb_type name="VPR_FF" num_pb="1" blif_model=".latch" class="flipflop">
+               <metadata>
+                    <meta name="fasm_features">VPR_FF</meta>
+                 </metadata>
+               <clock  name="clk" num_pins="1" port_class="clock" />
+               <input  name="D" num_pins="1" port_class="D" />
+               <output name="Q" num_pins="1"  port_class="Q" />
+               <T_setup    value="60e-12" port="VPR_FF.D" clock="clk"/>
+               <T_clock_to_Q max="80e-12" port="VPR_FF.Q" clock="clk"/>
+              </pb_type>
+              <interconnect>
+               <direct name="C" input="ff.clk"  output="VPR_FF.clk" />
+               <direct name="D" input="ff.D"  output="VPR_FF.D" />
+               <direct name="Q" input="VPR_FF.Q" output="ff.Q" />
+                </interconnect>
+            </mode>
+            <mode name="R0DFF">
+              <pb_type name="R0DFF" num_pb="1" blif_model=".subckt R0DFF">
+                    <metadata>
+                         <meta name="fasm_features">R0DFF</meta>
+                    </metadata>
+                 <clock  name="C" num_pins="1" />
+                 <input  name="D" num_pins="1" />
+                 <input  name="R" num_pins="1" />
+                 <output name="Q" num_pins="1"  />
+                 <T_setup    value="60e-12" port="R0DFF.D" clock="C"/>
+                 <T_setup    value="60e-12" port="R0DFF.R" clock="C"/>
+                 <T_clock_to_Q max="80e-12" port="R0DFF.Q" clock="C"/>
+              </pb_type>
+              <interconnect>
+                <direct name="C" input="ff.clk"  output="R0DFF.C" />
+                <direct name="D" input="ff.D" output="R0DFF.D" />
+                <direct name="R" input="ff.R" output="R0DFF.R" />
+                <direct name="Q" input="R0DFF.Q" output="ff.Q" />
+              </interconnect>
+            </mode>
+        </pb_type>	
+
+          <interconnect>
+            <!-- BLE input to LUT input direct connections and delays -->
+            <direct name="direct1" input="ble.in_A" output="lut4.in[0:0]"></direct>
+            <direct name="direct2" input="ble.in_B" output="lut4.in[1:1]"></direct>
+            <direct name="direct3" input="ble.in_C" output="lut4.in[2:2]"></direct>
+            <direct name="direct7" input="ble.in_D" output="lut4.in[3:3]"></direct>
+            <direct name="directR" input="ble.R" output="ff.R"></direct>
+            <direct name="direct8" input="lut4.out" output="ff.D">
+              <pack_pattern name="ble_pack1" in_port="lut4.out" out_port="ff.D" />
+            </direct>
+            <!--Clock -->
+            <direct name="direct6" input="ble.clk" output="ff.clk" />
+
+            <!-- BLE output (local) -->
+            <mux name="mux_right" input="ff.Q lut4.out" output="ble.out_right[0:0]">
+                <metadata>
+                    <meta name="fasm_mux">
+                         lut4.out  : mux_right_1
+                         ff.Q : mux_right_0
+                     </meta>
+                 </metadata>
+              <delay_constant max="105.3e-12" in_port="ff.Q" out_port="ble.out_right[0:0]" />
+              <delay_constant max="105.3e-12" in_port="lut4.out" out_port="ble.out_right[0:0]" />
+            </mux>
+            <!-- BLE output (routing 1) -->
+            <mux name="mux_top" input="ff.Q lut4.out" output="ble.out_top[0:0]">
+                <metadata>
+                    <meta name="fasm_mux">
+                         lut4.out  : mux_top_1
+                         ff.Q : mux_top_0
+                     </meta>
+                 </metadata>
+              <delay_constant max="100.12e-12" in_port="ff.Q" out_port="ble.out_top[0:0]" />
+              <delay_constant max="100.12e-12" in_port="lut4.out" out_port="ble.out_top[0:0]" />
+            </mux>
+          </interconnect>
+        </mode>
+      </pb_type>
+
+      <interconnect>
+          <!-- CLB IN to BLE* connections -->
+          <direct name="BLE_inA" input="clbsite.I[7:0]" output="ble[7:0].in_A"></direct>
+          <direct name="BLE_inB" input="clbsite.I[15:8]" output="ble[7:0].in_B"></direct>
+          <direct name="BLE_inC" input="clbsite.I[23:16]" output="ble[7:0].in_C"></direct>
+          <direct name="BLE_inD" input="clbsite.I[31:24]" output="ble[7:0].in_D"></direct>
+          <complete name="clks" input="clbsite.clk" output="ble[7:0].clk">
+          </complete>
+          <complete name="R" input="clbsite.R" output="ble[7:0].R">
+          </complete>
+          <!-- Direct connections to CLsiteB outputs -->
+          <!--<direct name="clbouts_topsite" input="ble[7:0].out_top" output="clb.OT[7:0]"/>
+          <direct name="clbouts_right" input="ble[7:0].out_right" output="clb.OR[7:0]"/>-->
+          <direct name="clbouts_top" input="ble[7:0].out_top" output="clbsite.O[15:8]"/>
+          <direct name="clbouts_right" input="ble[7:0].out_right" output="clbsite.O[7:0]"/>
+      </interconnect>
+    </pb_type>
+    <!-- Define general purpose logic block (CLB) ends -->
+  </complexblocklist>
+</architecture>

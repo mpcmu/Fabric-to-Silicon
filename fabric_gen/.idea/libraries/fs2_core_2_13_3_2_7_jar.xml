@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="fs2-core_2.13-3.2.7.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-core_2.13/3.2.7/fs2-core_2.13-3.2.7.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-core_2.13/3.2.7/fs2-core_2.13-3.2.7-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

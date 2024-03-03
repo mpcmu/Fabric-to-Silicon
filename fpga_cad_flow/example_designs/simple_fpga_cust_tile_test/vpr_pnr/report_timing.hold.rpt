@@ -1,0 +1,44 @@
+#Timing report of worst 1 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: R0_1.Q[0] (.latch at (3,1) clocked by clk)
+Endpoint  : R0.D[0] (.latch at (3,1) clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                                   0.000     0.000
+| (intra 'insite' routing)                                       0.000     0.000
+| (inter-block routing)                                          0.000     0.000
+| (intra 'clbsite' routing)                                      0.000     0.000
+R0_1.clk[0] (.latch at (3,1))                                    0.000     0.000
+| (primitive '.latch' Tcq_min)                                   0.080     0.080
+R0_1.Q[0] (.latch at (3,1)) [clock-to-output]                    0.000     0.080
+| (intra 'clbsite' routing)                                      0.000     0.080
+| (inter-block routing)                                          2.544     2.624
+| (intra 'clbsite' routing)                                      0.000     2.624
+R0.D[0] (.latch at (3,1))                                        0.000     2.624
+data arrival time                                                          2.624
+
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                                   0.000     0.000
+| (intra 'insite' routing)                                       0.000     0.000
+| (inter-block routing)                                          0.000     0.000
+| (intra 'clbsite' routing)                                      0.000     0.000
+R0.clk[0] (.latch at (3,1))                                      0.000     0.000
+clock uncertainty                                                0.000     0.000
+cell hold time                                                   0.060     0.060
+data required time                                                         0.060
+--------------------------------------------------------------------------------
+data required time                                                        -0.060
+data arrival time                                                          2.624
+--------------------------------------------------------------------------------
+slack (MET)                                                                2.564
+
+
+#End of timing report

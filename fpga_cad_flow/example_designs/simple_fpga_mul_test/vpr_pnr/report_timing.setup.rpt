@@ -1,0 +1,546 @@
+#Timing report of worst 12 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: IN[6].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[36].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[6].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.823     2.174
+| (intra 'clbsite' routing)                                      0.000     2.174
+$abc$331$new_n29.in[0] (.names at (3,3))                         0.000     2.174
+| (primitive '.names' combinational delay)                       0.155     2.329
+$abc$331$new_n29.out[0] (.names at (3,3))                        0.000     2.329
+| (intra 'clbsite' routing)                                      0.105     2.434
+| (inter-block routing)                                          1.733     4.167
+| (intra 'clbsite' routing)                                      0.000     4.167
+$abc$331$new_n28.in[1] (.names at (3,3))                         0.000     4.167
+| (primitive '.names' combinational delay)                       0.155     4.322
+$abc$331$new_n28.out[0] (.names at (3,3))                        0.000     4.322
+| (intra 'clbsite' routing)                                      0.105     4.427
+| (inter-block routing)                                          1.733     6.160
+| (intra 'clbsite' routing)                                      0.000     6.160
+$abc$331$new_n25.in[0] (.names at (3,3))                         0.000     6.160
+| (primitive '.names' combinational delay)                       0.155     6.315
+$abc$331$new_n25.out[0] (.names at (3,3))                        0.000     6.315
+| (intra 'clbsite' routing)                                      0.105     6.421
+| (inter-block routing)                                          1.011     7.432
+| (intra 'clbsite' routing)                                      0.000     7.432
+$abc$331$new_n32.in[0] (.names at (3,3))                         0.000     7.432
+| (primitive '.names' combinational delay)                       0.155     7.587
+$abc$331$new_n32.out[0] (.names at (3,3))                        0.000     7.587
+| (intra 'clbsite' routing)                                      0.105     7.693
+| (inter-block routing)                                          2.093     9.786
+| (intra 'clbsite' routing)                                      0.000     9.786
+OUT[36].in[2] (.names at (3,1))                                  0.000     9.786
+| (primitive '.names' combinational delay)                       0.155     9.941
+OUT[36].out[0] (.names at (3,1))                                 0.000     9.941
+| (intra 'clbsite' routing)                                      0.105    10.046
+| (inter-block routing)                                          1.372    11.418
+| (intra 'outsite' routing)                                      0.151    11.569
+out:OUT[36].outpad[0] (.output at (4,2))                         0.000    11.569
+data arrival time                                                         11.569
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                        -11.569
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                         -11.269
+
+
+#Path 2
+Startpoint: IN[4].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[39].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[4].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.643     1.994
+| (intra 'clbsite' routing)                                      0.000     1.994
+$abc$331$new_n27.in[3] (.names at (3,3))                         0.000     1.994
+| (primitive '.names' combinational delay)                       0.155     2.149
+$abc$331$new_n27.out[0] (.names at (3,3))                        0.000     2.149
+| (intra 'clbsite' routing)                                      0.105     2.254
+| (inter-block routing)                                          1.733     3.987
+| (intra 'clbsite' routing)                                      0.000     3.987
+$abc$331$new_n26.in[0] (.names at (3,3))                         0.000     3.987
+| (primitive '.names' combinational delay)                       0.155     4.142
+$abc$331$new_n26.out[0] (.names at (3,3))                        0.000     4.142
+| (intra 'clbsite' routing)                                      0.105     4.247
+| (inter-block routing)                                          1.643     5.890
+| (intra 'clbsite' routing)                                      0.000     5.890
+$abc$331$new_n33.in[3] (.names at (3,3))                         0.000     5.890
+| (primitive '.names' combinational delay)                       0.155     6.045
+$abc$331$new_n33.out[0] (.names at (3,3))                        0.000     6.045
+| (intra 'clbsite' routing)                                      0.105     6.151
+| (inter-block routing)                                          1.372     7.523
+| (intra 'clbsite' routing)                                      0.000     7.523
+$abc$331$new_n46.in[2] (.names at (2,1))                         0.000     7.523
+| (primitive '.names' combinational delay)                       0.155     7.678
+$abc$331$new_n46.out[0] (.names at (2,1))                        0.000     7.678
+| (intra 'clbsite' routing)                                      0.105     7.783
+| (inter-block routing)                                          1.282     9.065
+| (intra 'clbsite' routing)                                      0.000     9.065
+OUT[39].in[3] (.names at (3,1))                                  0.000     9.065
+| (primitive '.names' combinational delay)                       0.155     9.221
+OUT[39].out[0] (.names at (3,1))                                 0.000     9.221
+| (intra 'clbsite' routing)                                      0.105     9.326
+| (inter-block routing)                                          1.823    11.148
+| (intra 'outsite' routing)                                      0.151    11.299
+out:OUT[39].outpad[0] (.output at (4,2))                         0.000    11.299
+data arrival time                                                         11.299
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                        -11.299
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                         -10.999
+
+
+#Path 3
+Startpoint: IN[4].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[38].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[4].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.643     1.994
+| (intra 'clbsite' routing)                                      0.000     1.994
+$abc$331$new_n27.in[3] (.names at (3,3))                         0.000     1.994
+| (primitive '.names' combinational delay)                       0.155     2.149
+$abc$331$new_n27.out[0] (.names at (3,3))                        0.000     2.149
+| (intra 'clbsite' routing)                                      0.105     2.254
+| (inter-block routing)                                          1.733     3.987
+| (intra 'clbsite' routing)                                      0.000     3.987
+$abc$331$new_n26.in[0] (.names at (3,3))                         0.000     3.987
+| (primitive '.names' combinational delay)                       0.155     4.142
+$abc$331$new_n26.out[0] (.names at (3,3))                        0.000     4.142
+| (intra 'clbsite' routing)                                      0.105     4.247
+| (inter-block routing)                                          1.643     5.890
+| (intra 'clbsite' routing)                                      0.000     5.890
+$abc$331$new_n33.in[3] (.names at (3,3))                         0.000     5.890
+| (primitive '.names' combinational delay)                       0.155     6.045
+$abc$331$new_n33.out[0] (.names at (3,3))                        0.000     6.045
+| (intra 'clbsite' routing)                                      0.105     6.151
+| (inter-block routing)                                          1.372     7.523
+| (intra 'clbsite' routing)                                      0.000     7.523
+$abc$331$new_n46.in[2] (.names at (2,1))                         0.000     7.523
+| (primitive '.names' combinational delay)                       0.155     7.678
+$abc$331$new_n46.out[0] (.names at (2,1))                        0.000     7.678
+| (intra 'clbsite' routing)                                      0.105     7.783
+| (inter-block routing)                                          0.921     8.705
+| (intra 'clbsite' routing)                                      0.000     8.705
+OUT[38].in[1] (.names at (3,1))                                  0.000     8.705
+| (primitive '.names' combinational delay)                       0.155     8.860
+OUT[38].out[0] (.names at (3,1))                                 0.000     8.860
+| (intra 'clbsite' routing)                                      0.105     8.965
+| (inter-block routing)                                          1.823    10.788
+| (intra 'outsite' routing)                                      0.151    10.939
+out:OUT[38].outpad[0] (.output at (4,2))                         0.000    10.939
+data arrival time                                                         10.939
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                        -10.939
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                         -10.639
+
+
+#Path 4
+Startpoint: IN[6].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[37].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[6].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.823     2.174
+| (intra 'clbsite' routing)                                      0.000     2.174
+$abc$331$new_n29.in[0] (.names at (3,3))                         0.000     2.174
+| (primitive '.names' combinational delay)                       0.155     2.329
+$abc$331$new_n29.out[0] (.names at (3,3))                        0.000     2.329
+| (intra 'clbsite' routing)                                      0.105     2.434
+| (inter-block routing)                                          1.733     4.167
+| (intra 'clbsite' routing)                                      0.000     4.167
+$abc$331$new_n28.in[1] (.names at (3,3))                         0.000     4.167
+| (primitive '.names' combinational delay)                       0.155     4.322
+$abc$331$new_n28.out[0] (.names at (3,3))                        0.000     4.322
+| (intra 'clbsite' routing)                                      0.105     4.427
+| (inter-block routing)                                          1.733     6.160
+| (intra 'clbsite' routing)                                      0.000     6.160
+$abc$331$new_n25.in[0] (.names at (3,3))                         0.000     6.160
+| (primitive '.names' combinational delay)                       0.155     6.315
+$abc$331$new_n25.out[0] (.names at (3,3))                        0.000     6.315
+| (intra 'clbsite' routing)                                      0.105     6.421
+| (inter-block routing)                                          1.011     7.432
+| (intra 'clbsite' routing)                                      0.000     7.432
+$abc$331$new_n32.in[0] (.names at (3,3))                         0.000     7.432
+| (primitive '.names' combinational delay)                       0.155     7.587
+$abc$331$new_n32.out[0] (.names at (3,3))                        0.000     7.587
+| (intra 'clbsite' routing)                                      0.105     7.693
+| (inter-block routing)                                          1.733     9.425
+| (intra 'clbsite' routing)                                      0.000     9.425
+OUT[37].in[3] (.names at (3,1))                                  0.000     9.425
+| (primitive '.names' combinational delay)                       0.155     9.581
+OUT[37].out[0] (.names at (3,1))                                 0.000     9.581
+| (intra 'clbsite' routing)                                      0.105     9.686
+| (inter-block routing)                                          1.101    10.787
+| (intra 'outsite' routing)                                      0.151    10.938
+out:OUT[37].outpad[0] (.output at (4,2))                         0.000    10.938
+data arrival time                                                         10.938
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                        -10.938
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                         -10.638
+
+
+#Path 5
+Startpoint: IN[6].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[35].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[6].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.823     2.174
+| (intra 'clbsite' routing)                                      0.000     2.174
+$abc$331$new_n29.in[0] (.names at (3,3))                         0.000     2.174
+| (primitive '.names' combinational delay)                       0.155     2.329
+$abc$331$new_n29.out[0] (.names at (3,3))                        0.000     2.329
+| (intra 'clbsite' routing)                                      0.105     2.434
+| (inter-block routing)                                          1.733     4.167
+| (intra 'clbsite' routing)                                      0.000     4.167
+$abc$331$new_n28.in[1] (.names at (3,3))                         0.000     4.167
+| (primitive '.names' combinational delay)                       0.155     4.322
+$abc$331$new_n28.out[0] (.names at (3,3))                        0.000     4.322
+| (intra 'clbsite' routing)                                      0.105     4.427
+| (inter-block routing)                                          1.733     6.160
+| (intra 'clbsite' routing)                                      0.000     6.160
+$abc$331$new_n25.in[0] (.names at (3,3))                         0.000     6.160
+| (primitive '.names' combinational delay)                       0.155     6.315
+$abc$331$new_n25.out[0] (.names at (3,3))                        0.000     6.315
+| (intra 'clbsite' routing)                                      0.105     6.421
+| (inter-block routing)                                          1.733     8.153
+| (intra 'clbsite' routing)                                      0.000     8.153
+OUT[35].in[0] (.names at (3,2))                                  0.000     8.153
+| (primitive '.names' combinational delay)                       0.155     8.308
+OUT[35].out[0] (.names at (3,2))                                 0.000     8.308
+| (intra 'clbsite' routing)                                      0.105     8.414
+| (inter-block routing)                                          0.921     9.335
+| (intra 'outsite' routing)                                      0.151     9.486
+out:OUT[35].outpad[0] (.output at (4,2))                         0.000     9.486
+data arrival time                                                          9.486
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.486
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.186
+
+
+#Path 6
+Startpoint: IN[4].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[34].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[4].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.913     2.264
+| (intra 'clbsite' routing)                                      0.000     2.264
+$abc$331$new_n22.in[3] (.names at (3,3))                         0.000     2.264
+| (primitive '.names' combinational delay)                       0.155     2.419
+$abc$331$new_n22.out[0] (.names at (3,3))                        0.000     2.419
+| (intra 'clbsite' routing)                                      0.105     2.524
+| (inter-block routing)                                          1.913     4.437
+| (intra 'clbsite' routing)                                      0.000     4.437
+OUT[34].in[0] (.names at (3,2))                                  0.000     4.437
+| (primitive '.names' combinational delay)                       0.155     4.592
+OUT[34].out[0] (.names at (3,2))                                 0.000     4.592
+| (intra 'clbsite' routing)                                      0.105     4.697
+| (inter-block routing)                                          1.643     6.340
+| (intra 'outsite' routing)                                      0.151     6.491
+out:OUT[34].outpad[0] (.output at (4,2))                         0.000     6.491
+data arrival time                                                          6.491
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -6.491
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -6.191
+
+
+#Path 7
+Startpoint: IN[5].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[33].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[5].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          2.454     2.805
+| (intra 'clbsite' routing)                                      0.000     2.805
+OUT[33].in[2] (.names at (3,2))                                  0.000     2.805
+| (primitive '.names' combinational delay)                       0.155     2.960
+OUT[33].out[0] (.names at (3,2))                                 0.000     2.960
+| (intra 'clbsite' routing)                                      0.105     3.065
+| (inter-block routing)                                          1.913     4.978
+| (intra 'outsite' routing)                                      0.151     5.129
+out:OUT[33].outpad[0] (.output at (4,2))                         0.000     5.129
+data arrival time                                                          5.129
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -5.129
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -4.829
+
+
+#Path 8
+Startpoint: IN[0].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : out:OUT[32].outpad[0] (.output at (4,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[0].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.101     1.452
+| (intra 'clbsite' routing)                                      0.000     1.452
+OUT[32].in[1] (.names at (3,2))                                  0.000     1.452
+| (primitive '.names' combinational delay)                       0.155     1.608
+OUT[32].out[0] (.names at (3,2))                                 0.000     1.608
+| (intra 'clbsite' routing)                                      0.105     1.713
+| (inter-block routing)                                          2.273     3.986
+| (intra 'outsite' routing)                                      0.151     4.137
+out:OUT[32].outpad[0] (.output at (4,2))                         0.000     4.137
+data arrival time                                                          4.137
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -4.137
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -3.837
+
+
+#Path 9
+Startpoint: R0.Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : out:OUT[1].outpad[0] (.output at (4,1) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                                   0.000     0.000
+| (intra 'insite' routing)                                       0.151     0.151
+| (inter-block routing)                                          0.000     0.151
+| (intra 'clbsite' routing)                                      0.000     0.151
+R0.clk[0] (.latch at (3,2))                                      0.000     0.151
+| (primitive '.latch' Tcq_max)                                   0.080     0.231
+R0.Q[0] (.latch at (3,2)) [clock-to-output]                      0.000     0.231
+| (intra 'clbsite' routing)                                      0.105     0.336
+| (inter-block routing)                                          2.454     2.790
+| (intra 'outsite' routing)                                      0.151     2.941
+out:OUT[1].outpad[0] (.output at (4,1))                          0.000     2.941
+data arrival time                                                          2.941
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -2.941
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -2.641
+
+
+#Path 10
+Startpoint: R0_1.Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : out:OUT[0].outpad[0] (.output at (4,1) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                                   0.000     0.000
+| (intra 'insite' routing)                                       0.151     0.151
+| (inter-block routing)                                          0.000     0.151
+| (intra 'clbsite' routing)                                      0.000     0.151
+R0_1.clk[0] (.latch at (3,2))                                    0.000     0.151
+| (primitive '.latch' Tcq_max)                                   0.080     0.231
+R0_1.Q[0] (.latch at (3,2)) [clock-to-output]                    0.000     0.231
+| (intra 'clbsite' routing)                                      0.105     0.336
+| (inter-block routing)                                          1.823     2.159
+| (intra 'outsite' routing)                                      0.151     2.310
+out:OUT[0].outpad[0] (.output at (4,1))                          0.000     2.310
+data arrival time                                                          2.310
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -2.310
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -2.010
+
+
+#Path 11
+Startpoint: IN[0].inpad[0] (.input at (4,1) clocked by clk)
+Endpoint  : R0_1.D[0] (.latch at (3,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[0].inpad[0] (.input at (4,1))                                 0.000     0.200
+| (intra 'insite' routing)                                       0.151     0.351
+| (inter-block routing)                                          1.552     1.903
+| (intra 'clbsite' routing)                                      0.155     2.058
+R0_1.D[0] (.latch at (3,2))                                     -0.000     2.058
+data arrival time                                                          2.058
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input at (4,1))                                   0.000     0.500
+| (intra 'insite' routing)                                       0.151     0.651
+| (inter-block routing)                                          0.000     0.651
+| (intra 'clbsite' routing)                                      0.000     0.651
+R0_1.clk[0] (.latch at (3,2))                                    0.000     0.651
+clock uncertainty                                                0.000     0.651
+cell setup time                                                 -0.060     0.591
+data required time                                                         0.591
+--------------------------------------------------------------------------------
+data required time                                                         0.591
+data arrival time                                                         -2.058
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -1.467
+
+
+#Path 12
+Startpoint: R0_1.Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : R0.D[0] (.latch at (3,2) clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                                   0.000     0.000
+| (intra 'insite' routing)                                       0.151     0.151
+| (inter-block routing)                                          0.000     0.151
+| (intra 'clbsite' routing)                                      0.000     0.151
+R0_1.clk[0] (.latch at (3,2))                                    0.000     0.151
+| (primitive '.latch' Tcq_max)                                   0.080     0.231
+R0_1.Q[0] (.latch at (3,2)) [clock-to-output]                    0.000     0.231
+| (intra 'clbsite' routing)                                      0.105     0.336
+| (inter-block routing)                                          0.561     0.897
+| (intra 'clbsite' routing)                                      0.155     1.053
+R0.D[0] (.latch at (3,2))                                        0.000     1.053
+data arrival time                                                          1.053
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input at (4,1))                                   0.000     0.500
+| (intra 'insite' routing)                                       0.151     0.651
+| (inter-block routing)                                          0.000     0.651
+| (intra 'clbsite' routing)                                      0.000     0.651
+R0.clk[0] (.latch at (3,2))                                      0.000     0.651
+clock uncertainty                                                0.000     0.651
+cell setup time                                                 -0.060     0.591
+data required time                                                         0.591
+--------------------------------------------------------------------------------
+data required time                                                         0.591
+data arrival time                                                         -1.053
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.461
+
+
+#End of timing report

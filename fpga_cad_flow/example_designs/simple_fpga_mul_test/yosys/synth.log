@@ -1,0 +1,644 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33+34 (git sha1 b84ed5d3a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `scripts/synth.ys' --
+ >>> LOG: READING VERILOG files TOP_MODULE: mul
+
+1. Executing Verilog-2005 frontend: /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v
+Parsing Verilog input from `/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v' to AST representation.
+Generating RTLIL representation for module `\mul'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \mul
+
+2.2. Analyzing design hierarchy..
+Top module:  \mul
+Removed 0 unused modules.
+ >>> LOG: GENERIC MAPPING
+
+3. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                 13
+   Number of wire bits:            295
+   Number of public wires:           8
+   Number of public wire bits:     275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              2
+   Number of cells:                  1
+     $mul_8                          1
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 5 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:22$2'.
+Creating decoders for process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:15$1'.
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\mul.\OUT [1:0]' from process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:15$1'.
+No latch inferred for signal `\mul.\OUT [39:32]' from process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:15$1'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\mul.\R0' using process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:22$2'.
+  created $dff cell `$procdff$4' with positive edge clock.
+Creating register for signal `\mul.\R0_1' using process `\mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:22$2'.
+  created $dff cell `$procdff$5' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:22$2'.
+Removing empty process `mul.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:15$1'.
+Cleaned up 0 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+5. Executing FLATTEN pass (flatten design).
+
+6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module mul...
+Warning: Wire mul.\OUT [127] is used but has no driver.
+Warning: Wire mul.\OUT [126] is used but has no driver.
+Warning: Wire mul.\OUT [125] is used but has no driver.
+Warning: Wire mul.\OUT [124] is used but has no driver.
+Warning: Wire mul.\OUT [123] is used but has no driver.
+Warning: Wire mul.\OUT [122] is used but has no driver.
+Warning: Wire mul.\OUT [121] is used but has no driver.
+Warning: Wire mul.\OUT [120] is used but has no driver.
+Warning: Wire mul.\OUT [119] is used but has no driver.
+Warning: Wire mul.\OUT [118] is used but has no driver.
+Warning: Wire mul.\OUT [117] is used but has no driver.
+Warning: Wire mul.\OUT [116] is used but has no driver.
+Warning: Wire mul.\OUT [115] is used but has no driver.
+Warning: Wire mul.\OUT [114] is used but has no driver.
+Warning: Wire mul.\OUT [113] is used but has no driver.
+Warning: Wire mul.\OUT [112] is used but has no driver.
+Warning: Wire mul.\OUT [111] is used but has no driver.
+Warning: Wire mul.\OUT [110] is used but has no driver.
+Warning: Wire mul.\OUT [109] is used but has no driver.
+Warning: Wire mul.\OUT [108] is used but has no driver.
+Warning: Wire mul.\OUT [107] is used but has no driver.
+Warning: Wire mul.\OUT [106] is used but has no driver.
+Warning: Wire mul.\OUT [105] is used but has no driver.
+Warning: Wire mul.\OUT [104] is used but has no driver.
+Warning: Wire mul.\OUT [103] is used but has no driver.
+Warning: Wire mul.\OUT [102] is used but has no driver.
+Warning: Wire mul.\OUT [101] is used but has no driver.
+Warning: Wire mul.\OUT [100] is used but has no driver.
+Warning: Wire mul.\OUT [99] is used but has no driver.
+Warning: Wire mul.\OUT [98] is used but has no driver.
+Warning: Wire mul.\OUT [97] is used but has no driver.
+Warning: Wire mul.\OUT [96] is used but has no driver.
+Warning: Wire mul.\OUT [95] is used but has no driver.
+Warning: Wire mul.\OUT [94] is used but has no driver.
+Warning: Wire mul.\OUT [93] is used but has no driver.
+Warning: Wire mul.\OUT [92] is used but has no driver.
+Warning: Wire mul.\OUT [91] is used but has no driver.
+Warning: Wire mul.\OUT [90] is used but has no driver.
+Warning: Wire mul.\OUT [89] is used but has no driver.
+Warning: Wire mul.\OUT [88] is used but has no driver.
+Warning: Wire mul.\OUT [87] is used but has no driver.
+Warning: Wire mul.\OUT [86] is used but has no driver.
+Warning: Wire mul.\OUT [85] is used but has no driver.
+Warning: Wire mul.\OUT [84] is used but has no driver.
+Warning: Wire mul.\OUT [83] is used but has no driver.
+Warning: Wire mul.\OUT [82] is used but has no driver.
+Warning: Wire mul.\OUT [81] is used but has no driver.
+Warning: Wire mul.\OUT [80] is used but has no driver.
+Warning: Wire mul.\OUT [79] is used but has no driver.
+Warning: Wire mul.\OUT [78] is used but has no driver.
+Warning: Wire mul.\OUT [77] is used but has no driver.
+Warning: Wire mul.\OUT [76] is used but has no driver.
+Warning: Wire mul.\OUT [75] is used but has no driver.
+Warning: Wire mul.\OUT [74] is used but has no driver.
+Warning: Wire mul.\OUT [73] is used but has no driver.
+Warning: Wire mul.\OUT [72] is used but has no driver.
+Warning: Wire mul.\OUT [71] is used but has no driver.
+Warning: Wire mul.\OUT [70] is used but has no driver.
+Warning: Wire mul.\OUT [69] is used but has no driver.
+Warning: Wire mul.\OUT [68] is used but has no driver.
+Warning: Wire mul.\OUT [67] is used but has no driver.
+Warning: Wire mul.\OUT [66] is used but has no driver.
+Warning: Wire mul.\OUT [65] is used but has no driver.
+Warning: Wire mul.\OUT [64] is used but has no driver.
+Warning: Wire mul.\OUT [63] is used but has no driver.
+Warning: Wire mul.\OUT [62] is used but has no driver.
+Warning: Wire mul.\OUT [61] is used but has no driver.
+Warning: Wire mul.\OUT [60] is used but has no driver.
+Warning: Wire mul.\OUT [59] is used but has no driver.
+Warning: Wire mul.\OUT [58] is used but has no driver.
+Warning: Wire mul.\OUT [57] is used but has no driver.
+Warning: Wire mul.\OUT [56] is used but has no driver.
+Warning: Wire mul.\OUT [55] is used but has no driver.
+Warning: Wire mul.\OUT [54] is used but has no driver.
+Warning: Wire mul.\OUT [53] is used but has no driver.
+Warning: Wire mul.\OUT [52] is used but has no driver.
+Warning: Wire mul.\OUT [51] is used but has no driver.
+Warning: Wire mul.\OUT [50] is used but has no driver.
+Warning: Wire mul.\OUT [49] is used but has no driver.
+Warning: Wire mul.\OUT [48] is used but has no driver.
+Warning: Wire mul.\OUT [47] is used but has no driver.
+Warning: Wire mul.\OUT [46] is used but has no driver.
+Warning: Wire mul.\OUT [45] is used but has no driver.
+Warning: Wire mul.\OUT [44] is used but has no driver.
+Warning: Wire mul.\OUT [43] is used but has no driver.
+Warning: Wire mul.\OUT [42] is used but has no driver.
+Warning: Wire mul.\OUT [41] is used but has no driver.
+Warning: Wire mul.\OUT [40] is used but has no driver.
+Warning: Wire mul.\OUT [31] is used but has no driver.
+Warning: Wire mul.\OUT [30] is used but has no driver.
+Warning: Wire mul.\OUT [29] is used but has no driver.
+Warning: Wire mul.\OUT [28] is used but has no driver.
+Warning: Wire mul.\OUT [27] is used but has no driver.
+Warning: Wire mul.\OUT [26] is used but has no driver.
+Warning: Wire mul.\OUT [25] is used but has no driver.
+Warning: Wire mul.\OUT [24] is used but has no driver.
+Warning: Wire mul.\OUT [23] is used but has no driver.
+Warning: Wire mul.\OUT [22] is used but has no driver.
+Warning: Wire mul.\OUT [21] is used but has no driver.
+Warning: Wire mul.\OUT [20] is used but has no driver.
+Warning: Wire mul.\OUT [19] is used but has no driver.
+Warning: Wire mul.\OUT [18] is used but has no driver.
+Warning: Wire mul.\OUT [17] is used but has no driver.
+Warning: Wire mul.\OUT [16] is used but has no driver.
+Warning: Wire mul.\OUT [15] is used but has no driver.
+Warning: Wire mul.\OUT [14] is used but has no driver.
+Warning: Wire mul.\OUT [13] is used but has no driver.
+Warning: Wire mul.\OUT [12] is used but has no driver.
+Warning: Wire mul.\OUT [11] is used but has no driver.
+Warning: Wire mul.\OUT [10] is used but has no driver.
+Warning: Wire mul.\OUT [9] is used but has no driver.
+Warning: Wire mul.\OUT [8] is used but has no driver.
+Warning: Wire mul.\OUT [7] is used but has no driver.
+Warning: Wire mul.\OUT [6] is used but has no driver.
+Warning: Wire mul.\OUT [5] is used but has no driver.
+Warning: Wire mul.\OUT [4] is used but has no driver.
+Warning: Wire mul.\OUT [3] is used but has no driver.
+Warning: Wire mul.\OUT [2] is used but has no driver.
+Found and reported 118 problems.
+
+9. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                  8
+   Number of wire bits:            275
+   Number of public wires:           8
+   Number of public wire bits:     275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $dff_1                          2
+     $mul_8                          1
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mul..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mul.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+10.9. Finished OPT passes. (There is nothing left to do.)
+
+11. Executing WREDUCE pass (reducing word size of cells).
+
+12. Executing PEEPOPT pass (run peephole optimizers).
+
+13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+ >>> LOG: OPT
+
+14. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                  8
+   Number of wire bits:            275
+   Number of public wires:           8
+   Number of public wire bits:     275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $dff_1                          2
+     $mul_8                          1
+
+15. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module mul:
+  creating $macc model for $mul$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:27$3 ($mul).
+  creating $macc cell for $mul$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/inputs/mul.v:27$3: $auto$alumacc.cc:365:replace_macc$6
+  created 0 $alu and 1 $macc cells.
+
+16. Executing SHARE pass (SAT-based resource sharing).
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mul..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mul.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+17.9. Finished OPT passes. (There is nothing left to do.)
+
+18. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                  8
+   Number of wire bits:            275
+   Number of public wires:           8
+   Number of public wire bits:     275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $dff_1                          2
+     $macc                           1
+
+19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+<suppressed ~5 debug messages>
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mul..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mul.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_SHARE pass.
+
+20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+
+20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+20.10. Finished OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+Using extmapper maccmap for cells of type $macc.
+  add \IN [3:0] * \IN [7:4] (4x4 bits, unsigned)
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+No more expansions possible.
+<suppressed ~272 debug messages>
+
+22. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+ >>> LOG: LUT MAPPING
+
+23. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                 90
+   Number of wire bits:           1835
+   Number of public wires:           8
+   Number of public wire bits:     275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                183
+     $_AND_                         88
+     $_DFF_P_                        2
+     $_MUX_                          8
+     $_NOT_                          8
+     $_OR_                          28
+     $_XOR_                         49
+
+Removed 16 unused cells and 50 unused wires.
+
+24. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:        0
+
+Eliminating LUTs.
+Number of LUTs:        0
+
+Combining LUTs.
+Number of LUTs:        0
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+
+25. Executing ABC pass (technology mapping using ABC).
+
+25.1. Extracting gate netlist of module `\mul' to `<abc-temp-dir>/input.blif'..
+Extracted 165 gates and 174 wires to a netlist network with 8 inputs and 8 outputs.
+
+25.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+25.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:       29
+ABC RESULTS:        internal signals:      158
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mul..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mul.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+Removed 0 unused cells and 48 unused wires.
+<suppressed ~1 debug messages>
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+26.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mul..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mul.
+Performed a total of 0 changes.
+
+26.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mul'.
+Removed a total of 0 cells.
+
+26.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+
+26.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mul.
+
+26.16. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing FLATTEN pass (flatten design).
+
+28. Executing TECHMAP pass (map to technology primitives).
+
+28.1. Executing Verilog-2005 frontend: scripts/async_flop.v
+Parsing Verilog input from `scripts/async_flop.v' to AST representation.
+Successfully finished Verilog frontend.
+
+28.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mul..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~3 debug messages>
+
+30. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:       29
+  2-LUT                8
+  3-LUT                4
+  4-LUT               17
+
+Eliminating LUTs.
+Number of LUTs:       29
+  2-LUT                8
+  3-LUT                4
+  4-LUT               17
+
+Combining LUTs.
+Number of LUTs:       29
+  2-LUT                8
+  3-LUT                4
+  4-LUT               17
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~74 debug messages>
+
+31. Printing statistics.
+
+=== mul ===
+
+   Number of wires:                 26
+   Number of wire bits:            280
+   Number of public wires:           5
+   Number of public wire bits:     259
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     $_DFF_P_                        2
+     $lut_2                          8
+     $lut_3                          4
+     $lut_4                         17
+
+ >>> LOG: WRITING VERILOG /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/yosys/outputs/mul_syn.v
+
+32. Executing Verilog backend.
+
+32.1. Executing BMUXMAP pass.
+
+32.2. Executing DEMUXMAP pass.
+Dumping module `\mul'.
+ >>> LOG: WRITING BLIF /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_mul_test/yosys/outputs/mul_syn.blif
+
+33. Executing BLIF backend.
+
+Warnings: 118 unique messages, 118 total
+End of script. Logfile hash: 25cdf89eab, CPU: user 0.04s system 0.00s, MEM: 18.02 MB peak
+Yosys 0.33+34 (git sha1 b84ed5d3a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 65% 1x abc (0 sec), 6% 4x read_verilog (0 sec), ...

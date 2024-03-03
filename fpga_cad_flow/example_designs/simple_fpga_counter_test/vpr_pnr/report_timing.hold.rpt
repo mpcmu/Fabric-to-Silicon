@@ -1,0 +1,183 @@
+#Timing report of worst 4 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: OUT[33].Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : OUT[33].D[0] (.latch at (3,2) clocked by clk)
+Path Type : hold
+
+Point                                                                                   Incr      Path
+------------------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[33].clk[0] (.latch at (3,2))                                                       0.000     0.000
+| (primitive '.latch' Tcq_min)                                                         0.080     0.080
+OUT[33].Q[0] (.latch at (3,2)) [clock-to-output]                                       0.000     0.080
+| (intra 'clbsite' routing)                                                            0.000     0.080
+| (inter-block routing)                                                                0.561     0.641
+| (intra 'clbsite' routing)                                                            0.000     0.641
+$abc$169$auto$rtlil.cc:2654:MuxGate$164.in[0] (.names at (3,2))                        0.000     0.641
+| (primitive '.names' combinational delay)                                             0.155     0.796
+$abc$169$auto$rtlil.cc:2654:MuxGate$164.out[0] (.names at (3,2))                       0.000     0.796
+| (intra 'clbsite' routing)                                                            0.000     0.796
+OUT[33].D[0] (.latch at (3,2))                                                         0.000     0.796
+data arrival time                                                                                0.796
+
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[33].clk[0] (.latch at (3,2))                                                       0.000     0.000
+clock uncertainty                                                                      0.000     0.000
+cell hold time                                                                         0.060     0.060
+data required time                                                                               0.060
+------------------------------------------------------------------------------------------------------
+data required time                                                                              -0.060
+data arrival time                                                                                0.796
+------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                      0.736
+
+
+#Path 2
+Startpoint: OUT[35].Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : OUT[35].D[0] (.latch at (3,2) clocked by clk)
+Path Type : hold
+
+Point                                                                                   Incr      Path
+------------------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[35].clk[0] (.latch at (3,2))                                                       0.000     0.000
+| (primitive '.latch' Tcq_min)                                                         0.080     0.080
+OUT[35].Q[0] (.latch at (3,2)) [clock-to-output]                                       0.000     0.080
+| (intra 'clbsite' routing)                                                            0.000     0.080
+| (inter-block routing)                                                                0.561     0.641
+| (intra 'clbsite' routing)                                                            0.000     0.641
+$abc$169$auto$rtlil.cc:2654:MuxGate$168.in[0] (.names at (3,2))                        0.000     0.641
+| (primitive '.names' combinational delay)                                             0.155     0.796
+$abc$169$auto$rtlil.cc:2654:MuxGate$168.out[0] (.names at (3,2))                       0.000     0.796
+| (intra 'clbsite' routing)                                                            0.000     0.796
+OUT[35].D[0] (.latch at (3,2))                                                         0.000     0.796
+data arrival time                                                                                0.796
+
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[35].clk[0] (.latch at (3,2))                                                       0.000     0.000
+clock uncertainty                                                                      0.000     0.000
+cell hold time                                                                         0.060     0.060
+data required time                                                                               0.060
+------------------------------------------------------------------------------------------------------
+data required time                                                                              -0.060
+data arrival time                                                                                0.796
+------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                      0.736
+
+
+#Path 3
+Startpoint: OUT[32].Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : OUT[34].D[0] (.latch at (3,2) clocked by clk)
+Path Type : hold
+
+Point                                                                                   Incr      Path
+------------------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[32].clk[0] (.latch at (3,2))                                                       0.000     0.000
+| (primitive '.latch' Tcq_min)                                                         0.080     0.080
+OUT[32].Q[0] (.latch at (3,2)) [clock-to-output]                                       0.000     0.080
+| (intra 'clbsite' routing)                                                            0.000     0.080
+| (inter-block routing)                                                                0.561     0.641
+| (intra 'clbsite' routing)                                                            0.000     0.641
+$abc$169$new_n13.in[1] (.names at (3,2))                                               0.000     0.641
+| (primitive '.names' combinational delay)                                             0.155     0.796
+$abc$169$new_n13.out[0] (.names at (3,2))                                              0.000     0.796
+| (intra 'clbsite' routing)                                                            0.000     0.796
+| (inter-block routing)                                                                0.651     1.447
+| (intra 'clbsite' routing)                                                            0.000     1.447
+$abc$169$auto$rtlil.cc:2654:MuxGate$162.in[2] (.names at (3,2))                        0.000     1.447
+| (primitive '.names' combinational delay)                                             0.155     1.602
+$abc$169$auto$rtlil.cc:2654:MuxGate$162.out[0] (.names at (3,2))                       0.000     1.602
+| (intra 'clbsite' routing)                                                            0.000     1.602
+OUT[34].D[0] (.latch at (3,2))                                                         0.000     1.602
+data arrival time                                                                                1.602
+
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[34].clk[0] (.latch at (3,2))                                                       0.000     0.000
+clock uncertainty                                                                      0.000     0.000
+cell hold time                                                                         0.060     0.060
+data required time                                                                               0.060
+------------------------------------------------------------------------------------------------------
+data required time                                                                              -0.060
+data arrival time                                                                                1.602
+------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                      1.542
+
+
+#Path 4
+Startpoint: OUT[32].Q[0] (.latch at (3,2) clocked by clk)
+Endpoint  : OUT[32].D[0] (.latch at (3,2) clocked by clk)
+Path Type : hold
+
+Point                                                                                   Incr      Path
+------------------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[32].clk[0] (.latch at (3,2))                                                       0.000     0.000
+| (primitive '.latch' Tcq_min)                                                         0.080     0.080
+OUT[32].Q[0] (.latch at (3,2)) [clock-to-output]                                       0.000     0.080
+| (intra 'clbsite' routing)                                                            0.000     0.080
+| (inter-block routing)                                                                1.733     1.813
+| (intra 'clbsite' routing)                                                            0.000     1.813
+$abc$169$auto$rtlil.cc:2654:MuxGate$166.in[0] (.names at (3,2))                        0.000     1.813
+| (primitive '.names' combinational delay)                                             0.155     1.968
+$abc$169$auto$rtlil.cc:2654:MuxGate$166.out[0] (.names at (3,2))                       0.000     1.968
+| (intra 'clbsite' routing)                                                            0.000     1.968
+OUT[32].D[0] (.latch at (3,2))                                                         0.000     1.968
+data arrival time                                                                                1.968
+
+clock clk (rise edge)                                                                  0.000     0.000
+clock source latency                                                                   0.000     0.000
+clk.inpad[0] (.input at (4,1))                                                         0.000     0.000
+| (intra 'insite' routing)                                                             0.000     0.000
+| (inter-block routing)                                                                0.000     0.000
+| (intra 'clbsite' routing)                                                            0.000     0.000
+OUT[32].clk[0] (.latch at (3,2))                                                       0.000     0.000
+clock uncertainty                                                                      0.000     0.000
+cell hold time                                                                         0.060     0.060
+data required time                                                                               0.060
+------------------------------------------------------------------------------------------------------
+data required time                                                                              -0.060
+data arrival time                                                                                1.968
+------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                      1.908
+
+
+#End of timing report

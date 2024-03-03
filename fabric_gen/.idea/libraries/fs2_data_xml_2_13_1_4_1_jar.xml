@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="fs2-data-xml_2.13-1.4.1.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/gnieh/fs2-data-xml_2.13/1.4.1/fs2-data-xml_2.13-1.4.1.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/gnieh/fs2-data-xml_2.13/1.4.1/fs2-data-xml_2.13-1.4.1-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

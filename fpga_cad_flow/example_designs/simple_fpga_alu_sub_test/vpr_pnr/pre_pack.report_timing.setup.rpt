@@ -1,0 +1,1568 @@
+#Timing report of worst 52 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: alu.Q[15] (clbalu clocked by clk)
+Endpoint  : out:OUT[47].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[15] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[47].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 2
+Startpoint: alu.Q[0] (clbalu clocked by clk)
+Endpoint  : out:OUT[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[0] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[32].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 3
+Startpoint: alu.Q[1] (clbalu clocked by clk)
+Endpoint  : out:OUT[33].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[1] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[33].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 4
+Startpoint: alu.Q[2] (clbalu clocked by clk)
+Endpoint  : out:OUT[34].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[2] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[34].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 5
+Startpoint: alu.Q[3] (clbalu clocked by clk)
+Endpoint  : out:OUT[35].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[3] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[35].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 6
+Startpoint: alu.Q[4] (clbalu clocked by clk)
+Endpoint  : out:OUT[36].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[4] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[36].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 7
+Startpoint: alu.Q[5] (clbalu clocked by clk)
+Endpoint  : out:OUT[37].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[5] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[37].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 8
+Startpoint: alu.Q[6] (clbalu clocked by clk)
+Endpoint  : out:OUT[38].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[6] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[38].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 9
+Startpoint: alu.Q[7] (clbalu clocked by clk)
+Endpoint  : out:OUT[39].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[7] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[39].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 10
+Startpoint: alu.Q[9] (clbalu clocked by clk)
+Endpoint  : out:OUT[41].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[9] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[41].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 11
+Startpoint: alu.Q[10] (clbalu clocked by clk)
+Endpoint  : out:OUT[42].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[10] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[42].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 12
+Startpoint: alu.Q[11] (clbalu clocked by clk)
+Endpoint  : out:OUT[43].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[11] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[43].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 13
+Startpoint: alu.Q[12] (clbalu clocked by clk)
+Endpoint  : out:OUT[44].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[12] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[44].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 14
+Startpoint: alu.Q[13] (clbalu clocked by clk)
+Endpoint  : out:OUT[45].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[13] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[45].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 15
+Startpoint: alu.Q[14] (clbalu clocked by clk)
+Endpoint  : out:OUT[46].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[14] (clbalu) [clock-to-output]                             0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[46].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 16
+Startpoint: alu.Q[8] (clbalu clocked by clk)
+Endpoint  : out:OUT[40].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+alu.C[0] (clbalu)                                                0.000     4.405
+| (primitive 'clbalu' Tcq_max)                                   0.800     5.205
+alu.Q[8] (clbalu) [clock-to-output]                              0.000     5.205
+| (inter-cluster net delay estimate)                             4.405     9.611
+out:OUT[40].outpad[0] (.output)                                  0.000     9.611
+data arrival time                                                          9.611
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -9.611
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -9.311
+
+
+#Path 17
+Startpoint: R0_1.Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[0].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+R0_1.clk[0] (.latch)                                             0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+R0_1.Q[0] (.latch) [clock-to-output]                             0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[0].outpad[0] (.output)                                   0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#Path 18
+Startpoint: R0.Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[1].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+R0.clk[0] (.latch)                                               0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+R0.Q[0] (.latch) [clock-to-output]                               0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[1].outpad[0] (.output)                                   0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#Path 19
+Startpoint: R0_1.Q[0] (.latch clocked by clk)
+Endpoint  : R0.D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+R0_1.clk[0] (.latch)                                             0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+R0_1.Q[0] (.latch) [clock-to-output]                             0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+R0.D[0] (.latch)                                                 0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+R0.clk[0] (.latch)                                               0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.060     4.845
+data required time                                                         4.845
+--------------------------------------------------------------------------------
+data required time                                                         4.845
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -4.045
+
+
+#Path 20
+Startpoint: IN[25].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[9] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[25].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[9] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 21
+Startpoint: IN[31].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[15] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[31].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[15] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 22
+Startpoint: IN[30].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[14] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[30].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[14] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 23
+Startpoint: IN[29].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[13] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[29].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[13] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 24
+Startpoint: IN[28].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[12] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[28].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[12] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 25
+Startpoint: IN[27].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[11] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[27].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[11] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 26
+Startpoint: IN[26].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[10] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[26].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[10] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 27
+Startpoint: IN[12].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[12] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[12].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[12] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 28
+Startpoint: IN[0].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[0] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[0].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[0] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 29
+Startpoint: IN[1].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[1] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[1].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[1] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 30
+Startpoint: IN[2].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[2] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[2].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[2] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 31
+Startpoint: IN[3].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[3] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[3].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[3] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 32
+Startpoint: IN[4].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[4] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[4].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[4] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 33
+Startpoint: IN[5].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[5] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[5].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[5] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 34
+Startpoint: IN[6].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[6] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[6].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[6] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 35
+Startpoint: IN[7].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[7] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[7].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[7] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 36
+Startpoint: IN[8].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[8] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[8].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[8] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 37
+Startpoint: IN[9].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[9] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[9].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[9] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 38
+Startpoint: IN[10].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[10] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[10].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[10] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 39
+Startpoint: IN[11].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[11] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[11].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[11] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 40
+Startpoint: IN[13].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[13] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[13].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[13] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 41
+Startpoint: IN[14].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[14] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[14].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[14] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 42
+Startpoint: IN[15].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I0[15] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[15].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I0[15] (clbalu)                                              0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 43
+Startpoint: IN[16].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[0] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[16].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[0] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 44
+Startpoint: IN[17].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[1] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[17].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[1] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 45
+Startpoint: IN[18].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[2] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[18].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[2] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 46
+Startpoint: IN[19].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[3] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[19].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[3] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 47
+Startpoint: IN[20].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[4] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[20].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[4] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 48
+Startpoint: IN[21].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[5] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[21].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[5] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 49
+Startpoint: IN[22].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[6] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[22].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[6] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 50
+Startpoint: IN[23].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[7] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[23].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[7] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 51
+Startpoint: IN[24].inpad[0] (.input clocked by clk)
+Endpoint  : alu.I1[8] (clbalu clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[24].inpad[0] (.input)                                         0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+alu.I1[8] (clbalu)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+alu.C[0] (clbalu)                                                0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.160     4.745
+data required time                                                         4.745
+--------------------------------------------------------------------------------
+data required time                                                         4.745
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.140
+
+
+#Path 52
+Startpoint: IN[0].inpad[0] (.input clocked by clk)
+Endpoint  : R0_1.D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.200     0.200
+IN[0].inpad[0] (.input)                                          0.000     0.200
+| (inter-cluster net delay estimate)                             4.405     4.605
+R0_1.D[0] (.latch)                                               0.000     4.605
+data arrival time                                                          4.605
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clk.inpad[0] (.input)                                            0.000     0.500
+| (inter-cluster net delay estimate)                             4.405     4.905
+R0_1.clk[0] (.latch)                                             0.000     4.905
+clock uncertainty                                                0.000     4.905
+cell setup time                                                 -0.060     4.845
+data required time                                                         4.845
+--------------------------------------------------------------------------------
+data required time                                                         4.845
+data arrival time                                                         -4.605
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.240
+
+
+#End of timing report

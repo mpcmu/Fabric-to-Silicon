@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="cats-effect-kernel_2.13-3.3.9.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect-kernel_2.13/3.3.9/cats-effect-kernel_2.13-3.3.9.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect-kernel_2.13/3.3.9/cats-effect-kernel_2.13-3.3.9-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

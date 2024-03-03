@@ -1,0 +1,281 @@
+#Timing report of worst 8 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: OUT[33].Q[0] (.latch clocked by clk)
+Endpoint  : OUT[34].D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                                          Incr      Path
+---------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                         0.000     0.000
+clock source latency                                                          0.000     0.000
+clk.inpad[0] (.input)                                                         0.000     0.000
+| (inter-cluster net delay estimate)                                          4.405     4.405
+OUT[33].clk[0] (.latch)                                                       0.000     4.405
+| (primitive '.latch' Tcq_max)                                                0.080     4.485
+OUT[33].Q[0] (.latch) [clock-to-output]                                       0.000     4.485
+| (inter-cluster net delay estimate)                                          4.405     8.891
+$abc$169$new_n13.in[0] (.names)                                               0.000     8.891
+| (primitive '.names' combinational delay)                                    0.155     9.046
+$abc$169$new_n13.out[0] (.names)                                              0.000     9.046
+| (inter-cluster net delay estimate)                                          4.405    13.452
+$abc$169$auto$rtlil.cc:2654:MuxGate$162.in[2] (.names)                        0.000    13.452
+| (primitive '.names' combinational delay)                                    0.155    13.607
+$abc$169$auto$rtlil.cc:2654:MuxGate$162.out[0] (.names)                       0.000    13.607
+| (inter-cluster net delay estimate)                                          4.405    18.012
+OUT[34].D[0] (.latch)                                                         0.000    18.012
+data arrival time                                                                      18.012
+
+clock clk (rise edge)                                                         0.500     0.500
+clock source latency                                                          0.000     0.500
+clk.inpad[0] (.input)                                                         0.000     0.500
+| (inter-cluster net delay estimate)                                          4.405     4.905
+OUT[34].clk[0] (.latch)                                                       0.000     4.905
+clock uncertainty                                                             0.000     4.905
+cell setup time                                                              -0.060     4.845
+data required time                                                                      4.845
+---------------------------------------------------------------------------------------------
+data required time                                                                      4.845
+data arrival time                                                                     -18.012
+---------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                      -13.167
+
+
+#Path 2
+Startpoint: OUT[34].Q[0] (.latch clocked by clk)
+Endpoint  : OUT[35].D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                                          Incr      Path
+---------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                         0.000     0.000
+clock source latency                                                          0.000     0.000
+clk.inpad[0] (.input)                                                         0.000     0.000
+| (inter-cluster net delay estimate)                                          4.405     4.405
+OUT[34].clk[0] (.latch)                                                       0.000     4.405
+| (primitive '.latch' Tcq_max)                                                0.080     4.485
+OUT[34].Q[0] (.latch) [clock-to-output]                                       0.000     4.485
+| (inter-cluster net delay estimate)                                          4.405     8.891
+$abc$169$new_n17.in[0] (.names)                                               0.000     8.891
+| (primitive '.names' combinational delay)                                    0.155     9.046
+$abc$169$new_n17.out[0] (.names)                                              0.000     9.046
+| (inter-cluster net delay estimate)                                          4.405    13.452
+$abc$169$auto$rtlil.cc:2654:MuxGate$168.in[1] (.names)                        0.000    13.452
+| (primitive '.names' combinational delay)                                    0.155    13.607
+$abc$169$auto$rtlil.cc:2654:MuxGate$168.out[0] (.names)                       0.000    13.607
+| (inter-cluster net delay estimate)                                          4.405    18.012
+OUT[35].D[0] (.latch)                                                         0.000    18.012
+data arrival time                                                                      18.012
+
+clock clk (rise edge)                                                         0.500     0.500
+clock source latency                                                          0.000     0.500
+clk.inpad[0] (.input)                                                         0.000     0.500
+| (inter-cluster net delay estimate)                                          4.405     4.905
+OUT[35].clk[0] (.latch)                                                       0.000     4.905
+clock uncertainty                                                             0.000     4.905
+cell setup time                                                              -0.060     4.845
+data required time                                                                      4.845
+---------------------------------------------------------------------------------------------
+data required time                                                                      4.845
+data arrival time                                                                     -18.012
+---------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                      -13.167
+
+
+#Path 3
+Startpoint: OUT[32].Q[0] (.latch clocked by clk)
+Endpoint  : OUT[32].D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                                          Incr      Path
+---------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                         0.000     0.000
+clock source latency                                                          0.000     0.000
+clk.inpad[0] (.input)                                                         0.000     0.000
+| (inter-cluster net delay estimate)                                          4.405     4.405
+OUT[32].clk[0] (.latch)                                                       0.000     4.405
+| (primitive '.latch' Tcq_max)                                                0.080     4.485
+OUT[32].Q[0] (.latch) [clock-to-output]                                       0.000     4.485
+| (inter-cluster net delay estimate)                                          4.405     8.891
+$abc$169$auto$rtlil.cc:2654:MuxGate$166.in[0] (.names)                        0.000     8.891
+| (primitive '.names' combinational delay)                                    0.155     9.046
+$abc$169$auto$rtlil.cc:2654:MuxGate$166.out[0] (.names)                       0.000     9.046
+| (inter-cluster net delay estimate)                                          4.405    13.452
+OUT[32].D[0] (.latch)                                                         0.000    13.452
+data arrival time                                                                      13.452
+
+clock clk (rise edge)                                                         0.500     0.500
+clock source latency                                                          0.000     0.500
+clk.inpad[0] (.input)                                                         0.000     0.500
+| (inter-cluster net delay estimate)                                          4.405     4.905
+OUT[32].clk[0] (.latch)                                                       0.000     4.905
+clock uncertainty                                                             0.000     4.905
+cell setup time                                                              -0.060     4.845
+data required time                                                                      4.845
+---------------------------------------------------------------------------------------------
+data required time                                                                      4.845
+data arrival time                                                                     -13.452
+---------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                       -8.606
+
+
+#Path 4
+Startpoint: OUT[33].Q[0] (.latch clocked by clk)
+Endpoint  : OUT[33].D[0] (.latch clocked by clk)
+Path Type : setup
+
+Point                                                                          Incr      Path
+---------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                         0.000     0.000
+clock source latency                                                          0.000     0.000
+clk.inpad[0] (.input)                                                         0.000     0.000
+| (inter-cluster net delay estimate)                                          4.405     4.405
+OUT[33].clk[0] (.latch)                                                       0.000     4.405
+| (primitive '.latch' Tcq_max)                                                0.080     4.485
+OUT[33].Q[0] (.latch) [clock-to-output]                                       0.000     4.485
+| (inter-cluster net delay estimate)                                          4.405     8.891
+$abc$169$auto$rtlil.cc:2654:MuxGate$164.in[0] (.names)                        0.000     8.891
+| (primitive '.names' combinational delay)                                    0.155     9.046
+$abc$169$auto$rtlil.cc:2654:MuxGate$164.out[0] (.names)                       0.000     9.046
+| (inter-cluster net delay estimate)                                          4.405    13.452
+OUT[33].D[0] (.latch)                                                         0.000    13.452
+data arrival time                                                                      13.452
+
+clock clk (rise edge)                                                         0.500     0.500
+clock source latency                                                          0.000     0.500
+clk.inpad[0] (.input)                                                         0.000     0.500
+| (inter-cluster net delay estimate)                                          4.405     4.905
+OUT[33].clk[0] (.latch)                                                       0.000     4.905
+clock uncertainty                                                             0.000     4.905
+cell setup time                                                              -0.060     4.845
+data required time                                                                      4.845
+---------------------------------------------------------------------------------------------
+data required time                                                                      4.845
+data arrival time                                                                     -13.452
+---------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                       -8.606
+
+
+#Path 5
+Startpoint: OUT[32].Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[32].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+OUT[32].clk[0] (.latch)                                          0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+OUT[32].Q[0] (.latch) [clock-to-output]                          0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[32].outpad[0] (.output)                                  0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#Path 6
+Startpoint: OUT[33].Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[33].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+OUT[33].clk[0] (.latch)                                          0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+OUT[33].Q[0] (.latch) [clock-to-output]                          0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[33].outpad[0] (.output)                                  0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#Path 7
+Startpoint: OUT[34].Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[34].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+OUT[34].clk[0] (.latch)                                          0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+OUT[34].Q[0] (.latch) [clock-to-output]                          0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[34].outpad[0] (.output)                                  0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#Path 8
+Startpoint: OUT[35].Q[0] (.latch clocked by clk)
+Endpoint  : out:OUT[35].outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+| (inter-cluster net delay estimate)                             4.405     4.405
+OUT[35].clk[0] (.latch)                                          0.000     4.405
+| (primitive '.latch' Tcq_max)                                   0.080     4.485
+OUT[35].Q[0] (.latch) [clock-to-output]                          0.000     4.485
+| (inter-cluster net delay estimate)                             4.405     8.891
+out:OUT[35].outpad[0] (.output)                                  0.000     8.891
+data arrival time                                                          8.891
+
+clock clk (rise edge)                                            0.500     0.500
+clock source latency                                             0.000     0.500
+clock uncertainty                                                0.000     0.500
+output external delay                                           -0.200     0.300
+data required time                                                         0.300
+--------------------------------------------------------------------------------
+data required time                                                         0.300
+data arrival time                                                         -8.891
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -8.591
+
+
+#End of timing report

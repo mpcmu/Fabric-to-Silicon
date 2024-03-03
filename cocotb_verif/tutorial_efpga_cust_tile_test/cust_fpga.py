@@ -1,0 +1,191 @@
+from operator import xor
+import cocotb
+from cocotb.triggers import Timer,ClockCycles
+from cocotb.result import TestFailure, TestSuccess
+from cocotb.binary import BinaryValue
+from cocotb.clock import Clock
+from cocotb.utils import get_sim_time
+from cocotb.triggers import Edge,FallingEdge,ClockCycles
+from cocotb.handle import HierarchyObject, Force
+import numpy as np
+import random, copy, sys
+from pysilicon.scan_driver import *
+from pysilicon.binary import *
+from pysilicon.essentials import *
+from collections import deque
+import math
+import os
+
+cur_dir = os.path.dirname(__file__)
+
+step = "simple_efpga_asap7"
+_ns = 1000
+T = 1*_ns
+
+
+@cocotb.test()
+def core_test(d):
+    global dut, io, conf_chain
+    dut = d
+
+    yield Timer(1*_ns)
+
+    reset_signals()
+
+    yield Timer(5*_ns)
+
+    io = setup_io(dut)
+
+
+    cocotb.fork(Clock(dut.clock,10,'ns').start())
+
+    yield Timer(10*_ns)
+    yield ClockCycles(dut.clock, 10)
+
+    dut.reset = 1
+
+
+    yield setup_fpga()
+
+    yield ClockCycles(dut.clock, 5)
+
+    
+
+    yield ClockCycles(dut.clock, 5)
+
+    a = 20 
+    b = 10
+
+    write_to_i(a, b, dut, io, 32, 32)
+
+    
+
+    dut.reset = 0
+
+    yield ClockCycles(dut.clock, 5)
+    
+    val = read_from_o(dut, io, 16, 112)
+
+    print(val)
+
+    assert val == fqmul(a, b)
+    yield ClockCycles(dut.clock, 5)
+
+    a = 15 
+    b = 9
+
+    write_to_i(a, b, dut, io, 32, 32)
+
+    yield ClockCycles(dut.clock, 5)
+
+    val = read_from_o(dut, io, 16, 112)
+
+    assert val == fqmul(a, b)
+
+
+    yield Timer(5000*_ns)
+
+def write_to_i(a, b, dut, io, width, offset):
+    x = BinaryValue(a, width, False).binstr
+    y = BinaryValue(b, width, False).binstr
+
+    [io['io_IO_i'][i] <= int(bit,2) for i, bit in enumerate(reversed(x))]
+    [io['io_IO_i'][i+offset] <= int(bit,2) for i, bit in enumerate(reversed(y))]
+
+def read_from_o(dut, io, width, offset):
+    x = ""
+
+    for i in range(16):
+        x = str(io['io_IO_o'][i+offset].value) + x
+
+    return(int(x, 2))
+
+
+
+@cocotb.coroutine
+def setup_fpga():
+    
+    # Read & force FPGA config
+    with open(os.path.join(cur_dir, "bitstream/bitstream_force"), "r") as f:
+        lines = f.readlines()
+        for line in lines:
+            confbus = line.split(' ')[0]
+            bitstream = line.split(' ')[1].strip()
+            #print(f" BUS: {confbus} force BinaryValue(bitstream)")
+            getattr(dut, confbus).value = BinaryValue(bitstream)
+
+    # Setup control signals
+    dut.io_ctrlSignals_gndBlkOuts = 0
+    dut.io_ctrlSignals_pathBreak = 0
+
+    yield ClockCycles(dut.clock, 2)
+    dut.reset.value = 0
+    yield ClockCycles(dut.clock, 2)
+
+
+def setup_io(dut):
+    io = {}
+    for i in range(128):
+        io[f'io_IO_i[{i}]'] = dut.io_IO_i[i]
+
+    for i in range(128):
+        io[f'io_IO_o[{i}]'] = dut.io_IO_o[i]
+
+    io['io_IO_i'] = [io[f'io_IO_i[{i}]'] for i in range(128)]
+    io['io_IO_o'] = [io[f'io_IO_o[{i}]'] for i in range(128)]
+
+    io = {name: getattr(dut, name) for name, sig in io.items()}
+
+    io['a'] = [dut.io_IO_i[i] for i in range(7, 0)]
+    io['b'] = [dut.io_IO_i[i] for i in range(15, 8)]
+    
+    io['c'] = [io[f'io_IO_o[{i}]'] for i in range(39, 32)]
+    print (io['a'])
+
+
+    return io
+
+def reset_signals():
+    dut.clock = 0
+    dut.reset = 1
+    dut.io_IO_i.value = 0
+
+    dut.io_ctrlSignals_gndBlkOuts = 0
+    dut.io_ctrlSignals_pathBreak = 0
+    dut.io_ctrlSignals_confClock = 0
+    dut.io_confPorts_0_scanIn.value = 0
+    dut.io_confPorts_0_tileSelect.value = 0
+    dut.io_confPorts_0_scanEn = 0
+    dut.io_confPorts_1_scanIn.value = 0
+    dut.io_confPorts_1_tileSelect.value = 0
+    dut.io_confPorts_1_scanEn = 0
+    dut.io_confPorts_2_scanIn.value = 0
+    dut.io_confPorts_2_tileSelect.value = 0
+    dut.io_confPorts_2_scanEn = 0
+    dut.io_confPorts_3_scanIn.value = 0
+    dut.io_confPorts_3_tileSelect.value = 0
+    dut.io_confPorts_3_scanEn = 0
+    dut.io_confPorts_4_scanIn.value = 0
+    dut.io_confPorts_4_tileSelect.value = 0
+    dut.io_confPorts_4_scanEn = 0
+
+def fqmul(a, b):
+    prod = a*b
+    prod1 = prod*(-3327)
+    t = prod1%65536
+    prod2 = t*3329
+    prod3 = prod - prod2
+    tmp = prod3/65536
+    if (tmp < -1665):
+        tmp2 = (int)(3329+tmp)
+    elif (tmp > 1664):
+        tmp2 = (int)(tmp-3329)
+    else:
+        tmp2 = (int)(tmp)
+
+    if (tmp2 > 0):
+        return (int)(tmp2)
+    else:
+        return (int)(65536 + tmp2)
+
+

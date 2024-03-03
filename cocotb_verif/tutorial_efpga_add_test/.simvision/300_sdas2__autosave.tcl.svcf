@@ -1,0 +1,139 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Databases
+#
+database require /afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_add_test/sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn -search {
+	./sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn
+	/afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_add_test/sim_build/xcelium.d/worklib/flatFabric/sv/debug_db/flatFabric/flatFabric.dsn
+}
+database require dump -search {
+	./dump.shm/dump.trn
+	/afs/ece.cmu.edu/project/km_group/.vol9/fpga_tutorial/cocotb_verif/tutorial_efpga_add_test/dump.shm/dump.trn
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 2413x1165+2638+99}] != ""} {
+    window geometry "Waveform 1" 2413x1165+2638+99
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 66 \
+    -units ns \
+    -valuewidth 800
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	dump::flatFabric.io_confPorts_0_scanEn
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.io_confPorts_1_scanEn
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.io_confPorts_2_scanEn
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.io_confPorts_3_scanEn
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.io_confPorts_4_scanEn
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_0_tileSelect[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_1_tileSelect[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_2_tileSelect[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_3_tileSelect[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_4_tileSelect[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_0_scanIn[15:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	dump::flatFabric.clock
+	} ]
+set id [waveform add -signals  {
+	dump::flatFabric.Tile_0_0_EMPTY.configBlock.clock
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_0_2_EMPTY.configBlock.ioBundle_confOut[239:0]}
+	} ]
+waveform format $id -radix %x
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_0_2_EMPTY.configBlock.ioBundle_confPort_in[15:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	{dump::flatFabric.io_IO_i[127:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_IO_o[127:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_0_0_EMPTY.configBlock.ioBundle_confOut[207:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_1_0_EMPTY.configBlock.ioBundle_confOut[239:0]}
+	} ]
+set id [waveform add -signals  {
+	{dump::flatFabric.io_confPorts_2_scanIn[15:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	{dump::flatFabric.Tile_2_1_clbalutile.configBlock.ioBundle_confOut[607:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	dump::flatFabric.reset
+	} ]
+
+waveform xview limits 5630.001ns 12076.001ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+0+0
+
+#
+# Layout selection
+#

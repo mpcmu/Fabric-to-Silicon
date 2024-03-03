@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="scalafmt-dynamic_2.13-3.7.14.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/scalafmt-dynamic_2.13/3.7.14/scalafmt-dynamic_2.13-3.7.14.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/scalafmt-dynamic_2.13/3.7.14/scalafmt-dynamic_2.13-3.7.14-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

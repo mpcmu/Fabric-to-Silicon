@@ -1,0 +1,920 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+7a9676256
+Revision: v8.0.0-7543-g7a9676256
+Compiled: 2023-11-03T14:58:29
+Compiler: GNU 9.4.0 on Linux-5.15.0-57-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+vpr /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_cust_tile_test/../../vpr_arch_files/k4_N8_simple_fpga_cust_tile.xml /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_cust_tile_test/yosys/outputs/custmuleg_syn.eblif --gen_post_synthesis_netlist on --write_rr_graph rr.xml --disp off --timing_report_detail aggregated --sdc_file fpga.sdc --route_chan_width 80 --constant_net_method route --write_vpr_constraints out_constraints.xml --fix_clusters vpr_pin_place
+
+
+Architecture file: /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_cust_tile_test/../../vpr_arch_files/k4_N8_simple_fpga_cust_tile.xml
+Circuit name: custmuleg_syn
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.00 seconds (max_rss 15.9 MiB, delta_rss +1.2 MiB)
+
+Timing analysis: ON
+Circuit netlist file: custmuleg_syn.net
+Circuit placement file: custmuleg_syn.place
+Circuit routing file: custmuleg_syn.route
+Circuit SDC file: fpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: Using constraints file 'vpr_pin_place'
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 80
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: ASTAR_ROUTE
+PlaceOpts.seed: 0
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 80
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: AGGREGATED
+AnalysisOpts.post_synth_netlist_unconn_input_handling: UNCONNECTED
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 1: clbsite[0].I[32] unconnected pin in architecture.
+Warning 2: clbsite[0].I[33] unconnected pin in architecture.
+Warning 3: clbsite[0].I[34] unconnected pin in architecture.
+Warning 4: clbsite[0].I[35] unconnected pin in architecture.
+Warning 5: clbsite[0].I[36] unconnected pin in architecture.
+Warning 6: clbsite[0].I[37] unconnected pin in architecture.
+Warning 7: clbsite[0].I[38] unconnected pin in architecture.
+Warning 8: clbsite[0].I[39] unconnected pin in architecture.
+# Building complex block graph took 0.00 seconds (max_rss 16.9 MiB, delta_rss +1.0 MiB)
+Circuit file: /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_cust_tile_test/yosys/outputs/custmuleg_syn.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.8 MiB)
+# Clean circuit
+Absorbed 0 LUT buffers
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 96
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 98
+Swept block(s)      : 2
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 165
+    .input :      33
+    .latch :       2
+    .output:     128
+    0-LUT  :       1
+    custmul:       1
+  Nets  : 52
+    Avg Fanout:     3.2
+    Max Fanout:   110.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 217
+  Timing Graph Edges: 681
+  Timing Graph Levels: 4
+# Build Timing Graph took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'clk' Fanout: 3 pins (1.4%), 3 blocks (1.8%)
+# Load Timing Constraints
+Warning 9: set_input_delay command matched but was not applied to primary output 'OUT[0]'
+Warning 10: set_input_delay command matched but was not applied to primary output 'OUT[1]'
+Warning 11: set_input_delay command matched but was not applied to primary output 'OUT[2]'
+Warning 12: set_input_delay command matched but was not applied to primary output 'OUT[3]'
+Warning 13: set_input_delay command matched but was not applied to primary output 'OUT[4]'
+Warning 14: set_input_delay command matched but was not applied to primary output 'OUT[5]'
+Warning 15: set_input_delay command matched but was not applied to primary output 'OUT[6]'
+Warning 16: set_input_delay command matched but was not applied to primary output 'OUT[7]'
+Warning 17: set_input_delay command matched but was not applied to primary output 'OUT[8]'
+Warning 18: set_input_delay command matched but was not applied to primary output 'OUT[9]'
+Warning 19: set_input_delay command matched but was not applied to primary output 'OUT[10]'
+Warning 20: set_input_delay command matched but was not applied to primary output 'OUT[11]'
+Warning 21: set_input_delay command matched but was not applied to primary output 'OUT[12]'
+Warning 22: set_input_delay command matched but was not applied to primary output 'OUT[13]'
+Warning 23: set_input_delay command matched but was not applied to primary output 'OUT[14]'
+Warning 24: set_input_delay command matched but was not applied to primary output 'OUT[15]'
+Warning 25: set_input_delay command matched but was not applied to primary output 'OUT[16]'
+Warning 26: set_input_delay command matched but was not applied to primary output 'OUT[17]'
+Warning 27: set_input_delay command matched but was not applied to primary output 'OUT[18]'
+Warning 28: set_input_delay command matched but was not applied to primary output 'OUT[19]'
+Warning 29: set_input_delay command matched but was not applied to primary output 'OUT[20]'
+Warning 30: set_input_delay command matched but was not applied to primary output 'OUT[21]'
+Warning 31: set_input_delay command matched but was not applied to primary output 'OUT[22]'
+Warning 32: set_input_delay command matched but was not applied to primary output 'OUT[23]'
+Warning 33: set_input_delay command matched but was not applied to primary output 'OUT[24]'
+Warning 34: set_input_delay command matched but was not applied to primary output 'OUT[25]'
+Warning 35: set_input_delay command matched but was not applied to primary output 'OUT[26]'
+Warning 36: set_input_delay command matched but was not applied to primary output 'OUT[27]'
+Warning 37: set_input_delay command matched but was not applied to primary output 'OUT[28]'
+Warning 38: set_input_delay command matched but was not applied to primary output 'OUT[29]'
+Warning 39: set_input_delay command matched but was not applied to primary output 'OUT[30]'
+Warning 40: set_input_delay command matched but was not applied to primary output 'OUT[31]'
+Warning 41: set_input_delay command matched but was not applied to primary output 'OUT[32]'
+Warning 42: set_input_delay command matched but was not applied to primary output 'OUT[33]'
+Warning 43: set_input_delay command matched but was not applied to primary output 'OUT[34]'
+Warning 44: set_input_delay command matched but was not applied to primary output 'OUT[35]'
+Warning 45: set_input_delay command matched but was not applied to primary output 'OUT[36]'
+Warning 46: set_input_delay command matched but was not applied to primary output 'OUT[37]'
+Warning 47: set_input_delay command matched but was not applied to primary output 'OUT[38]'
+Warning 48: set_input_delay command matched but was not applied to primary output 'OUT[39]'
+Warning 49: set_input_delay command matched but was not applied to primary output 'OUT[40]'
+Warning 50: set_input_delay command matched but was not applied to primary output 'OUT[41]'
+Warning 51: set_input_delay command matched but was not applied to primary output 'OUT[42]'
+Warning 52: set_input_delay command matched but was not applied to primary output 'OUT[43]'
+Warning 53: set_input_delay command matched but was not applied to primary output 'OUT[44]'
+Warning 54: set_input_delay command matched but was not applied to primary output 'OUT[45]'
+Warning 55: set_input_delay command matched but was not applied to primary output 'OUT[46]'
+Warning 56: set_input_delay command matched but was not applied to primary output 'OUT[47]'
+Warning 57: set_input_delay command matched but was not applied to primary output 'OUT[48]'
+Warning 58: set_input_delay command matched but was not applied to primary output 'OUT[49]'
+Warning 59: set_input_delay command matched but was not applied to primary output 'OUT[50]'
+Warning 60: set_input_delay command matched but was not applied to primary output 'OUT[51]'
+Warning 61: set_input_delay command matched but was not applied to primary output 'OUT[52]'
+Warning 62: set_input_delay command matched but was not applied to primary output 'OUT[53]'
+Warning 63: set_input_delay command matched but was not applied to primary output 'OUT[54]'
+Warning 64: set_input_delay command matched but was not applied to primary output 'OUT[55]'
+Warning 65: set_input_delay command matched but was not applied to primary output 'OUT[56]'
+Warning 66: set_input_delay command matched but was not applied to primary output 'OUT[57]'
+Warning 67: set_input_delay command matched but was not applied to primary output 'OUT[58]'
+Warning 68: set_input_delay command matched but was not applied to primary output 'OUT[59]'
+Warning 69: set_input_delay command matched but was not applied to primary output 'OUT[60]'
+Warning 70: set_input_delay command matched but was not applied to primary output 'OUT[61]'
+Warning 71: set_input_delay command matched but was not applied to primary output 'OUT[62]'
+Warning 72: set_input_delay command matched but was not applied to primary output 'OUT[63]'
+Warning 73: set_input_delay command matched but was not applied to primary output 'OUT[64]'
+Warning 74: set_input_delay command matched but was not applied to primary output 'OUT[65]'
+Warning 75: set_input_delay command matched but was not applied to primary output 'OUT[66]'
+Warning 76: set_input_delay command matched but was not applied to primary output 'OUT[67]'
+Warning 77: set_input_delay command matched but was not applied to primary output 'OUT[68]'
+Warning 78: set_input_delay command matched but was not applied to primary output 'OUT[69]'
+Warning 79: set_input_delay command matched but was not applied to primary output 'OUT[70]'
+Warning 80: set_input_delay command matched but was not applied to primary output 'OUT[71]'
+Warning 81: set_input_delay command matched but was not applied to primary output 'OUT[72]'
+Warning 82: set_input_delay command matched but was not applied to primary output 'OUT[73]'
+Warning 83: set_input_delay command matched but was not applied to primary output 'OUT[74]'
+Warning 84: set_input_delay command matched but was not applied to primary output 'OUT[75]'
+Warning 85: set_input_delay command matched but was not applied to primary output 'OUT[76]'
+Warning 86: set_input_delay command matched but was not applied to primary output 'OUT[77]'
+Warning 87: set_input_delay command matched but was not applied to primary output 'OUT[78]'
+Warning 88: set_input_delay command matched but was not applied to primary output 'OUT[79]'
+Warning 89: set_input_delay command matched but was not applied to primary output 'OUT[80]'
+Warning 90: set_input_delay command matched but was not applied to primary output 'OUT[81]'
+Warning 91: set_input_delay command matched but was not applied to primary output 'OUT[82]'
+Warning 92: set_input_delay command matched but was not applied to primary output 'OUT[83]'
+Warning 93: set_input_delay command matched but was not applied to primary output 'OUT[84]'
+Warning 94: set_input_delay command matched but was not applied to primary output 'OUT[85]'
+Warning 95: set_input_delay command matched but was not applied to primary output 'OUT[86]'
+Warning 96: set_input_delay command matched but was not applied to primary output 'OUT[87]'
+Warning 97: set_input_delay command matched but was not applied to primary output 'OUT[88]'
+Warning 98: set_input_delay command matched but was not applied to primary output 'OUT[89]'
+Warning 99: set_input_delay command matched but was not applied to primary output 'OUT[90]'
+Warning 100: set_input_delay command matched but was not applied to primary output 'OUT[91]'
+Warning 101: set_input_delay command matched but was not applied to primary output 'OUT[92]'
+Warning 102: set_input_delay command matched but was not applied to primary output 'OUT[93]'
+Warning 103: set_input_delay command matched but was not applied to primary output 'OUT[94]'
+Warning 104: set_input_delay command matched but was not applied to primary output 'OUT[95]'
+Warning 105: set_input_delay command matched but was not applied to primary output 'OUT[96]'
+Warning 106: set_input_delay command matched but was not applied to primary output 'OUT[97]'
+Warning 107: set_input_delay command matched but was not applied to primary output 'OUT[98]'
+Warning 108: set_input_delay command matched but was not applied to primary output 'OUT[99]'
+Warning 109: set_input_delay command matched but was not applied to primary output 'OUT[100]'
+Warning 110: set_input_delay command matched but was not applied to primary output 'OUT[101]'
+Warning 111: set_input_delay command matched but was not applied to primary output 'OUT[102]'
+Warning 112: set_input_delay command matched but was not applied to primary output 'OUT[103]'
+Warning 113: set_input_delay command matched but was not applied to primary output 'OUT[104]'
+Warning 114: set_input_delay command matched but was not applied to primary output 'OUT[105]'
+Warning 115: set_input_delay command matched but was not applied to primary output 'OUT[106]'
+Warning 116: set_input_delay command matched but was not applied to primary output 'OUT[107]'
+Warning 117: set_input_delay command matched but was not applied to primary output 'OUT[108]'
+Warning 118: set_input_delay command matched but was not applied to primary output 'OUT[109]'
+Warning 119: set_input_delay command matched but was not applied to primary output 'OUT[110]'
+Warning 120: set_input_delay command matched but was not applied to primary output 'OUT[111]'
+Warning 121: set_input_delay command matched but was not applied to primary output 'OUT[112]'
+Warning 122: set_input_delay command matched but was not applied to primary output 'OUT[113]'
+Warning 123: set_input_delay command matched but was not applied to primary output 'OUT[114]'
+Warning 124: set_input_delay command matched but was not applied to primary output 'OUT[115]'
+Warning 125: set_input_delay command matched but was not applied to primary output 'OUT[116]'
+Warning 126: set_input_delay command matched but was not applied to primary output 'OUT[117]'
+Warning 127: set_input_delay command matched but was not applied to primary output 'OUT[118]'
+Warning 128: set_input_delay command matched but was not applied to primary output 'OUT[119]'
+Warning 129: set_input_delay command matched but was not applied to primary output 'OUT[120]'
+Warning 130: set_input_delay command matched but was not applied to primary output 'OUT[121]'
+Warning 131: set_input_delay command matched but was not applied to primary output 'OUT[122]'
+Warning 132: set_input_delay command matched but was not applied to primary output 'OUT[123]'
+Warning 133: set_input_delay command matched but was not applied to primary output 'OUT[124]'
+Warning 134: set_input_delay command matched but was not applied to primary output 'OUT[125]'
+Warning 135: set_input_delay command matched but was not applied to primary output 'OUT[126]'
+Warning 136: set_input_delay command matched but was not applied to primary output 'OUT[127]'
+Warning 137: set_output_delay command matched but was not applied to primary input 'IN[0]'
+Warning 138: set_output_delay command matched but was not applied to primary input 'IN[1]'
+Warning 139: set_output_delay command matched but was not applied to primary input 'IN[2]'
+Warning 140: set_output_delay command matched but was not applied to primary input 'IN[3]'
+Warning 141: set_output_delay command matched but was not applied to primary input 'IN[4]'
+Warning 142: set_output_delay command matched but was not applied to primary input 'IN[5]'
+Warning 143: set_output_delay command matched but was not applied to primary input 'IN[6]'
+Warning 144: set_output_delay command matched but was not applied to primary input 'IN[7]'
+Warning 145: set_output_delay command matched but was not applied to primary input 'IN[8]'
+Warning 146: set_output_delay command matched but was not applied to primary input 'IN[9]'
+Warning 147: set_output_delay command matched but was not applied to primary input 'IN[10]'
+Warning 148: set_output_delay command matched but was not applied to primary input 'IN[11]'
+Warning 149: set_output_delay command matched but was not applied to primary input 'IN[12]'
+Warning 150: set_output_delay command matched but was not applied to primary input 'IN[13]'
+Warning 151: set_output_delay command matched but was not applied to primary input 'IN[14]'
+Warning 152: set_output_delay command matched but was not applied to primary input 'IN[15]'
+Warning 153: set_output_delay command matched but was not applied to primary input 'IN[32]'
+Warning 154: set_output_delay command matched but was not applied to primary input 'IN[33]'
+Warning 155: set_output_delay command matched but was not applied to primary input 'IN[34]'
+Warning 156: set_output_delay command matched but was not applied to primary input 'IN[35]'
+Warning 157: set_output_delay command matched but was not applied to primary input 'IN[36]'
+Warning 158: set_output_delay command matched but was not applied to primary input 'IN[37]'
+Warning 159: set_output_delay command matched but was not applied to primary input 'IN[38]'
+Warning 160: set_output_delay command matched but was not applied to primary input 'IN[39]'
+Warning 161: set_output_delay command matched but was not applied to primary input 'IN[40]'
+Warning 162: set_output_delay command matched but was not applied to primary input 'IN[41]'
+Warning 163: set_output_delay command matched but was not applied to primary input 'IN[42]'
+Warning 164: set_output_delay command matched but was not applied to primary input 'IN[43]'
+Warning 165: set_output_delay command matched but was not applied to primary input 'IN[44]'
+Warning 166: set_output_delay command matched but was not applied to primary input 'IN[45]'
+Warning 167: set_output_delay command matched but was not applied to primary input 'IN[46]'
+Warning 168: set_output_delay command matched but was not applied to primary input 'IN[47]'
+Warning 169: set_output_delay command matched but was not applied to primary input 'clk'
+
+Applied 3 SDC commands from 'fpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'clk' Source: 'clk.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 17.6 MiB, delta_rss +0.0 MiB)
+# Packing
+Warning 170: Specified device dimensions (10x10) exceed those of the largest fixed-size device. Using the largest fixed-size device
+Begin packing '/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_cust_tile_test/yosys/outputs/custmuleg_syn.eblif'.
+
+After removing unused inputs...
+	total blocks: 165, total nets: 52, total inputs: 33, total outputs: 128
+Begin prepacking.
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 4.40544e-09
+Packing with pin utilization targets: iotile:1,1 clbalutile:1,1 custmultile:1,1
+Packing with high fanout thresholds: iotile:128 clbalutile:128 custmultile:128
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+     6/165       3%                            5     6 x 6     
+    12/165       7%                           11     6 x 6     
+    18/165      10%                           17     6 x 6     
+    24/165      14%                           22     6 x 6     
+    30/165      18%                           28     6 x 6     
+    36/165      21%                           34     6 x 6     
+    42/165      25%                           40     6 x 6     
+    48/165      29%                           46     6 x 6     
+    54/165      32%                           52     6 x 6     
+    60/165      36%                           58     6 x 6     
+    66/165      40%                           64     6 x 6     
+    72/165      43%                           70     6 x 6     
+    78/165      47%                           76     6 x 6     
+    84/165      50%                           82     6 x 6     
+    90/165      54%                           88     6 x 6     
+    96/165      58%                           94     6 x 6     
+   102/165      61%                          100     6 x 6     
+   108/165      65%                          106     6 x 6     
+   114/165      69%                          112     6 x 6     
+   120/165      72%                          118     6 x 6     
+   126/165      76%                          124     6 x 6     
+   132/165      80%                          130     6 x 6     
+   138/165      83%                          136     6 x 6     
+   144/165      87%                          142     6 x 6     
+   150/165      90%                          148     6 x 6     
+   156/165      94%                          154     6 x 6     
+   162/165      98%                          160     6 x 6     
+
+Logic Element (ble) detailed count:
+  Total number of Logic Elements used : 3
+  LEs used for logic and registers    : 0
+  LEs used for logic only             : 1
+  LEs used for registers only         : 2
+
+Incr Slack updates 1 in 4.127e-06 sec
+Full Max Req/Worst Slack updates 1 in 4.243e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 5.646e-06 sec
+FPGA sized to 6 x 6 (fixedly)
+Device Utilization: 0.15 (target 1.00)
+	Block Utilization: 0.13 Type: insite
+	Block Utilization: 0.50 Type: outsite
+	Block Utilization: 1.00 Type: custmulsite
+	Block Utilization: 0.18 Type: clbsite
+
+Start the iterative improvement process
+the iterative improvement process is done
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+    insite         33                                      0                            1   
+   outsite        128                                      1                            0   
+clbalusite          0                                      0                            0   
+custmulsite          1                                     33                           16   
+   clbsite          2                                    1.5                          1.5   
+Absorbed logical nets 0 out of 52 nets, 52 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 0.01 seconds (max_rss 18.2 MiB, delta_rss +0.6 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'custmuleg_syn.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.017388 seconds).
+# Load packing took 0.02 seconds (max_rss 56.3 MiB, delta_rss +38.2 MiB)
+Warning 171: Netlist contains 0 global net to non-global architecture pin connections
+Warning 172: Logic block #20 ($undef) has only 1 output pin '$undef.O[7]'. It may be a constant generator.
+
+Pb types usage...
+  insite         : 33
+   inpad         : 33
+  outsite        : 128
+   outpad        : 128
+  custmulsite    : 1
+   CUSTMUL       : 1
+  clbsite        : 2
+   ble           : 3
+    lut4         : 1
+     lut         : 1
+    ff           : 2
+     VPR_FF      : 2
+
+# Create Device
+## Build Device Grid
+FPGA sized to 6 x 6: 36 grid tiles (fixedly)
+
+Resource usage...
+	Netlist
+		33	blocks of type: insite
+	Architecture
+		256	blocks of type: iotile
+	Netlist
+		128	blocks of type: outsite
+	Architecture
+		256	blocks of type: iotile
+	Netlist
+		0	blocks of type: clbalusite
+	Architecture
+		11	blocks of type: clbalutile
+	Netlist
+		1	blocks of type: custmulsite
+	Architecture
+		1	blocks of type: custmultile
+	Netlist
+		2	blocks of type: clbsite
+	Architecture
+		11	blocks of type: clbalutile
+
+Device Utilization: 0.15 (target 1.00)
+	Physical Tile iotile:
+	Block Utilization: 0.13 Logical Block: insite
+	Block Utilization: 0.50 Logical Block: outsite
+	Physical Tile clbalutile:
+	Block Utilization: 0.00 Logical Block: clbalusite
+	Block Utilization: 0.18 Logical Block: clbsite
+	Physical Tile custmultile:
+	Block Utilization: 1.00 Logical Block: custmulsite
+
+## Build Device Grid took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+## Build routing resource graph
+SOURCE->OPIN and IPIN->SINK edge count:965
+OPIN->CHANX/CHANY edge count before creating direct connections: 1988
+OPIN->CHANX/CHANY edge count after creating direct connections: 1996
+CHAN->CHAN type edge count:15668
+## Build routing resource graph took 0.02 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 3586
+  RR Graph Edges: 18629
+# Create Device took 0.03 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 0.03 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+## Computing src/opin lookahead took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 0.03 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up
+RR graph channel widths unchanged, skipping RR graph rebuild
+## Computing delta delays
+## Computing delta delays took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+Using simple RL 'Softmax agent' for choosing move types
+# Placement
+## Initial Placement
+Reading vpr_pin_place.
+
+Warning 173: Block IN[16] has an invalid name and it is going to be skipped.
+Warning 174: Block IN[17] has an invalid name and it is going to be skipped.
+Warning 175: Block IN[18] has an invalid name and it is going to be skipped.
+Warning 176: Block IN[19] has an invalid name and it is going to be skipped.
+Warning 177: Block IN[20] has an invalid name and it is going to be skipped.
+Warning 178: Block IN[21] has an invalid name and it is going to be skipped.
+Warning 179: Block IN[22] has an invalid name and it is going to be skipped.
+Warning 180: Block IN[23] has an invalid name and it is going to be skipped.
+Warning 181: Block IN[24] has an invalid name and it is going to be skipped.
+Warning 182: Block IN[25] has an invalid name and it is going to be skipped.
+Warning 183: Block IN[26] has an invalid name and it is going to be skipped.
+Warning 184: Block IN[27] has an invalid name and it is going to be skipped.
+Warning 185: Block IN[28] has an invalid name and it is going to be skipped.
+Warning 186: Block IN[29] has an invalid name and it is going to be skipped.
+Warning 187: Block IN[30] has an invalid name and it is going to be skipped.
+Warning 188: Block IN[31] has an invalid name and it is going to be skipped.
+Warning 189: Block IN[48] has an invalid name and it is going to be skipped.
+Warning 190: Block IN[49] has an invalid name and it is going to be skipped.
+Warning 191: Block IN[50] has an invalid name and it is going to be skipped.
+Warning 192: Block IN[51] has an invalid name and it is going to be skipped.
+Warning 193: Block IN[52] has an invalid name and it is going to be skipped.
+Warning 194: Block IN[53] has an invalid name and it is going to be skipped.
+Warning 195: Block IN[54] has an invalid name and it is going to be skipped.
+Warning 196: Block IN[55] has an invalid name and it is going to be skipped.
+Warning 197: Block IN[56] has an invalid name and it is going to be skipped.
+Warning 198: Block IN[57] has an invalid name and it is going to be skipped.
+Warning 199: Block IN[58] has an invalid name and it is going to be skipped.
+Warning 200: Block IN[59] has an invalid name and it is going to be skipped.
+Warning 201: Block IN[60] has an invalid name and it is going to be skipped.
+Warning 202: Block IN[61] has an invalid name and it is going to be skipped.
+Warning 203: Block IN[62] has an invalid name and it is going to be skipped.
+Warning 204: Block IN[63] has an invalid name and it is going to be skipped.
+Warning 205: Block IN[64] has an invalid name and it is going to be skipped.
+Warning 206: Block IN[65] has an invalid name and it is going to be skipped.
+Warning 207: Block IN[66] has an invalid name and it is going to be skipped.
+Warning 208: Block IN[67] has an invalid name and it is going to be skipped.
+Warning 209: Block IN[68] has an invalid name and it is going to be skipped.
+Warning 210: Block IN[69] has an invalid name and it is going to be skipped.
+Warning 211: Block IN[70] has an invalid name and it is going to be skipped.
+Warning 212: Block IN[71] has an invalid name and it is going to be skipped.
+Warning 213: Block IN[72] has an invalid name and it is going to be skipped.
+Warning 214: Block IN[73] has an invalid name and it is going to be skipped.
+Warning 215: Block IN[74] has an invalid name and it is going to be skipped.
+Warning 216: Block IN[75] has an invalid name and it is going to be skipped.
+Warning 217: Block IN[76] has an invalid name and it is going to be skipped.
+Warning 218: Block IN[77] has an invalid name and it is going to be skipped.
+Warning 219: Block IN[78] has an invalid name and it is going to be skipped.
+Warning 220: Block IN[79] has an invalid name and it is going to be skipped.
+Warning 221: Block IN[80] has an invalid name and it is going to be skipped.
+Warning 222: Block IN[81] has an invalid name and it is going to be skipped.
+Warning 223: Block IN[82] has an invalid name and it is going to be skipped.
+Warning 224: Block IN[83] has an invalid name and it is going to be skipped.
+Warning 225: Block IN[84] has an invalid name and it is going to be skipped.
+Warning 226: Block IN[85] has an invalid name and it is going to be skipped.
+Warning 227: Block IN[86] has an invalid name and it is going to be skipped.
+Warning 228: Block IN[87] has an invalid name and it is going to be skipped.
+Warning 229: Block IN[88] has an invalid name and it is going to be skipped.
+Warning 230: Block IN[89] has an invalid name and it is going to be skipped.
+Warning 231: Block IN[90] has an invalid name and it is going to be skipped.
+Warning 232: Block IN[91] has an invalid name and it is going to be skipped.
+Warning 233: Block IN[92] has an invalid name and it is going to be skipped.
+Warning 234: Block IN[93] has an invalid name and it is going to be skipped.
+Warning 235: Block IN[94] has an invalid name and it is going to be skipped.
+Warning 236: Block IN[95] has an invalid name and it is going to be skipped.
+Warning 237: Block IN[96] has an invalid name and it is going to be skipped.
+Warning 238: Block IN[97] has an invalid name and it is going to be skipped.
+Warning 239: Block IN[98] has an invalid name and it is going to be skipped.
+Warning 240: Block IN[99] has an invalid name and it is going to be skipped.
+Warning 241: Block IN[100] has an invalid name and it is going to be skipped.
+Warning 242: Block IN[101] has an invalid name and it is going to be skipped.
+Warning 243: Block IN[102] has an invalid name and it is going to be skipped.
+Warning 244: Block IN[103] has an invalid name and it is going to be skipped.
+Warning 245: Block IN[104] has an invalid name and it is going to be skipped.
+Warning 246: Block IN[105] has an invalid name and it is going to be skipped.
+Warning 247: Block IN[106] has an invalid name and it is going to be skipped.
+Warning 248: Block IN[107] has an invalid name and it is going to be skipped.
+Warning 249: Block IN[108] has an invalid name and it is going to be skipped.
+Warning 250: Block IN[109] has an invalid name and it is going to be skipped.
+Warning 251: Block IN[110] has an invalid name and it is going to be skipped.
+Warning 252: Block IN[111] has an invalid name and it is going to be skipped.
+Warning 253: Block IN[112] has an invalid name and it is going to be skipped.
+Warning 254: Block IN[113] has an invalid name and it is going to be skipped.
+Warning 255: Block IN[114] has an invalid name and it is going to be skipped.
+Warning 256: Block IN[115] has an invalid name and it is going to be skipped.
+Warning 257: Block IN[116] has an invalid name and it is going to be skipped.
+Warning 258: Block IN[117] has an invalid name and it is going to be skipped.
+Warning 259: Block IN[118] has an invalid name and it is going to be skipped.
+Warning 260: Block IN[119] has an invalid name and it is going to be skipped.
+Warning 261: Block IN[120] has an invalid name and it is going to be skipped.
+Warning 262: Block IN[121] has an invalid name and it is going to be skipped.
+Warning 263: Block IN[122] has an invalid name and it is going to be skipped.
+Warning 264: Block IN[123] has an invalid name and it is going to be skipped.
+Warning 265: Block IN[124] has an invalid name and it is going to be skipped.
+Warning 266: Block IN[125] has an invalid name and it is going to be skipped.
+Warning 267: Block IN[126] has an invalid name and it is going to be skipped.
+Warning 268: Block IN[127] has an invalid name and it is going to be skipped.
+Successfully read constraints file vpr_pin_place.
+
+Initial placement iteration 0 has finished successfully
+## Initial Placement took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+
+There are 162 point to point connections in this circuit.
+
+
+BB estimate of min-dist (placement) wire length: 264
+
+Completed placement consistency check successfully.
+Initial placement cost: 1 bb_cost: 3.29654 td_cost: 5.9115e-08
+Initial placement estimated Critical Path Delay (CPD): 4.85608 ns
+Initial placement estimated setup Total Negative Slack (sTNS): -74.2949 ns
+Initial placement estimated setup Worst Negative Slack (sWNS): -4.35608 ns
+
+Initial placement estimated setup slack histogram:
+[ -4.4e-09:   -4e-09) 16 ( 80.0%) |************************************************
+[   -4e-09: -3.6e-09)  0 (  0.0%) |
+[ -3.6e-09: -3.2e-09)  0 (  0.0%) |
+[ -3.2e-09: -2.8e-09)  0 (  0.0%) |
+[ -2.8e-09: -2.4e-09)  0 (  0.0%) |
+[ -2.4e-09:   -2e-09)  0 (  0.0%) |
+[   -2e-09: -1.6e-09)  0 (  0.0%) |
+[ -1.6e-09: -1.2e-09)  2 ( 10.0%) |******
+[ -1.2e-09: -8.5e-10)  1 (  5.0%) |***
+[ -8.5e-10: -4.6e-10)  1 (  5.0%) |***
+Placement contains 0 placement macros involving 0 blocks (average macro size -nan)
+
+Moves per temperature: 448
+Warning 269: Starting t: 9 of 164 configurations accepted.
+
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+Tnum   Time       T Av Cost Av BB Cost Av TD Cost     CPD       sTNS     sWNS Ac Rate Std Dev  R lim Crit Exp Tot Moves  Alpha
+      (sec)                                          (ns)       (ns)     (ns)                                                 
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+   1    0.0 9.2e-05   1.000       3.20 5.9115e-08   4.856      -74.3   -4.356   0.027  0.0000    5.0     1.00       448  0.200
+   2    0.0 0.0e+00   1.000       3.20 5.9115e-08   4.856      -74.3   -4.356   0.020  0.0000    5.0     1.00       896  0.950
+## Placement Quench took 0.00 seconds (max_rss 56.7 MiB)
+post-quench CPD = 4.85608 (ns) 
+
+BB estimate of min-dist (placement) wire length: 256
+
+Completed placement consistency check successfully.
+
+Swaps called: 1060
+
+Aborted Move Reasons:
+  No moves aborted
+
+Placement estimated critical path delay (least slack): 4.85608 ns, Fmax: 205.927 MHz
+Placement estimated setup Worst Negative Slack (sWNS): -4.35608 ns
+Placement estimated setup Total Negative Slack (sTNS): -74.2949 ns
+
+Placement estimated setup slack histogram:
+[ -4.4e-09:   -4e-09) 16 ( 80.0%) |************************************************
+[   -4e-09: -3.6e-09)  0 (  0.0%) |
+[ -3.6e-09: -3.2e-09)  0 (  0.0%) |
+[ -3.2e-09: -2.8e-09)  0 (  0.0%) |
+[ -2.8e-09: -2.4e-09)  0 (  0.0%) |
+[ -2.4e-09:   -2e-09)  0 (  0.0%) |
+[   -2e-09: -1.6e-09)  0 (  0.0%) |
+[ -1.6e-09: -1.2e-09)  2 ( 10.0%) |******
+[ -1.2e-09: -8.5e-10)  1 (  5.0%) |***
+[ -8.5e-10: -4.6e-10)  1 (  5.0%) |***
+
+Placement estimated geomean non-virtual intra-domain period: 4.85608 ns (205.927 MHz)
+Placement estimated fanout-weighted geomean non-virtual intra-domain period: 4.85608 ns (205.927 MHz)
+
+Placement cost: 1, bb_cost: 3.20418, td_cost: 5.9115e-08, 
+
+Placement resource usage:
+  insite      implemented as iotile     : 33
+  outsite     implemented as iotile     : 128
+  custmulsite implemented as custmultile: 1
+  clbsite     implemented as clbalutile : 2
+
+Placement number of temperatures: 2
+Placement total # of swap attempts: 1060
+	Swaps accepted:   30 ( 2.8 %)
+	Swaps rejected:  370 (34.9 %)
+	Swaps aborted :  660 (62.3 %)
+
+
+Percentage of different move types:
+	Uniform move: 8.30 % (acc=6.82 %, rej=34.09 %, aborted=59.09 %)
+	Median move: 9.43 % (acc=0.00 %, rej=25.00 %, aborted=75.00 %)
+	W. Centroid move: 8.02 % (acc=5.88 %, rej=41.18 %, aborted=52.94 %)
+	Centroid move: 55.57 % (acc=3.23 %, rej=44.82 %, aborted=51.95 %)
+	W. Median move: 5.47 % (acc=0.00 %, rej=27.59 %, aborted=72.41 %)
+	Crit. Uniform move: 6.79 % (acc=0.00 %, rej=0.00 %, aborted=100.00 %)
+	Feasible Region move: 6.42 % (acc=0.00 %, rej=0.00 %, aborted=100.00 %)
+
+Placement Quench timing analysis took 0.000130026 seconds (0.000118054 STA, 1.1972e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 0.000630873 seconds (0.00057798 STA, 5.2893e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
+update_td_costs: connections 0 nets 0 sum_nets 0 total 0
+# Placement took 0.01 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+Confirming router algorithm: TIMING_DRIVEN.
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 112 ( 68.3%) |***********************************************
+[      0.1:      0.2)   0 (  0.0%) |
+[      0.2:      0.3)   2 (  1.2%) |*
+[      0.3:      0.4)   2 (  1.2%) |*
+[      0.4:      0.5)   0 (  0.0%) |
+[      0.5:      0.6)   0 (  0.0%) |
+[      0.6:      0.7)   0 (  0.0%) |
+[      0.7:      0.8)   0 (  0.0%) |
+[      0.8:      0.9)   0 (  0.0%) |
+[      0.9:        1)  48 ( 29.3%) |********************
+## Initializing router criticalities took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0   19054      51     162      33 ( 0.920%)     394 (12.3%)    5.848     -79.52     -5.348      0.000      0.000      N/A
+Incr Slack updates 4 in 1.3535e-05 sec
+Full Max Req/Worst Slack updates 1 in 4.683e-06 sec
+Incr Max Req/Worst Slack updates 3 in 1.1213e-05 sec
+Incr Criticality updates 3 in 1.281e-05 sec
+Full Criticality updates 1 in 5.843e-06 sec
+   2    0.0     0.5    0   19204      33     125      30 ( 0.837%)     414 (12.9%)    5.848     -80.24     -5.348      0.000      0.000      N/A
+   3    0.0     0.6    0   17326      28     115      24 ( 0.669%)     407 (12.7%)    5.848     -80.24     -5.348      0.000      0.000      N/A
+   4    0.0     0.8    0   11054      25      50      16 ( 0.446%)     424 (13.2%)    5.938     -81.62     -5.438      0.000      0.000      N/A
+   5    0.0     1.1    0    9033      21      38      18 ( 0.502%)     448 (14.0%)    5.938     -81.86     -5.438      0.000      0.000      N/A
+   6    0.0     1.4    0    5273      17      20      11 ( 0.307%)     450 (14.1%)    5.938     -81.86     -5.438      0.000      0.000      N/A
+   7    0.0     1.9    0    2891      13      13       9 ( 0.251%)     457 (14.3%)    6.028     -82.04     -5.528      0.000      0.000      N/A
+   8    0.0     2.4    0    4551      13      13       7 ( 0.195%)     461 (14.4%)    6.118     -83.66     -5.618      0.000      0.000      N/A
+   9    0.0     3.1    0    2647      11      11       4 ( 0.112%)     470 (14.7%)    6.028     -83.66     -5.528      0.000      0.000      N/A
+  10    0.0     4.1    0    3913      12      14       3 ( 0.084%)     466 (14.6%)    6.568     -86.82     -6.068      0.000      0.000       13
+  11    0.0     5.3    0    1686       8       8       3 ( 0.084%)     456 (14.2%)    6.208     -83.57     -5.708      0.000      0.000       13
+  12    0.0     6.9    0    1882       9       9       2 ( 0.056%)     451 (14.1%)    5.938     -82.22     -5.438      0.000      0.000       14
+  13    0.0     9.0    0    1030       2       2       0 ( 0.000%)     462 (14.4%)    6.749     -87.00     -6.249      0.000      0.000       14
+Restoring best routing
+Critical path: 6.74898 ns
+Successfully routed after 13 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 112 ( 68.3%) |***********************************************
+[      0.1:      0.2)   0 (  0.0%) |
+[      0.2:      0.3)   2 (  1.2%) |*
+[      0.3:      0.4)   0 (  0.0%) |
+[      0.4:      0.5)   2 (  1.2%) |*
+[      0.5:      0.6)   0 (  0.0%) |
+[      0.6:      0.7)   0 (  0.0%) |
+[      0.7:      0.8)   9 (  5.5%) |****
+[      0.8:      0.9)   9 (  5.5%) |****
+[      0.9:        1)  30 ( 18.3%) |*************
+Router Stats: total_nets_routed: 243 total_connections_routed: 580 total_heap_pushes: 99544 total_heap_pops: 39406 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 99544 total_external_heap_pops: 39406 total_external_SOURCE_pushes: 245 total_external_SOURCE_pops: 245 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 245 rt_node_SOURCE_high_fanout_pushes: 5 rt_node_SOURCE_entire_tree_pushes: 240 total_external_SINK_pushes: 9002 total_external_SINK_pops: 8589 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 13079 total_external_IPIN_pops: 9425 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 250 total_external_OPIN_pops: 250 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 9 rt_node_OPIN_high_fanout_pushes: 4 rt_node_OPIN_entire_tree_pushes: 5 total_external_CHANX_pushes: 38128 total_external_CHANX_pops: 11117 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 2501 rt_node_CHANX_high_fanout_pushes: 2492 rt_node_CHANX_entire_tree_pushes: 9 total_external_CHANY_pushes: 38840 total_external_CHANY_pops: 9780 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 1226 rt_node_CHANY_high_fanout_pushes: 1218 rt_node_CHANY_entire_tree_pushes: 8 total_number_of_adding_all_rt: 262 total_number_of_adding_high_fanout_rt: 341 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 44 
+# Routing took 0.02 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -16427728
+Circuit successfully routed with a channel width factor of 80.
+# Synchronize the packed netlist to routing optimization
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+Found 0 mismatches between routing and packing results.
+Fixed 0 routing traces due to mismatch between routing and packing results.
+# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 56.7 MiB, delta_rss +0.0 MiB)
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+    insite         33                                      0                            1   
+   outsite        128                                      1                            0   
+clbalusite          0                                      0                            0   
+custmulsite          1                                     33                           16   
+   clbsite          2                                    1.5                          1.5   
+Absorbed logical nets 0 out of 52 nets, 52 nets not absorbed.
+
+
+Average number of bends per net: 3.17647  Maximum # of bends: 68
+
+Number of global nets: 1
+Number of routed nets (nonglobal): 51
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 462, average net length: 9.05882
+	Maximum net length: 150
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 239, average wire segments per net: 4.68627
+	Maximum segments used by a net: 78
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)  0 (  0.0%) |
+[      0.9:        1)  0 (  0.0%) |
+[      0.8:      0.9)  0 (  0.0%) |
+[      0.7:      0.8)  0 (  0.0%) |
+[      0.5:      0.6)  0 (  0.0%) |
+[      0.4:      0.5)  4 (  8.0%) |******
+[      0.3:      0.4)  0 (  0.0%) |
+[      0.2:      0.3)  4 (  8.0%) |******
+[      0.1:      0.2) 12 ( 24.0%) |*******************
+[        0:      0.1) 30 ( 60.0%) |************************************************
+Maximum routing channel utilization:      0.49 at (4,4)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       9   3.167       80
+                         1      17   5.333       80
+                         2      21   7.500       80
+                         3      15   6.167       80
+                         4      39  15.667       80
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.333       80
+                         1       5   1.500       80
+                         2      10   4.667       80
+                         3      29  13.000       80
+                         4      34  19.667       80
+
+Total tracks in x-direction: 400, in y-direction: 400
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 86856.9
+	Total used logic block area: 21714.2
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 118891., per logic tile: 3302.52
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      2    426
+                                                      Y      2    426
+                                                      X      4    402
+                                                      Y      4    402
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            2       0.164
+                                            4       0.122
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            2       0.185
+                                            4       0.102
+
+Segment usage by type (index): name type utilization
+                               ---- ---- -----------
+                                 L4    0       0.224
+                                L4g    1       0.224
+                                 L2    2        0.35
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  2.6e-09:  2.6e-09) 1 (100.0%) |**************************************************
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+[  2.6e-09:  2.6e-09) 0 (  0.0%) |
+
+Final critical path delay (least slack): 6.74898 ns, Fmax: 148.171 MHz
+Final setup Worst Negative Slack (sWNS): -6.24898 ns
+Final setup Total Negative Slack (sTNS): -87.004 ns
+
+Final setup slack histogram:
+[ -6.2e-09: -5.7e-09) 1 (  5.0%) |******
+[ -5.7e-09: -5.2e-09) 6 ( 30.0%) |*************************************
+[ -5.2e-09: -4.7e-09) 1 (  5.0%) |******
+[ -4.7e-09: -4.2e-09) 8 ( 40.0%) |*************************************************
+[ -4.2e-09: -3.7e-09) 0 (  0.0%) |
+[ -3.7e-09: -3.2e-09) 0 (  0.0%) |
+[ -3.2e-09: -2.7e-09) 0 (  0.0%) |
+[ -2.7e-09: -2.2e-09) 1 (  5.0%) |******
+[ -2.2e-09: -1.7e-09) 1 (  5.0%) |******
+[ -1.7e-09: -1.2e-09) 2 ( 10.0%) |************
+
+Final geomean non-virtual intra-domain period: 6.74898 ns (148.171 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 6.74898 ns (148.171 MHz)
+
+Writing Implementation Netlist: custmuleg_post_synthesis.v
+Writing Implementation Netlist: custmuleg_post_synthesis.blif
+Writing Implementation SDF    : custmuleg_post_synthesis.sdf
+Incr Slack updates 1 in 4.285e-06 sec
+Full Max Req/Worst Slack updates 1 in 3.858e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 5.664e-06 sec
+Flow timing analysis took 0.00433902 seconds (0.00399958 STA, 0.000339443 slack) (20 full updates: 5 setup, 0 hold, 15 combined).
+VPR succeeded
+The entire flow of VPR took 0.18 seconds (max_rss 56.7 MiB)
+Incr Slack updates 14 in 4.8545e-05 sec
+Full Max Req/Worst Slack updates 6 in 2.1466e-05 sec
+Incr Max Req/Worst Slack updates 8 in 3.0392e-05 sec
+Incr Criticality updates 4 in 1.7607e-05 sec
+Full Criticality updates 10 in 4.5441e-05 sec

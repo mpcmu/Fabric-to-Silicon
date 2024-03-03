@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="requests_2.13-0.8.0.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/requests_2.13/0.8.0/requests_2.13-0.8.0.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/requests_2.13/0.8.0/requests_2.13-0.8.0-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

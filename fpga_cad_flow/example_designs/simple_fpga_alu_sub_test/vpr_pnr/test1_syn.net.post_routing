@@ -1,0 +1,2696 @@
+<?xml version="1.0"?>
+<block name="test1_syn.net.post_routing" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:e2fd9b9c9cc91d41b670d5e001fe3e6e9ca89448f6d03f5a39ad4ca4fbe1de05" atom_netlist_id="SHA256:e2bb2557409dcaaae4f119c3088322ca8488b7b5ab875c2d70b80d7faf47bbe4">
+	<inputs>io_cfu_cmd_valid io_cfu_cmd_payload_in0[0] io_cfu_cmd_payload_in0[1] io_cfu_cmd_payload_in0[2] io_cfu_cmd_payload_in0[3] io_cfu_cmd_payload_in0[4] io_cfu_cmd_payload_in0[5] io_cfu_cmd_payload_in0[6] io_cfu_cmd_payload_in0[7] io_cfu_cmd_payload_in0[8] io_cfu_cmd_payload_in0[9] io_cfu_cmd_payload_in0[10] io_cfu_cmd_payload_in0[11] io_cfu_cmd_payload_in0[12] io_cfu_cmd_payload_in0[13] io_cfu_cmd_payload_in0[14] io_cfu_cmd_payload_in0[15] io_cfu_cmd_payload_in1[0] io_cfu_cmd_payload_in1[1] io_cfu_cmd_payload_in1[2] io_cfu_cmd_payload_in1[3] io_cfu_cmd_payload_in1[4] io_cfu_cmd_payload_in1[5] io_cfu_cmd_payload_in1[6] io_cfu_cmd_payload_in1[7] io_cfu_cmd_payload_in1[8] io_cfu_cmd_payload_in1[9] io_cfu_cmd_payload_in1[10] io_cfu_cmd_payload_in1[11] io_cfu_cmd_payload_in1[12] io_cfu_cmd_payload_in1[13] io_cfu_cmd_payload_in1[14] io_cfu_cmd_payload_in1[15] io_cfu_cmd_payload_raw_insn[12] io_cfu_cmd_payload_raw_insn[13] io_cfu_cmd_payload_raw_insn[14] io_cfu_cmd_payload_raw_insn[25] io_cfu_cmd_payload_raw_insn[26] io_cfu_cmd_payload_raw_insn[27] io_cfu_cmd_payload_raw_insn[28] io_cfu_rsp_ready io_gpio_read[0] io_gpio_read[1] io_gpio_read[2] io_gpio_read[3] io_gpio_read[4] io_gpio_read[5] io_gpio_read[6] io_gpio_read[7] clk</inputs>
+	<outputs>out:io_cfu_cmd_ready out:io_cfu_rsp_valid out:io_cfu_rsp_payload_output[0] out:io_cfu_rsp_payload_output[1] out:io_cfu_rsp_payload_output[2] out:io_cfu_rsp_payload_output[3] out:io_cfu_rsp_payload_output[4] out:io_cfu_rsp_payload_output[5] out:io_cfu_rsp_payload_output[6] out:io_cfu_rsp_payload_output[7] out:io_cfu_rsp_payload_output[8] out:io_cfu_rsp_payload_output[9] out:io_cfu_rsp_payload_output[10] out:io_cfu_rsp_payload_output[11] out:io_cfu_rsp_payload_output[12] out:io_cfu_rsp_payload_output[13] out:io_cfu_rsp_payload_output[14] out:io_cfu_rsp_payload_output[15] out:io_cfu_rsp_payload_output[16] out:io_cfu_rsp_payload_output[17] out:io_cfu_rsp_payload_output[18] out:io_cfu_rsp_payload_output[19] out:io_cfu_rsp_payload_output[20] out:io_cfu_rsp_payload_output[21] out:io_cfu_rsp_payload_output[22] out:io_cfu_rsp_payload_output[23] out:io_cfu_rsp_payload_output[24] out:io_cfu_rsp_payload_output[25] out:io_cfu_rsp_payload_output[26] out:io_cfu_rsp_payload_output[27] out:io_cfu_rsp_payload_output[28] out:io_cfu_rsp_payload_output[29] out:io_cfu_rsp_payload_output[30] out:io_cfu_rsp_payload_output[31] out:io_cfu_rsp_payload_status[0] out:io_cfu_rsp_payload_status[1] out:io_cfu_rsp_payload_status[2] out:io_gpio_write[0] out:io_gpio_write[1] out:io_gpio_write[2] out:io_gpio_write[3] out:io_gpio_write[4] out:io_gpio_write[5] out:io_gpio_write[6] out:io_gpio_write[7] out:io_gpio_writeEnable[0] out:io_gpio_writeEnable[1] out:io_gpio_writeEnable[2] out:io_gpio_writeEnable[3] out:io_gpio_writeEnable[4] out:io_gpio_writeEnable[5] out:io_gpio_writeEnable[6] out:io_gpio_writeEnable[7] out:io_statusOuts[0] out:io_statusOuts[1] out:io_statusOuts[2] out:io_statusOuts[3] out:io_statusOuts[4] out:io_statusOuts[5] out:io_statusOuts[6] out:io_statusOuts[7] out:io_statusOuts[8] out:io_statusOuts[9] out:io_statusOuts[10] out:io_statusOuts[11] out:io_statusOuts[12] out:io_statusOuts[13] out:io_statusOuts[14] out:io_statusOuts[15] out:io_statusOuts[16] out:io_statusOuts[17] out:io_statusOuts[18] out:io_statusOuts[19] out:io_statusOuts[20] out:io_statusOuts[21] out:io_statusOuts[22] out:io_statusOuts[23] out:io_statusOuts[24] out:io_statusOuts[25] out:io_statusOuts[26] out:io_statusOuts[27] out:io_statusOuts[28] out:io_statusOuts[29] out:io_statusOuts[30] out:io_statusOuts[31]</outputs>
+	<clocks>clk</clocks>
+	<block name="fqmul_1.alu3" instance="clbalumsite[0]" mode="ALU16">
+		<inputs>
+			<port name="I">fqmul_1.alu2_Q[0] fqmul_1.alu2_Q[1] fqmul_1.alu2_Q[2] fqmul_1.alu2_Q[3] fqmul_1.alu2_Q[4] fqmul_1.alu2_Q[5] fqmul_1.alu2_Q[6] fqmul_1.alu2_Q[7] fqmul_1.alu2_Q[8] fqmul_1.alu2_Q[9] fqmul_1.alu2_Q[10] fqmul_1.alu2_Q[11] fqmul_1.alu2_Q[12] fqmul_1.alu2_Q[13] fqmul_1.alu2_Q[14] fqmul_1.alu2_Q[15] $true $true $true $true $true $true $true $true $false $true $false $false $true $true $true $true $false $false $true $false $false $false $false $false</port>
+			<port name="R">open</port>
+			<port name="IB32T">fqmul_1.alu1_OB32[0] fqmul_1.alu1_OB32[1] fqmul_1.alu1_OB32[2] fqmul_1.alu1_OB32[3] fqmul_1.alu1_OB32[4] fqmul_1.alu1_OB32[5] fqmul_1.alu1_OB32[6] fqmul_1.alu1_OB32[7] fqmul_1.alu1_OB32[8] fqmul_1.alu1_OB32[9] fqmul_1.alu1_OB32[10] fqmul_1.alu1_OB32[11] fqmul_1.alu1_OB32[12] fqmul_1.alu1_OB32[13] fqmul_1.alu1_OB32[14] fqmul_1.alu1_OB32[15] fqmul_1.alu1_OB32[16] fqmul_1.alu1_OB32[17] fqmul_1.alu1_OB32[18] fqmul_1.alu1_OB32[19] fqmul_1.alu1_OB32[20] fqmul_1.alu1_OB32[21] fqmul_1.alu1_OB32[22] fqmul_1.alu1_OB32[23] fqmul_1.alu1_OB32[24] fqmul_1.alu1_OB32[25] fqmul_1.alu1_OB32[26] fqmul_1.alu1_OB32[27] fqmul_1.alu1_OB32[28] fqmul_1.alu1_OB32[29] fqmul_1.alu1_OB32[30] fqmul_1.alu1_OB32[31]</port>
+		</inputs>
+		<outputs>
+			<port name="Q">CLBALUM[0].Q[0]-&gt;Q CLBALUM[0].Q[1]-&gt;Q CLBALUM[0].Q[2]-&gt;Q CLBALUM[0].Q[3]-&gt;Q CLBALUM[0].Q[4]-&gt;Q CLBALUM[0].Q[5]-&gt;Q CLBALUM[0].Q[6]-&gt;Q CLBALUM[0].Q[7]-&gt;Q CLBALUM[0].Q[8]-&gt;Q CLBALUM[0].Q[9]-&gt;Q CLBALUM[0].Q[10]-&gt;Q CLBALUM[0].Q[11]-&gt;Q CLBALUM[0].Q[12]-&gt;Q CLBALUM[0].Q[13]-&gt;Q CLBALUM[0].Q[14]-&gt;Q CLBALUM[0].Q[15]-&gt;Q</port>
+			<port name="OB32">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</outputs>
+		<clocks>
+			<port name="C">clk</port>
+		</clocks>
+		<block name="fqmul_1.alu3" instance="CLBALUM[0]">
+			<attributes />
+			<parameters>
+				<parameter name="MODE_ALU">00000000000000000000000000010000</parameter>
+			</parameters>
+			<inputs>
+				<port name="I0">clbalumsite.I[0]-&gt;I0 clbalumsite.I[1]-&gt;I0 clbalumsite.I[2]-&gt;I0 clbalumsite.I[3]-&gt;I0 clbalumsite.I[4]-&gt;I0 clbalumsite.I[5]-&gt;I0 clbalumsite.I[6]-&gt;I0 clbalumsite.I[7]-&gt;I0 clbalumsite.I[8]-&gt;I0 clbalumsite.I[9]-&gt;I0 clbalumsite.I[10]-&gt;I0 clbalumsite.I[11]-&gt;I0 clbalumsite.I[12]-&gt;I0 clbalumsite.I[13]-&gt;I0 clbalumsite.I[14]-&gt;I0 clbalumsite.I[15]-&gt;I0</port>
+				<port name="I1">clbalumsite.I[16]-&gt;I1 clbalumsite.I[17]-&gt;I1 clbalumsite.I[18]-&gt;I1 clbalumsite.I[19]-&gt;I1 clbalumsite.I[20]-&gt;I1 clbalumsite.I[21]-&gt;I1 clbalumsite.I[22]-&gt;I1 clbalumsite.I[23]-&gt;I1 clbalumsite.I[24]-&gt;I1 clbalumsite.I[25]-&gt;I1 clbalumsite.I[26]-&gt;I1 clbalumsite.I[27]-&gt;I1 clbalumsite.I[28]-&gt;I1 clbalumsite.I[29]-&gt;I1 clbalumsite.I[30]-&gt;I1 clbalumsite.I[31]-&gt;I1</port>
+				<port name="CTRL">clbalumsite.I[32]-&gt;CTRL clbalumsite.I[33]-&gt;CTRL clbalumsite.I[34]-&gt;CTRL clbalumsite.I[35]-&gt;CTRL clbalumsite.I[36]-&gt;CTRL clbalumsite.I[37]-&gt;CTRL clbalumsite.I[38]-&gt;CTRL clbalumsite.I[39]-&gt;CTRL</port>
+				<port name="R">open</port>
+				<port name="IB32T">clbalumsite.IB32T[0]-&gt;IB32T clbalumsite.IB32T[1]-&gt;IB32T clbalumsite.IB32T[2]-&gt;IB32T clbalumsite.IB32T[3]-&gt;IB32T clbalumsite.IB32T[4]-&gt;IB32T clbalumsite.IB32T[5]-&gt;IB32T clbalumsite.IB32T[6]-&gt;IB32T clbalumsite.IB32T[7]-&gt;IB32T clbalumsite.IB32T[8]-&gt;IB32T clbalumsite.IB32T[9]-&gt;IB32T clbalumsite.IB32T[10]-&gt;IB32T clbalumsite.IB32T[11]-&gt;IB32T clbalumsite.IB32T[12]-&gt;IB32T clbalumsite.IB32T[13]-&gt;IB32T clbalumsite.IB32T[14]-&gt;IB32T clbalumsite.IB32T[15]-&gt;IB32T clbalumsite.IB32T[16]-&gt;IB32T clbalumsite.IB32T[17]-&gt;IB32T clbalumsite.IB32T[18]-&gt;IB32T clbalumsite.IB32T[19]-&gt;IB32T clbalumsite.IB32T[20]-&gt;IB32T clbalumsite.IB32T[21]-&gt;IB32T clbalumsite.IB32T[22]-&gt;IB32T clbalumsite.IB32T[23]-&gt;IB32T clbalumsite.IB32T[24]-&gt;IB32T clbalumsite.IB32T[25]-&gt;IB32T clbalumsite.IB32T[26]-&gt;IB32T clbalumsite.IB32T[27]-&gt;IB32T clbalumsite.IB32T[28]-&gt;IB32T clbalumsite.IB32T[29]-&gt;IB32T clbalumsite.IB32T[30]-&gt;IB32T clbalumsite.IB32T[31]-&gt;IB32T</port>
+			</inputs>
+			<outputs>
+				<port name="Q">fqmul_1.alu3_Q[0] fqmul_1.alu3_Q[1] fqmul_1.alu3_Q[2] fqmul_1.alu3_Q[3] fqmul_1.alu3_Q[4] fqmul_1.alu3_Q[5] fqmul_1.alu3_Q[6] fqmul_1.alu3_Q[7] fqmul_1.alu3_Q[8] fqmul_1.alu3_Q[9] fqmul_1.alu3_Q[10] fqmul_1.alu3_Q[11] fqmul_1.alu3_Q[12] fqmul_1.alu3_Q[13] fqmul_1.alu3_Q[14] fqmul_1.alu3_Q[15]</port>
+				<port name="OB32">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			</outputs>
+			<clocks>
+				<port name="C">clbalumsite.C[0]-&gt;C</port>
+			</clocks>
+		</block>
+	</block>
+	<block name="fqmul_1.alu2" instance="clbalumsite[1]" mode="ALU16">
+		<inputs>
+			<port name="I">fqmul_1.alu1_Q[0] fqmul_1.alu1_Q[1] fqmul_1.alu1_Q[2] fqmul_1.alu1_Q[3] fqmul_1.alu1_Q[4] fqmul_1.alu1_Q[5] fqmul_1.alu1_Q[6] fqmul_1.alu1_Q[7] fqmul_1.alu1_Q[8] fqmul_1.alu1_Q[9] fqmul_1.alu1_Q[10] fqmul_1.alu1_Q[11] fqmul_1.alu1_Q[12] fqmul_1.alu1_Q[13] fqmul_1.alu1_Q[14] fqmul_1.alu1_Q[15] $true $false $false $false $false $false $false $false $true $true $false $false $true $true $true $true $false $false $false $false $false $false $false $false</port>
+			<port name="R">open</port>
+			<port name="IB32T">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</inputs>
+		<outputs>
+			<port name="Q">CLBALUM[0].Q[0]-&gt;Q CLBALUM[0].Q[1]-&gt;Q CLBALUM[0].Q[2]-&gt;Q CLBALUM[0].Q[3]-&gt;Q CLBALUM[0].Q[4]-&gt;Q CLBALUM[0].Q[5]-&gt;Q CLBALUM[0].Q[6]-&gt;Q CLBALUM[0].Q[7]-&gt;Q CLBALUM[0].Q[8]-&gt;Q CLBALUM[0].Q[9]-&gt;Q CLBALUM[0].Q[10]-&gt;Q CLBALUM[0].Q[11]-&gt;Q CLBALUM[0].Q[12]-&gt;Q CLBALUM[0].Q[13]-&gt;Q CLBALUM[0].Q[14]-&gt;Q CLBALUM[0].Q[15]-&gt;Q</port>
+			<port name="OB32">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</outputs>
+		<clocks>
+			<port name="C">clk</port>
+		</clocks>
+		<block name="fqmul_1.alu2" instance="CLBALUM[0]">
+			<attributes />
+			<parameters>
+				<parameter name="MODE_ALU">00000000000000000000000000001000</parameter>
+			</parameters>
+			<inputs>
+				<port name="I0">clbalumsite.I[0]-&gt;I0 clbalumsite.I[1]-&gt;I0 clbalumsite.I[2]-&gt;I0 clbalumsite.I[3]-&gt;I0 clbalumsite.I[4]-&gt;I0 clbalumsite.I[5]-&gt;I0 clbalumsite.I[6]-&gt;I0 clbalumsite.I[7]-&gt;I0 clbalumsite.I[8]-&gt;I0 clbalumsite.I[9]-&gt;I0 clbalumsite.I[10]-&gt;I0 clbalumsite.I[11]-&gt;I0 clbalumsite.I[12]-&gt;I0 clbalumsite.I[13]-&gt;I0 clbalumsite.I[14]-&gt;I0 clbalumsite.I[15]-&gt;I0</port>
+				<port name="I1">clbalumsite.I[16]-&gt;I1 clbalumsite.I[17]-&gt;I1 clbalumsite.I[18]-&gt;I1 clbalumsite.I[19]-&gt;I1 clbalumsite.I[20]-&gt;I1 clbalumsite.I[21]-&gt;I1 clbalumsite.I[22]-&gt;I1 clbalumsite.I[23]-&gt;I1 clbalumsite.I[24]-&gt;I1 clbalumsite.I[25]-&gt;I1 clbalumsite.I[26]-&gt;I1 clbalumsite.I[27]-&gt;I1 clbalumsite.I[28]-&gt;I1 clbalumsite.I[29]-&gt;I1 clbalumsite.I[30]-&gt;I1 clbalumsite.I[31]-&gt;I1</port>
+				<port name="CTRL">clbalumsite.I[32]-&gt;CTRL clbalumsite.I[33]-&gt;CTRL clbalumsite.I[34]-&gt;CTRL clbalumsite.I[35]-&gt;CTRL clbalumsite.I[36]-&gt;CTRL clbalumsite.I[37]-&gt;CTRL clbalumsite.I[38]-&gt;CTRL clbalumsite.I[39]-&gt;CTRL</port>
+				<port name="R">open</port>
+				<port name="IB32T">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="Q">fqmul_1.alu2_Q[0] fqmul_1.alu2_Q[1] fqmul_1.alu2_Q[2] fqmul_1.alu2_Q[3] fqmul_1.alu2_Q[4] fqmul_1.alu2_Q[5] fqmul_1.alu2_Q[6] fqmul_1.alu2_Q[7] fqmul_1.alu2_Q[8] fqmul_1.alu2_Q[9] fqmul_1.alu2_Q[10] fqmul_1.alu2_Q[11] fqmul_1.alu2_Q[12] fqmul_1.alu2_Q[13] fqmul_1.alu2_Q[14] fqmul_1.alu2_Q[15]</port>
+				<port name="OB32">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			</outputs>
+			<clocks>
+				<port name="C">clbalumsite.C[0]-&gt;C</port>
+			</clocks>
+		</block>
+	</block>
+	<block name="fqmul_1.alu1" instance="clbalumsite[2]" mode="ALU16">
+		<inputs>
+			<port name="I">io_cfu_cmd_payload_in0[0] io_cfu_cmd_payload_in0[1] io_cfu_cmd_payload_in0[2] io_cfu_cmd_payload_in0[3] io_cfu_cmd_payload_in0[4] io_cfu_cmd_payload_in0[5] io_cfu_cmd_payload_in0[6] io_cfu_cmd_payload_in0[7] io_cfu_cmd_payload_in0[8] io_cfu_cmd_payload_in0[9] io_cfu_cmd_payload_in0[10] io_cfu_cmd_payload_in0[11] io_cfu_cmd_payload_in0[12] io_cfu_cmd_payload_in0[13] io_cfu_cmd_payload_in0[14] io_cfu_cmd_payload_in0[15] io_cfu_cmd_payload_in1[0] io_cfu_cmd_payload_in1[1] io_cfu_cmd_payload_in1[2] io_cfu_cmd_payload_in1[3] io_cfu_cmd_payload_in1[4] io_cfu_cmd_payload_in1[5] io_cfu_cmd_payload_in1[6] io_cfu_cmd_payload_in1[7] io_cfu_cmd_payload_in1[8] io_cfu_cmd_payload_in1[9] io_cfu_cmd_payload_in1[10] io_cfu_cmd_payload_in1[11] io_cfu_cmd_payload_in1[12] io_cfu_cmd_payload_in1[13] io_cfu_cmd_payload_in1[14] io_cfu_cmd_payload_in1[15] $false $false $false $false $false $false $false $false</port>
+			<port name="R">open</port>
+			<port name="IB32T">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</inputs>
+		<outputs>
+			<port name="Q">CLBALUM[0].Q[0]-&gt;Q CLBALUM[0].Q[1]-&gt;Q CLBALUM[0].Q[2]-&gt;Q CLBALUM[0].Q[3]-&gt;Q CLBALUM[0].Q[4]-&gt;Q CLBALUM[0].Q[5]-&gt;Q CLBALUM[0].Q[6]-&gt;Q CLBALUM[0].Q[7]-&gt;Q CLBALUM[0].Q[8]-&gt;Q CLBALUM[0].Q[9]-&gt;Q CLBALUM[0].Q[10]-&gt;Q CLBALUM[0].Q[11]-&gt;Q CLBALUM[0].Q[12]-&gt;Q CLBALUM[0].Q[13]-&gt;Q CLBALUM[0].Q[14]-&gt;Q CLBALUM[0].Q[15]-&gt;Q</port>
+			<port name="OB32">CLBALUM[0].OB32[0]-&gt;OB32 CLBALUM[0].OB32[1]-&gt;OB32 CLBALUM[0].OB32[2]-&gt;OB32 CLBALUM[0].OB32[3]-&gt;OB32 CLBALUM[0].OB32[4]-&gt;OB32 CLBALUM[0].OB32[5]-&gt;OB32 CLBALUM[0].OB32[6]-&gt;OB32 CLBALUM[0].OB32[7]-&gt;OB32 CLBALUM[0].OB32[8]-&gt;OB32 CLBALUM[0].OB32[9]-&gt;OB32 CLBALUM[0].OB32[10]-&gt;OB32 CLBALUM[0].OB32[11]-&gt;OB32 CLBALUM[0].OB32[12]-&gt;OB32 CLBALUM[0].OB32[13]-&gt;OB32 CLBALUM[0].OB32[14]-&gt;OB32 CLBALUM[0].OB32[15]-&gt;OB32 CLBALUM[0].OB32[16]-&gt;OB32 CLBALUM[0].OB32[17]-&gt;OB32 CLBALUM[0].OB32[18]-&gt;OB32 CLBALUM[0].OB32[19]-&gt;OB32 CLBALUM[0].OB32[20]-&gt;OB32 CLBALUM[0].OB32[21]-&gt;OB32 CLBALUM[0].OB32[22]-&gt;OB32 CLBALUM[0].OB32[23]-&gt;OB32 CLBALUM[0].OB32[24]-&gt;OB32 CLBALUM[0].OB32[25]-&gt;OB32 CLBALUM[0].OB32[26]-&gt;OB32 CLBALUM[0].OB32[27]-&gt;OB32 CLBALUM[0].OB32[28]-&gt;OB32 CLBALUM[0].OB32[29]-&gt;OB32 CLBALUM[0].OB32[30]-&gt;OB32 CLBALUM[0].OB32[31]-&gt;OB32</port>
+		</outputs>
+		<clocks>
+			<port name="C">clk</port>
+		</clocks>
+		<block name="fqmul_1.alu1" instance="CLBALUM[0]">
+			<attributes />
+			<parameters>
+				<parameter name="MODE_ALU">00000000000000000000000000010000</parameter>
+			</parameters>
+			<inputs>
+				<port name="I0">clbalumsite.I[0]-&gt;I0 clbalumsite.I[1]-&gt;I0 clbalumsite.I[2]-&gt;I0 clbalumsite.I[3]-&gt;I0 clbalumsite.I[4]-&gt;I0 clbalumsite.I[5]-&gt;I0 clbalumsite.I[6]-&gt;I0 clbalumsite.I[7]-&gt;I0 clbalumsite.I[8]-&gt;I0 clbalumsite.I[9]-&gt;I0 clbalumsite.I[10]-&gt;I0 clbalumsite.I[11]-&gt;I0 clbalumsite.I[12]-&gt;I0 clbalumsite.I[13]-&gt;I0 clbalumsite.I[14]-&gt;I0 clbalumsite.I[15]-&gt;I0</port>
+				<port name="I1">clbalumsite.I[16]-&gt;I1 clbalumsite.I[17]-&gt;I1 clbalumsite.I[18]-&gt;I1 clbalumsite.I[19]-&gt;I1 clbalumsite.I[20]-&gt;I1 clbalumsite.I[21]-&gt;I1 clbalumsite.I[22]-&gt;I1 clbalumsite.I[23]-&gt;I1 clbalumsite.I[24]-&gt;I1 clbalumsite.I[25]-&gt;I1 clbalumsite.I[26]-&gt;I1 clbalumsite.I[27]-&gt;I1 clbalumsite.I[28]-&gt;I1 clbalumsite.I[29]-&gt;I1 clbalumsite.I[30]-&gt;I1 clbalumsite.I[31]-&gt;I1</port>
+				<port name="CTRL">clbalumsite.I[32]-&gt;CTRL clbalumsite.I[33]-&gt;CTRL clbalumsite.I[34]-&gt;CTRL clbalumsite.I[35]-&gt;CTRL clbalumsite.I[36]-&gt;CTRL clbalumsite.I[37]-&gt;CTRL clbalumsite.I[38]-&gt;CTRL clbalumsite.I[39]-&gt;CTRL</port>
+				<port name="R">open</port>
+				<port name="IB32T">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="Q">fqmul_1.alu1_Q[0] fqmul_1.alu1_Q[1] fqmul_1.alu1_Q[2] fqmul_1.alu1_Q[3] fqmul_1.alu1_Q[4] fqmul_1.alu1_Q[5] fqmul_1.alu1_Q[6] fqmul_1.alu1_Q[7] fqmul_1.alu1_Q[8] fqmul_1.alu1_Q[9] fqmul_1.alu1_Q[10] fqmul_1.alu1_Q[11] fqmul_1.alu1_Q[12] fqmul_1.alu1_Q[13] fqmul_1.alu1_Q[14] fqmul_1.alu1_Q[15]</port>
+				<port name="OB32">fqmul_1.alu1_OB32[0] fqmul_1.alu1_OB32[1] fqmul_1.alu1_OB32[2] fqmul_1.alu1_OB32[3] fqmul_1.alu1_OB32[4] fqmul_1.alu1_OB32[5] fqmul_1.alu1_OB32[6] fqmul_1.alu1_OB32[7] fqmul_1.alu1_OB32[8] fqmul_1.alu1_OB32[9] fqmul_1.alu1_OB32[10] fqmul_1.alu1_OB32[11] fqmul_1.alu1_OB32[12] fqmul_1.alu1_OB32[13] fqmul_1.alu1_OB32[14] fqmul_1.alu1_OB32[15] fqmul_1.alu1_OB32[16] fqmul_1.alu1_OB32[17] fqmul_1.alu1_OB32[18] fqmul_1.alu1_OB32[19] fqmul_1.alu1_OB32[20] fqmul_1.alu1_OB32[21] fqmul_1.alu1_OB32[22] fqmul_1.alu1_OB32[23] fqmul_1.alu1_OB32[24] fqmul_1.alu1_OB32[25] fqmul_1.alu1_OB32[26] fqmul_1.alu1_OB32[27] fqmul_1.alu1_OB32[28] fqmul_1.alu1_OB32[29] fqmul_1.alu1_OB32[30] fqmul_1.alu1_OB32[31]</port>
+			</outputs>
+			<clocks>
+				<port name="C">clbalumsite.C[0]-&gt;C</port>
+			</clocks>
+		</block>
+	</block>
+	<block name="io_gpio_write[0]" instance="clbsite[3]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_read[1] io_cfu_cmd_valid io_cfu_cmd_valid open io_cfu_cmd_valid open io_cfu_cmd_valid io_cfu_cmd_payload_raw_insn[12] open io_cfu_cmd_payload_raw_insn[14] io_cfu_cmd_payload_raw_insn[25] io_cfu_cmd_payload_raw_insn[26] open io_cfu_cmd_payload_raw_insn[28] open io_gpio_read[0] io_cfu_cmd_payload_raw_insn[13] open io_gpio_read[4] io_gpio_read[5] io_cfu_cmd_payload_raw_insn[27] io_cfu_cmd_valid open open io_cfu_cmd_valid io_gpio_read[2] open io_cfu_cmd_valid io_gpio_read[6] io_gpio_read[7] io_gpio_read[3] io_cfu_cmd_valid open open open open open open open open</port>
+			<port name="R">open</port>
+		</inputs>
+		<outputs>
+			<port name="O">ble[0].out_right[0]-&gt;clbouts_right ble[1].out_right[0]-&gt;clbouts_right ble[2].out_right[0]-&gt;clbouts_right ble[3].out_right[0]-&gt;clbouts_right ble[4].out_right[0]-&gt;clbouts_right ble[5].out_right[0]-&gt;clbouts_right ble[6].out_right[0]-&gt;clbouts_right ble[7].out_right[0]-&gt;clbouts_right open open open open open open open open</port>
+		</outputs>
+		<clocks>
+			<port name="clk">open</port>
+		</clocks>
+		<block name="io_gpio_write[1]" instance="ble[0]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[0]-&gt;BLE_inA</port>
+				<port name="in_B">open</port>
+				<port name="in_C">clbsite.I[16]-&gt;BLE_inC</port>
+				<port name="in_D">clbsite.I[24]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[1]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 open ble.in_C[0]-&gt;direct3 ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[1]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 open lut4.in[2]-&gt;direct:lut4 lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">2 open 1 0</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[1]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[2]" instance="ble[1]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[1]-&gt;BLE_inA</port>
+				<port name="in_B">clbsite.I[9]-&gt;BLE_inB</port>
+				<port name="in_C">open</port>
+				<port name="in_D">clbsite.I[25]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[2]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 ble.in_B[0]-&gt;direct2 open ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[2]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 lut4.in[1]-&gt;direct:lut4 open lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">0 1 open 2</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[2]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[4]" instance="ble[2]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[2]-&gt;BLE_inA</port>
+				<port name="in_B">clbsite.I[10]-&gt;BLE_inB</port>
+				<port name="in_C">clbsite.I[18]-&gt;BLE_inC</port>
+				<port name="in_D">open</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[4]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 ble.in_B[0]-&gt;direct2 ble.in_C[0]-&gt;direct3 open</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[4]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 lut4.in[1]-&gt;direct:lut4 lut4.in[2]-&gt;direct:lut4 open</port>
+						<port_rotation_map name="in">0 1 2 open</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[4]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[5]" instance="ble[3]" mode="ble4">
+			<inputs>
+				<port name="in_A">open</port>
+				<port name="in_B">clbsite.I[11]-&gt;BLE_inB</port>
+				<port name="in_C">clbsite.I[19]-&gt;BLE_inC</port>
+				<port name="in_D">clbsite.I[27]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[5]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">open ble.in_B[0]-&gt;direct2 ble.in_C[0]-&gt;direct3 ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[5]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">open lut4.in[1]-&gt;direct:lut4 lut4.in[2]-&gt;direct:lut4 lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">open 1 2 0</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[5]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[6]" instance="ble[4]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[4]-&gt;BLE_inA</port>
+				<port name="in_B">open</port>
+				<port name="in_C">clbsite.I[20]-&gt;BLE_inC</port>
+				<port name="in_D">clbsite.I[28]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[6]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 open ble.in_C[0]-&gt;direct3 ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[6]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 open lut4.in[2]-&gt;direct:lut4 lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">0 open 1 2</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[6]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[7]" instance="ble[5]" mode="ble4">
+			<inputs>
+				<port name="in_A">open</port>
+				<port name="in_B">clbsite.I[13]-&gt;BLE_inB</port>
+				<port name="in_C">clbsite.I[21]-&gt;BLE_inC</port>
+				<port name="in_D">clbsite.I[29]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[7]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">open ble.in_B[0]-&gt;direct2 ble.in_C[0]-&gt;direct3 ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[7]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">open lut4.in[1]-&gt;direct:lut4 lut4.in[2]-&gt;direct:lut4 lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">open 1 0 2</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[7]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[3]" instance="ble[6]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[6]-&gt;BLE_inA</port>
+				<port name="in_B">open</port>
+				<port name="in_C">open</port>
+				<port name="in_D">clbsite.I[30]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[3]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 open open ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[3]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 open open lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">1 open open 0</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[3]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+		<block name="io_gpio_write[0]" instance="ble[7]" mode="ble4">
+			<inputs>
+				<port name="in_A">clbsite.I[7]-&gt;BLE_inA</port>
+				<port name="in_B">clbsite.I[15]-&gt;BLE_inB</port>
+				<port name="in_C">open</port>
+				<port name="in_D">clbsite.I[31]-&gt;BLE_inD</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="io_gpio_write[0]" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">ble.in_A[0]-&gt;direct1 ble.in_B[0]-&gt;direct2 open ble.in_D[0]-&gt;direct7</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="io_gpio_write[0]" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">lut4.in[0]-&gt;direct:lut4 lut4.in[1]-&gt;direct:lut4 open lut4.in[3]-&gt;direct:lut4</port>
+						<port_rotation_map name="in">1 2 open 0</port_rotation_map>
+					</inputs>
+					<outputs>
+						<port name="out">io_gpio_write[0]</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[0]" instance="outsite[4]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[0]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[0]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[1]" instance="outsite[5]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[1]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[1]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[2]" instance="outsite[6]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[2]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[2]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[3]" instance="outsite[7]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[3]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[3]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[4]" instance="outsite[8]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[4]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[4]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[5]" instance="outsite[9]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[5]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[5]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[6]" instance="outsite[10]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[6]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[6]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[7]" instance="outsite[11]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[7]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[7]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[8]" instance="outsite[12]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[8]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[8]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[9]" instance="outsite[13]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[9]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[9]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[10]" instance="outsite[14]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[10]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[10]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[11]" instance="outsite[15]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[11]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[11]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[12]" instance="outsite[16]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[12]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[12]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[13]" instance="outsite[17]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[13]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[13]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[14]" instance="outsite[18]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[14]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[14]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[15]" instance="outsite[19]" mode="default">
+		<inputs>
+			<port name="I">fqmul_1.alu3_Q[15]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[15]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[0]" instance="outsite[20]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[0]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[0]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[1]" instance="outsite[21]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[1]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[1]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[2]" instance="outsite[22]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[2]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[2]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[3]" instance="outsite[23]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[3]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[3]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[4]" instance="outsite[24]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[4]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[4]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[5]" instance="outsite[25]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[5]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[5]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[6]" instance="outsite[26]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[6]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[6]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_write[7]" instance="outsite[27]" mode="default">
+		<inputs>
+			<port name="I">io_gpio_write[7]</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_write[7]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_cmd_ready" instance="outsite[28]" mode="default">
+		<inputs>
+			<port name="I">io_cfu_rsp_ready</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_cmd_ready" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_valid" instance="outsite[29]" mode="default">
+		<inputs>
+			<port name="I">io_cfu_cmd_valid</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_valid" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="$false" instance="clbsite[30]" mode="default">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			<port name="R">open</port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open open open open ble[7].out_right[0]-&gt;clbouts_right open open open open open open open open</port>
+		</outputs>
+		<clocks>
+			<port name="clk">open</port>
+		</clocks>
+		<block name="open" instance="ble[0]" />
+		<block name="open" instance="ble[1]" />
+		<block name="open" instance="ble[2]" />
+		<block name="open" instance="ble[3]" />
+		<block name="open" instance="ble[4]" />
+		<block name="open" instance="ble[5]" />
+		<block name="open" instance="ble[6]" />
+		<block name="$false" instance="ble[7]" mode="ble4">
+			<inputs>
+				<port name="in_A">open</port>
+				<port name="in_B">open</port>
+				<port name="in_C">open</port>
+				<port name="in_D">open</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="$false" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="$false" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">open open open open</port>
+					</inputs>
+					<outputs>
+						<port name="out">$false</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+	</block>
+	<block name="$true" instance="clbsite[31]" mode="default">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			<port name="R">open</port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open open open open ble[7].out_right[0]-&gt;clbouts_right open open open open open open open open</port>
+		</outputs>
+		<clocks>
+			<port name="clk">open</port>
+		</clocks>
+		<block name="open" instance="ble[0]" />
+		<block name="open" instance="ble[1]" />
+		<block name="open" instance="ble[2]" />
+		<block name="open" instance="ble[3]" />
+		<block name="open" instance="ble[4]" />
+		<block name="open" instance="ble[5]" />
+		<block name="open" instance="ble[6]" />
+		<block name="$true" instance="ble[7]" mode="ble4">
+			<inputs>
+				<port name="in_A">open</port>
+				<port name="in_B">open</port>
+				<port name="in_C">open</port>
+				<port name="in_D">open</port>
+				<port name="R">open</port>
+			</inputs>
+			<outputs>
+				<port name="out_right">lut4[0].out[0]-&gt;mux_right</port>
+				<port name="out_top">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="$true" instance="lut4[0]" mode="lut4">
+				<inputs>
+					<port name="in">open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut[0].out[0]-&gt;direct:lut4</port>
+				</outputs>
+				<clocks />
+				<block name="$true" instance="lut[0]">
+					<attributes />
+					<parameters />
+					<inputs>
+						<port name="in">open open open open</port>
+					</inputs>
+					<outputs>
+						<port name="out">$true</port>
+					</outputs>
+					<clocks />
+				</block>
+			</block>
+			<block name="open" instance="ff[0]" />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[0]" instance="outsite[32]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[0]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[1]" instance="outsite[33]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[1]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[2]" instance="outsite[34]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[2]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[3]" instance="outsite[35]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[3]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[4]" instance="outsite[36]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[4]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[5]" instance="outsite[37]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[5]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[6]" instance="outsite[38]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[6]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[7]" instance="outsite[39]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[7]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[8]" instance="outsite[40]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[8]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[9]" instance="outsite[41]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[9]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[10]" instance="outsite[42]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[10]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[11]" instance="outsite[43]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[11]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[12]" instance="outsite[44]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[12]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[13]" instance="outsite[45]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[13]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[14]" instance="outsite[46]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[14]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[15]" instance="outsite[47]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[15]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[16]" instance="outsite[48]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[16]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[17]" instance="outsite[49]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[17]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[18]" instance="outsite[50]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[18]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[19]" instance="outsite[51]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[19]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[20]" instance="outsite[52]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[20]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[21]" instance="outsite[53]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[21]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[22]" instance="outsite[54]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[22]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[23]" instance="outsite[55]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[23]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[24]" instance="outsite[56]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[24]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[25]" instance="outsite[57]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[25]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[26]" instance="outsite[58]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[26]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[27]" instance="outsite[59]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[27]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[28]" instance="outsite[60]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[28]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[29]" instance="outsite[61]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[29]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[30]" instance="outsite[62]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[30]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_output[31]" instance="outsite[63]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_output[31]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_status[0]" instance="outsite[64]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_status[0]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_status[1]" instance="outsite[65]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_status[1]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_cfu_rsp_payload_status[2]" instance="outsite[66]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_cfu_rsp_payload_status[2]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[0]" instance="outsite[67]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[0]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[1]" instance="outsite[68]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[1]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[2]" instance="outsite[69]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[2]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[3]" instance="outsite[70]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[3]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[4]" instance="outsite[71]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[4]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[5]" instance="outsite[72]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[5]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[6]" instance="outsite[73]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[6]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_gpio_writeEnable[7]" instance="outsite[74]" mode="default">
+		<inputs>
+			<port name="I">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_gpio_writeEnable[7]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[16]" instance="outsite[75]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[16]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[17]" instance="outsite[76]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[17]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[18]" instance="outsite[77]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[18]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[19]" instance="outsite[78]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[19]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[20]" instance="outsite[79]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[20]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[21]" instance="outsite[80]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[21]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[22]" instance="outsite[81]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[22]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[23]" instance="outsite[82]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[23]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[24]" instance="outsite[83]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[24]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[25]" instance="outsite[84]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[25]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[26]" instance="outsite[85]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[26]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[27]" instance="outsite[86]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[27]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[28]" instance="outsite[87]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[28]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[29]" instance="outsite[88]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[29]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[30]" instance="outsite[89]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[30]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:io_statusOuts[31]" instance="outsite[90]" mode="default">
+		<inputs>
+			<port name="I">$false</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:io_statusOuts[31]" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">outsite.I[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_valid" instance="insite[91]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_valid" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_valid</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[0]" instance="insite[92]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[0]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[0]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[1]" instance="insite[93]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[1]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[1]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[2]" instance="insite[94]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[2]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[2]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[3]" instance="insite[95]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[3]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[3]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[4]" instance="insite[96]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[4]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[4]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[5]" instance="insite[97]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[5]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[5]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[6]" instance="insite[98]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[6]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[6]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[7]" instance="insite[99]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[7]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[7]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[8]" instance="insite[100]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[8]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[8]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[9]" instance="insite[101]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[9]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[9]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[10]" instance="insite[102]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[10]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[10]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[11]" instance="insite[103]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[11]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[11]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[12]" instance="insite[104]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[12]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[12]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[13]" instance="insite[105]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[13]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[13]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[14]" instance="insite[106]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[14]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[14]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in0[15]" instance="insite[107]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in0[15]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in0[15]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[0]" instance="insite[108]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[0]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[0]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[1]" instance="insite[109]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[1]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[1]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[2]" instance="insite[110]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[2]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[2]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[3]" instance="insite[111]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[3]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[3]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[4]" instance="insite[112]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[4]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[4]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[5]" instance="insite[113]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[5]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[5]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[6]" instance="insite[114]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[6]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[6]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[7]" instance="insite[115]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[7]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[7]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[8]" instance="insite[116]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[8]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[8]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[9]" instance="insite[117]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[9]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[9]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[10]" instance="insite[118]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[10]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[10]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[11]" instance="insite[119]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[11]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[11]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[12]" instance="insite[120]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[12]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[12]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[13]" instance="insite[121]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[13]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[13]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[14]" instance="insite[122]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[14]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[14]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_in1[15]" instance="insite[123]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_in1[15]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_in1[15]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[12]" instance="insite[124]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[12]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[12]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[13]" instance="insite[125]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[13]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[13]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[14]" instance="insite[126]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[14]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[14]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[25]" instance="insite[127]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[25]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[25]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[26]" instance="insite[128]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[26]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[26]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[27]" instance="insite[129]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[27]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[27]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_cmd_payload_raw_insn[28]" instance="insite[130]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_cmd_payload_raw_insn[28]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_cmd_payload_raw_insn[28]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_cfu_rsp_ready" instance="insite[131]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_cfu_rsp_ready" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_cfu_rsp_ready</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[0]" instance="insite[132]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[0]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[0]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[1]" instance="insite[133]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[1]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[1]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[2]" instance="insite[134]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[2]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[2]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[3]" instance="insite[135]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[3]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[3]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[4]" instance="insite[136]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[4]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[4]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[5]" instance="insite[137]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[5]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[5]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[6]" instance="insite[138]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[6]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[6]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="io_gpio_read[7]" instance="insite[139]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="io_gpio_read[7]" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">io_gpio_read[7]</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="clk" instance="insite[140]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="O">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks />
+		<block name="clk" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">clk</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="interface-1.0.19.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/io/get-coursier/interface/1.0.19/interface-1.0.19.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/io/get-coursier/interface/1.0.19/interface-1.0.19-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

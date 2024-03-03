@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="directories-26.jar">
+        <CLASSES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/dev/dirs/directories/26/directories-26.jar!/"/>
+        </CLASSES>
+        <SOURCES>
+            <root url="jar://$PROJECT_DIR$/../../../.cache/coursier/v1/https/repo1.maven.org/maven2/dev/dirs/directories/26/directories-26-sources.jar!/"/>
+        </SOURCES>
+    </library>
+</component>

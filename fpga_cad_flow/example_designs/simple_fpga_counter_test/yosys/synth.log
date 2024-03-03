@@ -1,0 +1,768 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33+34 (git sha1 b84ed5d3a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `scripts/synth.ys' --
+ >>> LOG: READING VERILOG files TOP_MODULE: counter
+
+1. Executing Verilog-2005 frontend: /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v
+Parsing Verilog input from `/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v' to AST representation.
+Generating RTLIL representation for module `\counter'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \counter
+
+2.2. Analyzing design hierarchy..
+Top module:  \counter
+Removed 0 unused modules.
+ >>> LOG: GENERIC MAPPING
+
+3. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                 11
+   Number of wire bits:            343
+   Number of public wires:           7
+   Number of public wire bits:     271
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              2
+   Number of cells:                  2
+     $add_32                         1
+     $sub_32                         1
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:22$2 in module counter.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:22$2'.
+     1/1: $0\count[3:0]
+Creating decoders for process `\counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:17$1'.
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\counter.\OUT [35:32]' from process `\counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:17$1'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\counter.\count' using process `\counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:22$2'.
+  created $dff cell `$procdff$11' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:22$2'.
+Removing empty process `counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:22$2'.
+Removing empty process `counter.$proc$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:17$1'.
+Cleaned up 2 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+5. Executing FLATTEN pass (flatten design).
+
+6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module counter...
+Warning: Wire counter.\OUT [127] is used but has no driver.
+Warning: Wire counter.\OUT [126] is used but has no driver.
+Warning: Wire counter.\OUT [125] is used but has no driver.
+Warning: Wire counter.\OUT [124] is used but has no driver.
+Warning: Wire counter.\OUT [123] is used but has no driver.
+Warning: Wire counter.\OUT [122] is used but has no driver.
+Warning: Wire counter.\OUT [121] is used but has no driver.
+Warning: Wire counter.\OUT [120] is used but has no driver.
+Warning: Wire counter.\OUT [119] is used but has no driver.
+Warning: Wire counter.\OUT [118] is used but has no driver.
+Warning: Wire counter.\OUT [117] is used but has no driver.
+Warning: Wire counter.\OUT [116] is used but has no driver.
+Warning: Wire counter.\OUT [115] is used but has no driver.
+Warning: Wire counter.\OUT [114] is used but has no driver.
+Warning: Wire counter.\OUT [113] is used but has no driver.
+Warning: Wire counter.\OUT [112] is used but has no driver.
+Warning: Wire counter.\OUT [111] is used but has no driver.
+Warning: Wire counter.\OUT [110] is used but has no driver.
+Warning: Wire counter.\OUT [109] is used but has no driver.
+Warning: Wire counter.\OUT [108] is used but has no driver.
+Warning: Wire counter.\OUT [107] is used but has no driver.
+Warning: Wire counter.\OUT [106] is used but has no driver.
+Warning: Wire counter.\OUT [105] is used but has no driver.
+Warning: Wire counter.\OUT [104] is used but has no driver.
+Warning: Wire counter.\OUT [103] is used but has no driver.
+Warning: Wire counter.\OUT [102] is used but has no driver.
+Warning: Wire counter.\OUT [101] is used but has no driver.
+Warning: Wire counter.\OUT [100] is used but has no driver.
+Warning: Wire counter.\OUT [99] is used but has no driver.
+Warning: Wire counter.\OUT [98] is used but has no driver.
+Warning: Wire counter.\OUT [97] is used but has no driver.
+Warning: Wire counter.\OUT [96] is used but has no driver.
+Warning: Wire counter.\OUT [95] is used but has no driver.
+Warning: Wire counter.\OUT [94] is used but has no driver.
+Warning: Wire counter.\OUT [93] is used but has no driver.
+Warning: Wire counter.\OUT [92] is used but has no driver.
+Warning: Wire counter.\OUT [91] is used but has no driver.
+Warning: Wire counter.\OUT [90] is used but has no driver.
+Warning: Wire counter.\OUT [89] is used but has no driver.
+Warning: Wire counter.\OUT [88] is used but has no driver.
+Warning: Wire counter.\OUT [87] is used but has no driver.
+Warning: Wire counter.\OUT [86] is used but has no driver.
+Warning: Wire counter.\OUT [85] is used but has no driver.
+Warning: Wire counter.\OUT [84] is used but has no driver.
+Warning: Wire counter.\OUT [83] is used but has no driver.
+Warning: Wire counter.\OUT [82] is used but has no driver.
+Warning: Wire counter.\OUT [81] is used but has no driver.
+Warning: Wire counter.\OUT [80] is used but has no driver.
+Warning: Wire counter.\OUT [79] is used but has no driver.
+Warning: Wire counter.\OUT [78] is used but has no driver.
+Warning: Wire counter.\OUT [77] is used but has no driver.
+Warning: Wire counter.\OUT [76] is used but has no driver.
+Warning: Wire counter.\OUT [75] is used but has no driver.
+Warning: Wire counter.\OUT [74] is used but has no driver.
+Warning: Wire counter.\OUT [73] is used but has no driver.
+Warning: Wire counter.\OUT [72] is used but has no driver.
+Warning: Wire counter.\OUT [71] is used but has no driver.
+Warning: Wire counter.\OUT [70] is used but has no driver.
+Warning: Wire counter.\OUT [69] is used but has no driver.
+Warning: Wire counter.\OUT [68] is used but has no driver.
+Warning: Wire counter.\OUT [67] is used but has no driver.
+Warning: Wire counter.\OUT [66] is used but has no driver.
+Warning: Wire counter.\OUT [65] is used but has no driver.
+Warning: Wire counter.\OUT [64] is used but has no driver.
+Warning: Wire counter.\OUT [63] is used but has no driver.
+Warning: Wire counter.\OUT [62] is used but has no driver.
+Warning: Wire counter.\OUT [61] is used but has no driver.
+Warning: Wire counter.\OUT [60] is used but has no driver.
+Warning: Wire counter.\OUT [59] is used but has no driver.
+Warning: Wire counter.\OUT [58] is used but has no driver.
+Warning: Wire counter.\OUT [57] is used but has no driver.
+Warning: Wire counter.\OUT [56] is used but has no driver.
+Warning: Wire counter.\OUT [55] is used but has no driver.
+Warning: Wire counter.\OUT [54] is used but has no driver.
+Warning: Wire counter.\OUT [53] is used but has no driver.
+Warning: Wire counter.\OUT [52] is used but has no driver.
+Warning: Wire counter.\OUT [51] is used but has no driver.
+Warning: Wire counter.\OUT [50] is used but has no driver.
+Warning: Wire counter.\OUT [49] is used but has no driver.
+Warning: Wire counter.\OUT [48] is used but has no driver.
+Warning: Wire counter.\OUT [47] is used but has no driver.
+Warning: Wire counter.\OUT [46] is used but has no driver.
+Warning: Wire counter.\OUT [45] is used but has no driver.
+Warning: Wire counter.\OUT [44] is used but has no driver.
+Warning: Wire counter.\OUT [43] is used but has no driver.
+Warning: Wire counter.\OUT [42] is used but has no driver.
+Warning: Wire counter.\OUT [41] is used but has no driver.
+Warning: Wire counter.\OUT [40] is used but has no driver.
+Warning: Wire counter.\OUT [39] is used but has no driver.
+Warning: Wire counter.\OUT [38] is used but has no driver.
+Warning: Wire counter.\OUT [37] is used but has no driver.
+Warning: Wire counter.\OUT [36] is used but has no driver.
+Warning: Wire counter.\OUT [31] is used but has no driver.
+Warning: Wire counter.\OUT [30] is used but has no driver.
+Warning: Wire counter.\OUT [29] is used but has no driver.
+Warning: Wire counter.\OUT [28] is used but has no driver.
+Warning: Wire counter.\OUT [27] is used but has no driver.
+Warning: Wire counter.\OUT [26] is used but has no driver.
+Warning: Wire counter.\OUT [25] is used but has no driver.
+Warning: Wire counter.\OUT [24] is used but has no driver.
+Warning: Wire counter.\OUT [23] is used but has no driver.
+Warning: Wire counter.\OUT [22] is used but has no driver.
+Warning: Wire counter.\OUT [21] is used but has no driver.
+Warning: Wire counter.\OUT [20] is used but has no driver.
+Warning: Wire counter.\OUT [19] is used but has no driver.
+Warning: Wire counter.\OUT [18] is used but has no driver.
+Warning: Wire counter.\OUT [17] is used but has no driver.
+Warning: Wire counter.\OUT [16] is used but has no driver.
+Warning: Wire counter.\OUT [15] is used but has no driver.
+Warning: Wire counter.\OUT [14] is used but has no driver.
+Warning: Wire counter.\OUT [13] is used but has no driver.
+Warning: Wire counter.\OUT [12] is used but has no driver.
+Warning: Wire counter.\OUT [11] is used but has no driver.
+Warning: Wire counter.\OUT [10] is used but has no driver.
+Warning: Wire counter.\OUT [9] is used but has no driver.
+Warning: Wire counter.\OUT [8] is used but has no driver.
+Warning: Wire counter.\OUT [7] is used but has no driver.
+Warning: Wire counter.\OUT [6] is used but has no driver.
+Warning: Wire counter.\OUT [5] is used but has no driver.
+Warning: Wire counter.\OUT [4] is used but has no driver.
+Warning: Wire counter.\OUT [3] is used but has no driver.
+Warning: Wire counter.\OUT [2] is used but has no driver.
+Warning: Wire counter.\OUT [1] is used but has no driver.
+Warning: Wire counter.\OUT [0] is used but has no driver.
+Found and reported 124 problems.
+
+9. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                 10
+   Number of wire bits:            335
+   Number of public wires:           6
+   Number of public wire bits:     263
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $add_32                         1
+     $dff_4                          1
+     $mux_4                          2
+     $sub_32                         1
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$11 ($dff) from module counter (D = $procmux$6_Y, Q = \count, rval = 4'0000).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+10.16. Finished OPT passes. (There is nothing left to do.)
+
+11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell counter.$sub$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:26$3 ($sub).
+Removed top 28 bits (of 32) from port Y of cell counter.$sub$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:26$3 ($sub).
+Removed top 31 bits (of 32) from port B of cell counter.$add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4 ($add).
+Removed top 28 bits (of 32) from port Y of cell counter.$add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4 ($add).
+Removed top 28 bits (of 32) from wire counter.$add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4_Y.
+
+12. Executing PEEPOPT pass (run peephole optimizers).
+
+13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+ >>> LOG: OPT
+
+14. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                  9
+   Number of wire bits:            303
+   Number of public wires:           6
+   Number of public wire bits:     263
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $add_4                          1
+     $mux_4                          1
+     $sdff_4                         1
+     $sub_4                          1
+
+15. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module counter:
+  creating $macc model for $add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4 ($add).
+  creating $macc model for $sub$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:26$3 ($sub).
+  creating $alu model for $macc $sub$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:26$3.
+  creating $alu model for $macc $add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4.
+  creating $alu cell for $add$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:28$4: $auto$alumacc.cc:485:replace_alu$14
+  creating $alu cell for $sub$/home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/inputs/counter.v:26$3: $auto$alumacc.cc:485:replace_alu$17
+  created 2 $alu and 0 $macc cells.
+
+16. Executing SHARE pass (SAT-based resource sharing).
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+17.9. Finished OPT passes. (There is nothing left to do.)
+
+18. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                 13
+   Number of wire bits:            319
+   Number of public wires:           6
+   Number of public wire bits:     263
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $alu_4                          2
+     $mux_4                          1
+     $sdff_4                         1
+
+19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+<suppressed ~10 debug messages>
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+20.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$6 in front of them:
+        $auto$alumacc.cc:485:replace_alu$17
+        $auto$alumacc.cc:485:replace_alu$14
+
+20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+<suppressed ~2 debug messages>
+
+20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+    Consolidated identical input bits for $mux cell $auto$opt_share.cc:244:merge_operators$23:
+      Old ports: A=4'1111, B=4'0001, Y=$auto$rtlil.cc:2543:Mux$24
+      New ports: A=1'1, B=1'0, Y=$auto$rtlil.cc:2543:Mux$24 [1]
+      New connections: { $auto$rtlil.cc:2543:Mux$24 [3:2] $auto$rtlil.cc:2543:Mux$24 [0] } = { $auto$rtlil.cc:2543:Mux$24 [1] $auto$rtlil.cc:2543:Mux$24 [1] 1'1 }
+  Optimizing cells in module \counter.
+Performed a total of 1 changes.
+
+20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+20.14. Executing OPT_SHARE pass.
+
+20.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+<suppressed ~1 debug messages>
+
+20.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+20.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+20.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+20.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+20.22. Executing OPT_SHARE pass.
+
+20.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+
+20.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+20.26. Finished OPT passes. (There is nothing left to do.)
+
+21. Executing TECHMAP pass (map to technology primitives).
+
+21.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~223 debug messages>
+
+22. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+ >>> LOG: LUT MAPPING
+
+23. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                 46
+   Number of wire bits:           1458
+   Number of public wires:           6
+   Number of public wire bits:     263
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 41
+     $_AND_                         10
+     $_DFF_P_                        4
+     $_MUX_                          8
+     $_NOT_                          5
+     $_OR_                           5
+     $_XOR_                          9
+
+Removed 7 unused cells and 26 unused wires.
+
+24. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:        0
+
+Eliminating LUTs.
+Number of LUTs:        0
+
+Combining LUTs.
+Number of LUTs:        0
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+
+25. Executing ABC pass (technology mapping using ABC).
+
+25.1. Extracting gate netlist of module `\counter' to `<abc-temp-dir>/input.blif'..
+Extracted 30 gates and 38 wires to a netlist network with 6 inputs and 4 outputs.
+
+25.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+25.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:        6
+ABC RESULTS:        internal signals:       28
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~1 debug messages>
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+26.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter.
+Performed a total of 0 changes.
+
+26.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter'.
+Removed a total of 0 cells.
+
+26.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+
+26.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter.
+
+26.16. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing FLATTEN pass (flatten design).
+
+28. Executing TECHMAP pass (map to technology primitives).
+
+28.1. Executing Verilog-2005 frontend: scripts/async_flop.v
+Parsing Verilog input from `scripts/async_flop.v' to AST representation.
+Successfully finished Verilog frontend.
+
+28.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~3 debug messages>
+
+30. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:        6
+  2-LUT                1
+  3-LUT                2
+  4-LUT                3
+
+Eliminating LUTs.
+Number of LUTs:        6
+  2-LUT                1
+  3-LUT                2
+  4-LUT                3
+
+Combining LUTs.
+Number of LUTs:        6
+  2-LUT                1
+  3-LUT                2
+  4-LUT                3
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~26 debug messages>
+
+31. Printing statistics.
+
+=== counter ===
+
+   Number of wires:                  9
+   Number of wire bits:            263
+   Number of public wires:           3
+   Number of public wire bits:     257
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     $_DFF_P_                        4
+     $lut_2                          1
+     $lut_3                          2
+     $lut_4                          3
+
+ >>> LOG: WRITING VERILOG /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/yosys/outputs/counter_syn.v
+
+32. Executing Verilog backend.
+
+32.1. Executing BMUXMAP pass.
+
+32.2. Executing DEMUXMAP pass.
+Dumping module `\counter'.
+ >>> LOG: WRITING BLIF /home/kmgroup/projects/tutorial/fpga_cad_flow/example_designs/simple_fpga_counter_test/yosys/outputs/counter_syn.blif
+
+33. Executing BLIF backend.
+
+Warnings: 124 unique messages, 124 total
+End of script. Logfile hash: 4ba32ec738, CPU: user 0.05s system 0.00s, MEM: 17.69 MB peak
+Yosys 0.33+34 (git sha1 b84ed5d3a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 59% 1x abc (0 sec), 8% 16x opt_expr (0 sec), ...
