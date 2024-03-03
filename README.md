@@ -1,3 +1,5 @@
+Post your questions and raise issues on our [gitter](https://app.gitter.im/#/room/!caIZPIzqZRxWsNVwfm:gitter.im) room.
+
 ## Tool versions & dependencies
 
 * FPGA CAD
