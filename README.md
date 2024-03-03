@@ -99,7 +99,7 @@ This will pick up all pytest test files with name `test_*.py` from the subdirect
 For in-depth tests and a closer look at waveforms for all signals in the fabric, you can go to the respective test directory and follow the following steps
 
 ```command
-cd tutorial_efpga_<test>_test
+cd tutorial_efpga_<application>_test
 make -B
 ```
 
