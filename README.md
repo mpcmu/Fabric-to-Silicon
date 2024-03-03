@@ -3,16 +3,16 @@ Post your questions and raise issues on our [gitter](https://app.gitter.im/#/roo
 ## Tool versions & dependencies
 
 * FPGA CAD
-    * Yosys: 0.33+34
-    * VPR: 8.1.0-dev+7a9676256
+    * [Yosys](https://github.com/YosysHQ/yosys): 0.33+34
+    * [VPR](https://github.com/verilog-to-routing/vtr-verilog-to-routing/): 8.1.0-dev+7a9676256
 
 * eFPGA Verification
-    * cocotb: 1.8.1
-    * pytest: 7.0.1
+    * [cocotb](https://github.com/cocotb/cocotb): 1.8.1
+    * [pytest](https://docs.pytest.org/en/8.0.x/): 7.0.1
     * Cadence Xcelium: 22.03
 
 * Physical Design
-    * ASAP7 PDK 
+    * [ASAP7](https://github.com/The-OpenROAD-Project/asap7) PDK 
     * Cadence Genus: 21.12
     * Cadence Innovus: 21.13
 
