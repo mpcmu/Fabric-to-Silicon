@@ -59,7 +59,7 @@ def core_test(d):
 
     val = read_from_o(dut, io, 8)
 
-    assert val == (5+13)%255
+    assert val == (5+13)%256
 
     yield ClockCycles(dut.clock, 5)
 
@@ -69,7 +69,7 @@ def core_test(d):
 
     val = read_from_o(dut, io, 8)
 
-    assert val == (0+255)%255
+    assert val == (0+255)%256
     
 
     yield Timer(5000*_ns)
