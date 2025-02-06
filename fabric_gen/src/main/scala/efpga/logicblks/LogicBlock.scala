@@ -1,7 +1,7 @@
 package efpga.logicblks
 
 import chisel3._
-import cmu.util.TristateIO
+// import cmu.util.TristateIO
 import efpga.tiles.TileIO
 
 import scala.collection.immutable.SortedMap

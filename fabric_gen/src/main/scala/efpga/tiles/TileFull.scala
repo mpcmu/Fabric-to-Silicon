@@ -1,7 +1,7 @@
 package efpga.tiles
 
 import chisel3._
-import cmu.util.TristateIO
+// import cmu.util.TristateIO
 import efpga.config._
 import efpga.logicblks._
 import efpga.utils._

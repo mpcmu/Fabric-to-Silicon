@@ -4,7 +4,7 @@ import chisel3._
 import circt.stage.ChiselStage
 import chisel3.experimental.ExtModule
 import chisel3.util.MuxLookup
-import cmu.util.{ScanBundle, TristateIO}
+// import cmu.util.{ScanBundle, TristateIO}
 import efpga.config
 import efpga.config.{ConfScanIO}
 import efpga.tiles.{Tile, TileFull, efpgaCtrlSignals}
